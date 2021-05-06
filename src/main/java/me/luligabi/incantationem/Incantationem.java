@@ -1,5 +1,6 @@
 package me.luligabi.incantationem;
 
+import me.luligabi.incantationem.registry.CurseRegistry;
 import me.luligabi.incantationem.registry.EnchantmentRegistry;
 import net.fabricmc.api.ModInitializer;
 
@@ -10,5 +11,6 @@ public class Incantationem implements ModInitializer {
     @Override
     public void onInitialize() {
         EnchantmentRegistry.register();
+        CurseRegistry.register();
     }
 }

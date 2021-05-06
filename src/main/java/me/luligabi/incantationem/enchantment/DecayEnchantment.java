@@ -16,7 +16,7 @@ import net.minecraft.util.Formatting;
 public class DecayEnchantment extends Enchantment {
 
     public DecayEnchantment() {
-        super(Rarity.RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND});
+        super(Rarity.RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND});
     }
 
     public int getMinPower(int level) {

@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(LivingEntity.class)
-public class LivingEntityMixin {
+public abstract class LivingEntityMixin {
 
     // Mixin used to magnetize objects near player if using magnetic enchantment
     @Inject(method = "baseTick", at = @At("RETURN"), cancellable = true)
@@ -21,6 +21,7 @@ public class LivingEntityMixin {
 
         if(enchantmentLevel > 0) {
             MagneticEnchantment.magnetize(livingEntity, livingEntity.getEntityWorld(), enchantmentLevel);
+            callbackInfo.cancel();
         }
     }
 }
