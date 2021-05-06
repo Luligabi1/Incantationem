@@ -4,6 +4,7 @@
   "package": "me.luligabi.incantationem.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "LivingEntityMixin"
   ],
   "client": [
   ],
