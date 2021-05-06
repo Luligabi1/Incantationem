@@ -5,7 +5,11 @@
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "BlockMixin",
-    "LivingEntityMixin"
+    "HoglinEntityMixin",
+    "LivingEntityMixin",
+    "PigEntityMixin",
+    "PiglinBruteEntityMixin",
+    "PiglinEntityMixin"
   ],
   "client": [
   ],
