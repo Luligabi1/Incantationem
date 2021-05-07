@@ -20,7 +20,7 @@ public class DecayEnchantment extends Enchantment {
     }
 
     public int getMinPower(int level) {
-        return 10 + 20 * (level - 1);
+        return 10 + 30 * (level - 1);
     }
 
     public int getMaxPower(int level) {
