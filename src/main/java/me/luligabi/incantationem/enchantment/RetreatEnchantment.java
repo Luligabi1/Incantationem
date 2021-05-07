@@ -8,8 +8,6 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.text.Style;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
 
@@ -36,9 +34,7 @@ public class RetreatEnchantment extends Enchantment {
         if(Util.randomNumber(user.getRandom(),0, 10) < level*1.25) {
             if(!user.hasStatusEffect(StatusEffects.SPEED)) {
                 user.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, (5+(level*2))*20, level-1));
-                if(user instanceof PlayerEntity) { //TODO: Add config setting to show message.
-                    ((PlayerEntity) user).sendMessage(new TranslatableText("message.incantationem.retreat.applied").setStyle(Style.EMPTY.withColor(Formatting.GREEN)), true);
-                }
+                Util.sendActionBarMessage(user, new TranslatableText("message.incantationem.retreat.applied"), Formatting.AQUA);
             }
         }
         super.onUserDamaged(user, attacker, level);
