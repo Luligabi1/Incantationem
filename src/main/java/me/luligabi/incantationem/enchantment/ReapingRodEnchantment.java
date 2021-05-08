@@ -23,9 +23,7 @@ public class ReapingRodEnchantment extends Enchantment {
         return 50;
     }
 
-    public int getMaxLevel() {
-        return 1;
-    }
+    public int getMaxLevel() { return 1; }
 
     @Override
     public void onTargetDamaged(LivingEntity user, Entity target, int level) {

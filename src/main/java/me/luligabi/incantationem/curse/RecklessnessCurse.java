@@ -25,4 +25,8 @@ public class RecklessnessCurse extends Enchantment {
 
     public boolean isCursed() { return true; }
 
+    public boolean isAvailableForEnchantedBookOffer() {
+        return false;
+    }
+
 }
