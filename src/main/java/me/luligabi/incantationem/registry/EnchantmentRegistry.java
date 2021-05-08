@@ -14,6 +14,7 @@ public class EnchantmentRegistry {
         MAGNETIC = Registry.register(Registry.ENCHANTMENT, new Identifier(Incantationem.MOD_ID, "magnetic"), new MagneticEnchantment());
         SWINE_BANE = Registry.register(Registry.ENCHANTMENT, new Identifier(Incantationem.MOD_ID, "swine_bane"), new SwineBaneEnchantment());
         LAST_STAND = Registry.register(Registry.ENCHANTMENT, new Identifier(Incantationem.MOD_ID, "last_stand"), new LastStandEnchantment());
+        REAPING_ROD = Registry.register(Registry.ENCHANTMENT, new Identifier(Incantationem.MOD_ID, "reaping_rod"), new ReapingRodEnchantment());
     }
 
     public static Enchantment RETREAT;
@@ -21,5 +22,6 @@ public class EnchantmentRegistry {
     public static Enchantment MAGNETIC;
     public static Enchantment SWINE_BANE;
     public static Enchantment LAST_STAND;
+    public static Enchantment REAPING_ROD;
 
 }

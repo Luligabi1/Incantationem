@@ -28,7 +28,6 @@ public class MagneticEnchantment extends Enchantment {
         return 3;
     }
 
-
     public static void magnetize(LivingEntity entity, World world, int level) {
         Vec3d pos = entity.getPos();
         BlockPos box1 = new BlockPos(pos.x + (level*2), pos.y + (level*2), pos.z + (level*2));
