@@ -15,6 +15,7 @@ public class EnchantmentRegistry {
         SWINE_BANE = Registry.register(Registry.ENCHANTMENT, new Identifier(Incantationem.MOD_ID, "swine_bane"), new SwineBaneEnchantment());
         LAST_STAND = Registry.register(Registry.ENCHANTMENT, new Identifier(Incantationem.MOD_ID, "last_stand"), new LastStandEnchantment());
         REAPING_ROD = Registry.register(Registry.ENCHANTMENT, new Identifier(Incantationem.MOD_ID, "reaping_rod"), new ReapingRodEnchantment());
+        FORGING_TOUCH = Registry.register(Registry.ENCHANTMENT, new Identifier(Incantationem.MOD_ID, "forging_touch"), new ForgingTouchEnchantment());
     }
 
     public static Enchantment RETREAT;
@@ -23,5 +24,6 @@ public class EnchantmentRegistry {
     public static Enchantment SWINE_BANE;
     public static Enchantment LAST_STAND;
     public static Enchantment REAPING_ROD;
+    public static Enchantment FORGING_TOUCH;
 
 }

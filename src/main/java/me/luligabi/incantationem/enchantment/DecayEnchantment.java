@@ -31,7 +31,7 @@ public class DecayEnchantment extends Enchantment {
 
     @Override
     public void onTargetDamaged(LivingEntity user, Entity attacker, int level) {
-        if(Util.randomNumber(user.getRandom(),0, 10) < level*1.25) {
+        if(Util.randomNumber(user.getRandom(),0, 10) < level*1) {
             if(!user.hasStatusEffect(StatusEffects.WITHER)) {
                 if(attacker instanceof LivingEntity) {
                     ((LivingEntity) attacker).addStatusEffect(new StatusEffectInstance(StatusEffects.WITHER, (3 + (level * 2)) * 20, level - 1));

@@ -31,7 +31,7 @@ public class RetreatEnchantment extends Enchantment {
 
     @Override
     public void onUserDamaged(LivingEntity user, Entity attacker, int level) {
-        if(Util.randomNumber(user.getRandom(),0, 10) < level*1.25) {
+        if(Util.randomNumber(user.getRandom(),0, 10) < level*1) {
             if(!user.hasStatusEffect(StatusEffects.SPEED)) {
                 user.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, (5+(level*2))*20, level-1));
                 Util.sendActionBarMessage(user, new TranslatableText("message.incantationem.retreat.applied"), Formatting.AQUA);
