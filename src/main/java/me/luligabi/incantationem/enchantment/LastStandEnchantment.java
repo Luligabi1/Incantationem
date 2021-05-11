@@ -29,7 +29,7 @@ public class LastStandEnchantment extends Enchantment {
     @Override
     public void onUserDamaged(LivingEntity user, Entity attacker, int level) {
         if (user.getHealth() < (level * 1.5)) {
-            if (Util.randomNumber(user.getRandom(), 0, 10) < level * 1) {
+            if (Util.positiveEffectRandomNumber(user, user.getRandom(), 0, 10) < level * 1) {
                 Util.applyEffectIfNotPresent(user, StatusEffects.STRENGTH, (int) Math.ceil(level * 2.5), 1);
                 Util.sendActionBarMessage(user, new TranslatableText("message.incantationem.last_stand.applied"), Formatting.GOLD);
             }

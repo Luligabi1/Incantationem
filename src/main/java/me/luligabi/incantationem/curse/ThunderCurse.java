@@ -31,7 +31,7 @@ public class ThunderCurse extends Enchantment {
 
     @Override
     public void onUserDamaged(LivingEntity user, Entity attacker, int level) {
-        if(Util.randomNumber(user.getRandom(), 1, 10) == 1) {
+        if(Util.negativeEffectRandomNumber(user, user.getRandom(), 1, 10) == 1) {
             LightningEntity lightningEntity = EntityType.LIGHTNING_BOLT.create(user.getEntityWorld());
             lightningEntity.setCosmetic(!user.getEntityWorld().getGameRules().getBoolean(GameRules.DO_MOB_GRIEFING));
             lightningEntity.refreshPositionAfterTeleport(user.getPos().x, user.getPos().y, user.getPos().z);
