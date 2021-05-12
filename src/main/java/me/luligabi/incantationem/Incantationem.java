@@ -11,8 +11,8 @@ public class Incantationem implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        EnchantmentRegistry.register();
         CurseRegistry.register();
+        EnchantmentRegistry.register();
     }
 
     public static EntityGroup SWINE = new EntityGroup();
