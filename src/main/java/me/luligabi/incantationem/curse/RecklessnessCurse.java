@@ -3,6 +3,7 @@ package me.luligabi.incantationem.curse;
 import me.luligabi.incantationem.registry.EnchantmentRegistry;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.EquipmentSlot;
 
 /*
@@ -30,6 +31,6 @@ public class RecklessnessCurse extends Enchantment {
         return false;
     }
 
-    public boolean canAccept(Enchantment other) { return super.canAccept(other) && other != EnchantmentRegistry.FORGING_TOUCH; }
+    public boolean canAccept(Enchantment other) { return super.canAccept(other) && (other != EnchantmentRegistry.FORGING_TOUCH || other != Enchantments.FORTUNE); }
 
 }
