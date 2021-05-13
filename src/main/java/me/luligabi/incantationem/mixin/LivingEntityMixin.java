@@ -23,11 +23,16 @@ public abstract class LivingEntityMixin {
 
         int bunnysHopLevel = EnchantmentHelper.getEquipmentLevel(EnchantmentRegistry.BUNNYS_HOP, livingEntity);
 
+        int charmedLevel = EnchantmentHelper.getEquipmentLevel(EnchantmentRegistry.CHARMED, livingEntity);
+
         int magneticLevel = EnchantmentHelper.getEquipmentLevel(EnchantmentRegistry.MAGNETIC, livingEntity);
 
         if(bunnysHopLevel > 0) {
             Util.applyEffectIfNotPresent(livingEntity, StatusEffects.JUMP_BOOST, 3, bunnysHopLevel-1);
             callbackInfo.cancel();
+        }
+        if(charmedLevel > 0) {
+            Util.applyEffectIfNotPresent(livingEntity, StatusEffects.LUCK, 3, 0);
         }
         if(magneticLevel > 0) {
             MagneticEnchantment.magnetize(livingEntity, livingEntity.getEntityWorld(), magneticLevel);

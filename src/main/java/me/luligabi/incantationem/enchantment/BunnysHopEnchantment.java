@@ -7,8 +7,8 @@ import net.minecraft.entity.EquipmentSlot;
 public class BunnysHopEnchantment extends Enchantment {
 
     public BunnysHopEnchantment() {
-            super(Enchantment.Rarity.UNCOMMON, EnchantmentTarget.ARMOR_FEET, new EquipmentSlot[]{EquipmentSlot.FEET});
-        }
+        super(Enchantment.Rarity.UNCOMMON, EnchantmentTarget.ARMOR_FEET, new EquipmentSlot[]{EquipmentSlot.FEET});
+    }
 
         public int getMinPower(int level) { return 10 + 10 * (level - 1); }
 
