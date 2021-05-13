@@ -1,5 +1,6 @@
 package me.luligabi.incantationem.enchantment;
 
+import me.luligabi.incantationem.registry.CurseRegistry;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.EquipmentSlot;
@@ -27,4 +28,6 @@ public class CharmedEnchantment extends Enchantment {
     public boolean isAcceptableItem(ItemStack stack) {
         return stack.isDamageable() || super.isAcceptableItem(stack);
     }
+
+    public boolean canAccept(Enchantment other) { return super.canAccept(other) && (other != CurseRegistry.TOUGH_LUCK); }
 }

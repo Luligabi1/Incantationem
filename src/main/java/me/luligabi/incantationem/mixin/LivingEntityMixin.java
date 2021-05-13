@@ -2,6 +2,7 @@ package me.luligabi.incantationem.mixin;
 
 import me.luligabi.incantationem.Util;
 import me.luligabi.incantationem.enchantment.MagneticEnchantment;
+import me.luligabi.incantationem.registry.CurseRegistry;
 import me.luligabi.incantationem.registry.EnchantmentRegistry;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.LivingEntity;
@@ -27,17 +28,24 @@ public abstract class LivingEntityMixin {
 
         int magneticLevel = EnchantmentHelper.getEquipmentLevel(EnchantmentRegistry.MAGNETIC, livingEntity);
 
+        int toughLuckLevel = EnchantmentHelper.getEquipmentLevel(CurseRegistry.TOUGH_LUCK, livingEntity);
+
         if(bunnysHopLevel > 0) {
             Util.applyEffectIfNotPresent(livingEntity, StatusEffects.JUMP_BOOST, 3, bunnysHopLevel-1);
             callbackInfo.cancel();
         }
         if(charmedLevel > 0) {
             Util.applyEffectIfNotPresent(livingEntity, StatusEffects.LUCK, 3, 0);
+            callbackInfo.cancel();
         }
         if(magneticLevel > 0) {
             MagneticEnchantment.magnetize(livingEntity, livingEntity.getEntityWorld(), magneticLevel);
             callbackInfo.cancel();
         }
 
+        if(toughLuckLevel > 0) {
+            Util.applyEffectIfNotPresent(livingEntity, StatusEffects.UNLUCK, 3, 0);
+            callbackInfo.cancel();
+        }
     }
 }
