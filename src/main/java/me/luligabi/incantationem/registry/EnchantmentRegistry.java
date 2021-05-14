@@ -18,6 +18,7 @@ public class EnchantmentRegistry {
         MAGNETIC = Registry.register(Registry.ENCHANTMENT, new Identifier(Incantationem.MOD_ID, "magnetic"), new MagneticEnchantment());
         REAPING_ROD = Registry.register(Registry.ENCHANTMENT, new Identifier(Incantationem.MOD_ID, "reaping_rod"), new ReapingRodEnchantment());
         RETREAT = Registry.register(Registry.ENCHANTMENT, new Identifier(Incantationem.MOD_ID, "retreat"), new RetreatEnchantment());
+        VENOMOUS = Registry.register(Registry.ENCHANTMENT, new Identifier(Incantationem.MOD_ID, "venomous"), new VenomousEnchantment());
     }
 
     public static Enchantment BUNNYS_HOP;
@@ -29,5 +30,6 @@ public class EnchantmentRegistry {
     public static Enchantment MAGNETIC;
     public static Enchantment REAPING_ROD;
     public static Enchantment RETREAT;
+    public static Enchantment VENOMOUS;
 
 }
