@@ -10,7 +10,7 @@ import net.minecraft.util.registry.Registry;
 
 public class CurseRegistry {
 
-    public static void register() {
+    public static void init() {
         RECKLESSNESS = Registry.register(Registry.ENCHANTMENT, new Identifier(Incantationem.MOD_ID, "recklessness"), new RecklessnessCurse());
         THUNDER = Registry.register(Registry.ENCHANTMENT, new Identifier(Incantationem.MOD_ID, "thunder"), new ThunderCurse());
         TOUGH_LUCK = Registry.register(Registry.ENCHANTMENT, new Identifier(Incantationem.MOD_ID, "tough_luck"), new ToughLuckCurse());

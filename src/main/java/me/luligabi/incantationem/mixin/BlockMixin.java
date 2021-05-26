@@ -1,6 +1,5 @@
 package me.luligabi.incantationem.mixin;
 
-import me.luligabi.incantationem.Util;
 import me.luligabi.incantationem.registry.CurseRegistry;
 import me.luligabi.incantationem.registry.EnchantmentRegistry;
 import net.minecraft.block.Block;
@@ -8,15 +7,10 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.recipe.RecipeType;
-import net.minecraft.recipe.SmeltingRecipe;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.stat.Stats;
-import net.minecraft.text.TranslatableText;
-import net.minecraft.util.Formatting;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
@@ -28,8 +22,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
-import java.util.Random;
 
 @Mixin(Block.class)
 public abstract class BlockMixin {
@@ -59,9 +51,10 @@ public abstract class BlockMixin {
             callbackInfo.setReturnValue(callbackInfo.getReturnValue());
             return;
         }
-        for (ItemStack preForgingItems : callbackInfo.getReturnValue()) {
+        /*for (ItemStack preForgingItems : callbackInfo.getReturnValue()) { //TODO: Fix getPreviewInputs
             Optional<SmeltingRecipe> recipe = world.getRecipeManager().listAllOfType(RecipeType.SMELTING).stream().filter(
                     (smeltingRecipe -> smeltingRecipe.getPreviewInputs().get(0).test(preForgingItems))).findFirst();
+
             if (recipe.isPresent() && Util.neutralEffectRandomNumber(new Random(), 0, 10) < (forgingTouchLevel*1.5)) {
                 ItemStack forgedItems = recipe.get().getOutput();
                 forgedItems.setCount(preForgingItems.getCount());
@@ -73,7 +66,7 @@ public abstract class BlockMixin {
                 itemsToDropList.add(preForgingItems);
             }
 
-        }
+        }*/
         callbackInfo.setReturnValue(itemsToDropList);
     }
 }

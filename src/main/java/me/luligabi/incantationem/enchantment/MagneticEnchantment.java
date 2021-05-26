@@ -35,9 +35,9 @@ public class MagneticEnchantment extends Enchantment {
 
         List<Entity> entities = world.getEntitiesByType(null, new Box(box1, box2), e -> e instanceof ItemEntity || e instanceof ExperienceOrbEntity);
 
-        for(Entity e : entities) {
+         /*for(Entity e : entities) { //TODO: Fix reverseSubtract
             Vec3d velocity = e.getPos().reverseSubtract(new Vec3d(pos.x + 0.5, pos.y + 0.5, pos.z + 0.5)).normalize().multiply(0.1);
             e.addVelocity(velocity.x, velocity.y, velocity.z);
-        }
+        } */
     }
 }

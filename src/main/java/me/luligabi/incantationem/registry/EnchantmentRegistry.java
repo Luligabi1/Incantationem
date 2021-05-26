@@ -8,7 +8,7 @@ import net.minecraft.util.registry.Registry;
 
 public class EnchantmentRegistry {
 
-    public static void register() {
+    public static void init() {
         BUNNYS_HOP = Registry.register(Registry.ENCHANTMENT, new Identifier(Incantationem.MOD_ID, "bunnys_hop"), new BunnysHopEnchantment());
         SWINE_BANE = Registry.register(Registry.ENCHANTMENT, new Identifier(Incantationem.MOD_ID, "swine_bane"), new SwineBaneEnchantment());
         CHARMED = Registry.register(Registry.ENCHANTMENT, new Identifier(Incantationem.MOD_ID, "charmed"), new CharmedEnchantment());
