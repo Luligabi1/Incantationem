@@ -15,7 +15,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(LivingEntity.class)
 public abstract class LivingEntityMixin {
 
-    // Mixin used to magnetize objects near player if using magnetic enchantment
     @Inject(method = "baseTick",
             at = @At("RETURN"),
             cancellable = true)

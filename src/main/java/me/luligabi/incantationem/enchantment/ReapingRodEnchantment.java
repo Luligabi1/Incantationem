@@ -28,7 +28,7 @@ public class ReapingRodEnchantment extends Enchantment {
     @Override
     public void onTargetDamaged(LivingEntity user, Entity target, int level) {
         if(target instanceof HostileEntity) {
-            if(((LivingEntity) target).getHealth() <= 0.5) {
+            if(((LivingEntity) target).getHealth() <= 0.25) {
                 Util.applyEffectIfNotPresent(user, StatusEffects.REGENERATION, 10, 1);
                 Util.applyEffectIfNotPresent(user, StatusEffects.ABSORPTION, 25, 2);
                 Util.applyEffectIfNotPresent(user, StatusEffects.RESISTANCE, 30, 0);
