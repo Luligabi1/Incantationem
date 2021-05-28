@@ -17,6 +17,10 @@ public class ForgingTouchEnchantment extends Enchantment {
 
     public int getMaxLevel() { return 3; }
 
+    public boolean isTreasure() {
+        return true;
+    }
+
     public boolean canAccept(Enchantment other) { return super.canAccept(other) && other != CurseRegistry.RECKLESSNESS; }
 
 }
