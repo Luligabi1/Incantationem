@@ -4,6 +4,8 @@ import me.luligabi.incantationem.Util;
 import me.luligabi.incantationem.enchantment.MagneticEnchantment;
 import me.luligabi.incantationem.registry.CurseRegistry;
 import me.luligabi.incantationem.registry.EnchantmentRegistry;
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffects;
@@ -11,6 +13,8 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+
+import java.util.Arrays;
 
 @Mixin(LivingEntity.class)
 public abstract class LivingEntityMixin {
@@ -30,7 +34,14 @@ public abstract class LivingEntityMixin {
         int toughLuckLevel = EnchantmentHelper.getEquipmentLevel(CurseRegistry.TOUGH_LUCK, livingEntity);
 
         if(bunnysHopLevel > 0) {
-            Util.applyEffectIfNotPresent(livingEntity, StatusEffects.JUMP_BOOST, 3, bunnysHopLevel-1);
+            Block floor = livingEntity.world.getBlockState(((EntityInvoker) livingEntity).invokeGetVelocityAffectingPos()).getBlock();
+
+            Block[] grassBlocks = {Blocks.GRASS,
+                    Blocks.DIRT,
+                    Blocks.COARSE_DIRT};
+            if(Arrays.asList(grassBlocks).contains(floor)) {
+                Util.applyEffectIfNotPresent(livingEntity, StatusEffects.JUMP_BOOST, 4, bunnysHopLevel-1);
+            }
             callbackInfo.cancel();
         }
         if(charmedLevel > 0) {
