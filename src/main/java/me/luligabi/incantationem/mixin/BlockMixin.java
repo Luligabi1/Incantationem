@@ -59,7 +59,7 @@ public abstract class BlockMixin {
             callbackInfo.setReturnValue(callbackInfo.getReturnValue());
             return;
         }
-        for (ItemStack preForgingItems : callbackInfo.getReturnValue()) { //TODO: Fix getPreviewInputs
+        for (ItemStack preForgingItems : callbackInfo.getReturnValue()) {
             Optional<SmeltingRecipe> recipe = world.getRecipeManager().listAllOfType(RecipeType.SMELTING).stream().filter((
                     smeltingRecipe -> smeltingRecipe.getIngredients().get(0).test(preForgingItems))).findFirst();
 
