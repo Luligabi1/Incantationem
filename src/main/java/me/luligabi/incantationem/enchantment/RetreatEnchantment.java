@@ -6,7 +6,6 @@ import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
@@ -26,16 +25,14 @@ public class RetreatEnchantment extends Enchantment {
     }
 
     public int getMaxLevel() {
-        return 3;
+        return 1;
     }
 
     @Override
     public void onUserDamaged(LivingEntity user, Entity attacker, int level) {
-        if(Util.positiveEffectRandomNumber(user, user.getRandom(),0, 10) < level*1) {
-            if(!user.hasStatusEffect(StatusEffects.SPEED)) {
-                user.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, (5+(level*2))*20, level-1));
-                Util.sendActionBarMessage(user, new TranslatableText("message.incantationem.retreat.applied"), Formatting.AQUA);
-            }
+        if(Util.positiveEffectRandomNumber(user, user.getRandom(),0, 10) < 2) {
+            Util.applyEffectIfNotPresent(user, StatusEffects.SPEED, 7, 0);
+            Util.sendActionBarMessage(user, new TranslatableText("message.incantationem.retreat.applied"), Formatting.AQUA);
         }
         super.onUserDamaged(user, attacker, level);
     }
