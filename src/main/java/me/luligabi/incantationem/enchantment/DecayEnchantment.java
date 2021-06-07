@@ -6,7 +6,6 @@ import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
@@ -31,9 +30,9 @@ public class DecayEnchantment extends Enchantment {
 
     @Override
     public void onTargetDamaged(LivingEntity user, Entity attacker, int level) {
-        if(Util.positiveEffectRandomNumber(user, user.getRandom(),0, 10) < level*1) {
+        if(Util.positiveEffectRandomNumber(user, user.getRandom(),0, 10) < 1) {
             if(attacker instanceof LivingEntity) {
-                ((LivingEntity) attacker).addStatusEffect(new StatusEffectInstance(StatusEffects.WITHER, (3 + (level * 2)) * 20, level - 1));
+                Util.applyEffectIfNotPresent((LivingEntity) attacker, StatusEffects.WITHER, 3+level, level-1);
                 Util.sendActionBarMessage(user, new TranslatableText("message.incantationem.decay.applied"), Formatting.DARK_GRAY);
             }
         }
