@@ -19,12 +19,12 @@ import java.util.Arrays;
 @Mixin(LivingEntity.class)
 public abstract class LivingEntityMixin {
 
+    LivingEntity livingEntity = ((LivingEntity) (Object) this);
+
     @Inject(method = "baseTick",
             at = @At("RETURN"),
             cancellable = true)
     public void injectBaseTick(CallbackInfo callbackInfo) {
-        LivingEntity livingEntity = ((LivingEntity) (Object) this);
-
         int bunnysHopLevel = EnchantmentHelper.getEquipmentLevel(EnchantmentRegistry.BUNNYS_HOP, livingEntity);
 
         int charmedLevel = EnchantmentHelper.getEquipmentLevel(EnchantmentRegistry.CHARMED, livingEntity);
@@ -52,10 +52,10 @@ public abstract class LivingEntityMixin {
             MagneticEnchantment.magnetize(livingEntity, livingEntity.getEntityWorld(), magneticLevel);
             callbackInfo.cancel();
         }
-
         if(toughLuckLevel > 0) {
             Util.applyEffectIfNotPresent(livingEntity, StatusEffects.UNLUCK, 3, 0);
             callbackInfo.cancel();
         }
     }
+
 }
