@@ -36,9 +36,10 @@ public abstract class LivingEntityMixin {
         if(bunnysHopLevel > 0) {
             Block floor = livingEntity.world.getBlockState(((EntityInvoker) livingEntity).invokeGetVelocityAffectingPos()).getBlock();
 
-            Block[] grassBlocks = {Blocks.GRASS,
+            Block[] grassBlocks = {Blocks.GRASS_BLOCK,
                     Blocks.DIRT,
-                    Blocks.COARSE_DIRT};
+                    Blocks.COARSE_DIRT,
+                    Blocks.ROOTED_DIRT};
             if(Arrays.asList(grassBlocks).contains(floor)) {
                 Util.applyEffectIfNotPresent(livingEntity, StatusEffects.JUMP_BOOST, 4, bunnysHopLevel-1);
             }
