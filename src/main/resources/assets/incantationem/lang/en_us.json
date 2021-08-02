@@ -28,11 +28,11 @@
   "enchantment.incantationem.swine_bane.desc": "Increases damage for swine mobs, such as pigs, piglins and hoglins.",
   "enchantment.incantationem.charmed.desc": "Grants permanent luck effect while using it, increasing your odds on luck-based events.",
   "enchantment.incantationem.decay.desc": "Randomly inflicts withering to hit entities.",
-  "enchantment.incantationem.forging_touch.desc": "Broken blocks randomly drop their smelted counterpart (e.g. sand -> glass)",
+  "enchantment.incantationem.forging_touch.desc": "Broken blocks randomly drop their smelted counterpart (e.g. sand -> glass).",
   "enchantment.incantationem.last_stand.desc": "Randomly applies strength to the user when on low health.",
   "enchantment.incantationem.magnetic.desc": "Magnetizes dropped items and experience orbs towards the player.",
   "enchantment.incantationem.reaping_rod.desc": "Applies enchanted golden apple-like effects to the user when the killing blow to a hostile mob is made.",
-  "enchantment.incantationem.retreat.desc": "Randomly grants speed when the user is hit",
+  "enchantment.incantationem.retreat.desc": "Randomly grants speed when the user is hit.",
   "enchantment.incantationem.venomous.desc": "Randomly applies poison to hit entities.",
 
 
