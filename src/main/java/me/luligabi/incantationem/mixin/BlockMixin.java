@@ -64,7 +64,7 @@ public abstract class BlockMixin {
                     smeltingRecipe -> smeltingRecipe.getIngredients().get(0).test(preForgingItems))).findFirst();
 
             if (recipe.isPresent() && Util.neutralEffectRandomNumber(new Random(), 0, 10) < (forgingTouchLevel*1.5)) {
-                ItemStack forgedItems = recipe.get().getOutput();
+                ItemStack forgedItems = recipe.get().getOutput().copy();
                 forgedItems.setCount(preForgingItems.getCount());
                 itemsToDropList.add(forgedItems);
                 if(entity instanceof LivingEntity) {
