@@ -7,13 +7,14 @@ import net.minecraft.entity.EntityGroup;
 
 public class Incantationem implements ModInitializer {
 
-    public static String MOD_ID = "incantationem";
-
     @Override
     public void onInitialize() {
         CurseRegistry.init();
         EnchantmentRegistry.init();
     }
 
-    public static EntityGroup SWINE = new EntityGroup();
+    public static String MOD_ID = "incantationem";
+
+    public static final EntityGroup SWINE = new EntityGroup();
+
 }
