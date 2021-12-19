@@ -71,7 +71,7 @@ curseforge {
         id = project.curseforge_id
         changelog = getChangeLog()
         releaseType = "beta"
-        addGameVersion "1.18-Snapshot"
+        addGameVersion project.minecraft_version
         addGameVersion "Fabric"
 
         mainArtifact(file(RELEASE_FILE)) {
@@ -106,7 +106,7 @@ task modrinth(type: TaskModrinthUpload, dependsOn: remapJar, group: "upload") {
 
     versionNumber = version
     versionName = RELEASE_NAME
-    versionType = VersionType.valueOf("BETA")
+    versionType = VersionType.valueOf("RELEASE")
 
     uploadFile = file(RELEASE_FILE)
 
