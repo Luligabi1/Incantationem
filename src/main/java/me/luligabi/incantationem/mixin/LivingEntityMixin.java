@@ -36,7 +36,7 @@ public abstract class LivingEntityMixin {
         if(bunnysHopLevel > 0) {
             Block floor = livingEntity.world.getBlockState(((EntityInvoker) livingEntity).invokeGetVelocityAffectingPos()).getBlock();
 
-            Block[] grassBlocks = {Blocks.GRASS_BLOCK,
+            Block[] grassBlocks = {Blocks.GRASS_BLOCK, // TODO: Replace this with a tag check
                     Blocks.DIRT,
                     Blocks.COARSE_DIRT,
                     Blocks.ROOTED_DIRT};

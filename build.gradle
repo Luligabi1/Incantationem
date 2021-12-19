@@ -19,7 +19,7 @@ def RELEASE_FILE = "${buildDir}/libs/${archivesBaseName}-${version}.jar"
 
 @SuppressWarnings('GrMethodMayBeStatic')
 def getChangeLog() {
-    return "- Updated to 1.18-pre1"
+    return ""
 }
 
 dependencies {

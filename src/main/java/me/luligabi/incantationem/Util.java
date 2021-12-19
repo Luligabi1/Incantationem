@@ -37,7 +37,7 @@ public class Util {
 
     public static void applyEffectIfNotPresent(LivingEntity livingEntity, StatusEffect statusEffect, int duration, int strength) {
         if(livingEntity.hasStatusEffect(statusEffect)) return;
-        livingEntity.addStatusEffect(new StatusEffectInstance(statusEffect, duration*20, strength));
+        livingEntity.addStatusEffect(new StatusEffectInstance(statusEffect, duration*20, strength, true, false));
     }
 
     public static void sendActionBarMessage(LivingEntity livingEntity, TranslatableText message, Formatting formatting) {
