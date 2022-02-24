@@ -1,7 +1,7 @@
 package me.luligabi.incantationem.mixin;
 
 import me.luligabi.incantationem.Util;
-import me.luligabi.incantationem.registry.EnchantmentRegistry;
+import me.luligabi.incantationem.enchantment.EnchantmentRegistry;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffects;

@@ -1,4 +1,4 @@
-package me.luligabi.incantationem.registry;
+package me.luligabi.incantationem.curse;
 
 import me.luligabi.incantationem.Incantationem;
 import me.luligabi.incantationem.curse.RecklessnessCurse;

@@ -2,9 +2,11 @@ package me.luligabi.incantationem.mixin;
 
 import me.luligabi.incantationem.Util;
 import me.luligabi.incantationem.enchantment.MagneticEnchantment;
-import me.luligabi.incantationem.registry.CurseRegistry;
-import me.luligabi.incantationem.registry.EnchantmentRegistry;
+import me.luligabi.incantationem.curse.CurseRegistry;
+import me.luligabi.incantationem.enchantment.EnchantmentRegistry;
+import me.luligabi.incantationem.tag.TagRegistry;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.LivingEntity;
@@ -34,13 +36,10 @@ public abstract class LivingEntityMixin {
         int toughLuckLevel = EnchantmentHelper.getEquipmentLevel(CurseRegistry.TOUGH_LUCK, livingEntity);
 
         if(bunnysHopLevel > 0) {
-            Block floor = livingEntity.world.getBlockState(((EntityInvoker) livingEntity).invokeGetVelocityAffectingPos()).getBlock();
+            if(livingEntity.hasStatusEffect(StatusEffects.JUMP_BOOST)) return;
+            BlockState floor = livingEntity.world.getBlockState(((EntityInvoker) livingEntity).invokeGetVelocityAffectingPos());
 
-            Block[] grassBlocks = {Blocks.GRASS_BLOCK, // TODO: Replace this with a tag check
-                    Blocks.DIRT,
-                    Blocks.COARSE_DIRT,
-                    Blocks.ROOTED_DIRT};
-            if(Arrays.asList(grassBlocks).contains(floor)) {
+            if(floor.isIn(TagRegistry.COMMON_DIRT)) {
                 Util.applyEffectIfNotPresent(livingEntity, StatusEffects.JUMP_BOOST, 4, bunnysHopLevel-1);
             }
             callbackInfo.cancel();

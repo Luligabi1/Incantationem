@@ -1,8 +1,8 @@
 package me.luligabi.incantationem.mixin;
 
 import me.luligabi.incantationem.Util;
-import me.luligabi.incantationem.registry.CurseRegistry;
-import me.luligabi.incantationem.registry.EnchantmentRegistry;
+import me.luligabi.incantationem.curse.CurseRegistry;
+import me.luligabi.incantationem.enchantment.EnchantmentRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;

@@ -1,7 +1,7 @@
 package me.luligabi.incantationem;
 
-import me.luligabi.incantationem.registry.CurseRegistry;
-import me.luligabi.incantationem.registry.EnchantmentRegistry;
+import me.luligabi.incantationem.curse.CurseRegistry;
+import me.luligabi.incantationem.enchantment.EnchantmentRegistry;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.entity.EntityGroup;
 

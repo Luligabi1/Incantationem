@@ -1,6 +1,6 @@
 package me.luligabi.incantationem.curse;
 
-import me.luligabi.incantationem.registry.EnchantmentRegistry;
+import me.luligabi.incantationem.enchantment.EnchantmentRegistry;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.enchantment.Enchantments;

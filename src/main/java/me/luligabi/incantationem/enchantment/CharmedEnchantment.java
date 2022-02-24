@@ -1,6 +1,6 @@
 package me.luligabi.incantationem.enchantment;
 
-import me.luligabi.incantationem.registry.CurseRegistry;
+import me.luligabi.incantationem.curse.CurseRegistry;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.EquipmentSlot;
