@@ -42,14 +42,13 @@ public class SwineBaneEnchantment extends Enchantment {
         return super.isAcceptableItem(stack) || stack.getItem() instanceof AxeItem;
     }
 
-    public float getAttackDamage(int level, EntityGroup group) {
+    public float getAttackDamage(int level, EntityGroup group) { // TODO: Change group check for a tag check if method signature changes accordingly
         return group == Incantationem.SWINE ? (float)level * 2.5F : 0.0F;
     }
 
     @Override
     public void onTargetDamaged(LivingEntity user, Entity target, int level) {
-        if (target instanceof LivingEntity) {
-            LivingEntity livingEntity = (LivingEntity) target;
+        if (target instanceof LivingEntity livingEntity) {
 
             if (livingEntity.getGroup() == Incantationem.SWINE) {
                 int randomEffectTimer = 20 + user.getRandom().nextInt(10 * level);
