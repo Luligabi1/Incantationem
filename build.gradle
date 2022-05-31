@@ -67,7 +67,7 @@ curseforge {
         id = project.curseforge_id
         changelog = getChangeLog()
         releaseType = "release"
-        addGameVersion project.minecraft_version
+        addGameVersion "1.19-Snapshot" //project.minecraft_version
         addGameVersion "Fabric"
 
         mainArtifact(file(RELEASE_FILE)) {
