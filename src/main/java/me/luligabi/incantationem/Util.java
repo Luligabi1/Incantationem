@@ -1,5 +1,7 @@
 package me.luligabi.incantationem;
 
+import me.luligabi.incantationem.enchantment.VenomousEnchantment;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -9,6 +11,7 @@ import net.minecraft.text.MutableText;
 import net.minecraft.text.Style;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.math.random.Random;
+import net.minecraft.util.registry.Registry;
 
 
 public class Util {
@@ -44,4 +47,10 @@ public class Util {
         if(!(livingEntity instanceof PlayerEntity)) return;
         ((PlayerEntity) livingEntity).sendMessage(message.setStyle(Style.EMPTY.withColor(formatting)), true);
     }
+
+
+    public static Enchantment initEnchantment(String id, Enchantment enchantment) {
+        return Registry.register(Registry.ENCHANTMENT, Incantationem.modId(id), enchantment);
+    }
+
 }
