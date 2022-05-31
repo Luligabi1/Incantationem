@@ -7,14 +7,14 @@ import net.minecraft.util.registry.Registry;
 
 public class TagRegistry {
 
-    private TagRegistry() {
+    public static final TagKey<Block> COMMON_DIRT = TagKey.of(Registry.BLOCK_KEY, new Identifier("c", "dirt"));
+
+
+    public static void init() {
         // NO-OP
     }
 
-
-    public static final TagKey<Block> COMMON_DIRT;
-
-    static {
-        COMMON_DIRT = TagKey.of(Registry.BLOCK_KEY, new Identifier("c", "dirt"));
+    private TagRegistry() {
+        // NO-OP
     }
 }
