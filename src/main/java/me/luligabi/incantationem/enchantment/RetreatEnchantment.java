@@ -7,7 +7,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.text.TranslatableText;
+import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 
 public class RetreatEnchantment extends Enchantment {
@@ -32,7 +32,7 @@ public class RetreatEnchantment extends Enchantment {
     public void onUserDamaged(LivingEntity user, Entity attacker, int level) {
         if(Util.positiveEffectRandomNumber(user, user.getRandom(),0, 10) < 2) {
             Util.applyEffectIfNotPresent(user, StatusEffects.SPEED, 7, 0);
-            Util.sendActionBarMessage(user, new TranslatableText("message.incantationem.retreat.applied"), Formatting.AQUA);
+            Util.sendActionBarMessage(user, Text.translatable("message.incantationem.retreat.applied"), Formatting.AQUA);
         }
         super.onUserDamaged(user, attacker, level);
     }

@@ -15,7 +15,7 @@ import net.minecraft.recipe.RecipeType;
 import net.minecraft.recipe.SmeltingRecipe;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.stat.Stats;
-import net.minecraft.text.TranslatableText;
+import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -63,12 +63,12 @@ public abstract class BlockMixin {
             Optional<SmeltingRecipe> recipe = world.getRecipeManager().listAllOfType(RecipeType.SMELTING).stream().filter((
                     smeltingRecipe -> smeltingRecipe.getIngredients().get(0).test(preForgingItems))).findFirst();
 
-            if (recipe.isPresent() && Util.neutralEffectRandomNumber(new Random(), 0, 10) < (forgingTouchLevel*1.5)) {
+            if (recipe.isPresent() && Util.neutralEffectRandomNumber(world.getRandom(), 0, 10) < (forgingTouchLevel*1.5)) {
                 ItemStack forgedItems = recipe.get().getOutput().copy();
                 forgedItems.setCount(preForgingItems.getCount());
                 itemsToDropList.add(forgedItems);
                 if(entity instanceof LivingEntity) {
-                    Util.sendActionBarMessage((LivingEntity) entity, new TranslatableText("message.incantationem.forging_touch.applied"), Formatting.GOLD);
+                    Util.sendActionBarMessage((LivingEntity) entity, Text.translatable("message.incantationem.forging_touch.applied"), Formatting.GOLD);
                 }
             } else {
                 itemsToDropList.add(preForgingItems);

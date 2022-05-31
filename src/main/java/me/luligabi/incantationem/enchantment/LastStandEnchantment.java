@@ -7,7 +7,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.text.TranslatableText;
+import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 
 public class LastStandEnchantment extends Enchantment {
@@ -30,9 +30,9 @@ public class LastStandEnchantment extends Enchantment {
     @Override
     public void onUserDamaged(LivingEntity user, Entity attacker, int level) {
         if (user.getHealth() <= 4) {
-            if (Util.positiveEffectRandomNumber(user, user.getRandom(), 0, 10) < level*0.5) {
+            if (Util.positiveEffectRandomNumber(user, user.getRandom(), 0, 10) < level*0.35) {
                 Util.applyEffectIfNotPresent(user, StatusEffects.STRENGTH, (int) Math.ceil(level * 2.5), level-1);
-                Util.sendActionBarMessage(user, new TranslatableText("message.incantationem.last_stand.applied"), Formatting.GOLD);
+                Util.sendActionBarMessage(user, Text.translatable("message.incantationem.last_stand.applied"), Formatting.GOLD);
             }
             super.onUserDamaged(user, attacker, level);
         }

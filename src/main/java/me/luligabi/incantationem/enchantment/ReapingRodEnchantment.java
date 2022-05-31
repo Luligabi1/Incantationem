@@ -8,7 +8,7 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.HostileEntity;
-import net.minecraft.text.TranslatableText;
+import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 
 public class ReapingRodEnchantment extends Enchantment {
@@ -32,7 +32,7 @@ public class ReapingRodEnchantment extends Enchantment {
                 Util.applyEffectIfNotPresent(user, StatusEffects.REGENERATION, 10, 1);
                 Util.applyEffectIfNotPresent(user, StatusEffects.ABSORPTION, 25, 2);
                 Util.applyEffectIfNotPresent(user, StatusEffects.RESISTANCE, 30, 0);
-                Util.sendActionBarMessage(user, new TranslatableText("message.incantationem.reaping_rod.applied"), Formatting.LIGHT_PURPLE);
+                Util.sendActionBarMessage(user, Text.translatable("message.incantationem.reaping_rod.applied"), Formatting.LIGHT_PURPLE);
             }
         }
         super.onTargetDamaged(user, target, level);

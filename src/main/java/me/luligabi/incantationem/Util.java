@@ -5,11 +5,11 @@ import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.text.MutableText;
 import net.minecraft.text.Style;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
+import net.minecraft.util.math.random.Random;
 
-import java.util.Random;
 
 public class Util {
 
@@ -40,7 +40,7 @@ public class Util {
         livingEntity.addStatusEffect(new StatusEffectInstance(statusEffect, duration*20, strength, true, false));
     }
 
-    public static void sendActionBarMessage(LivingEntity livingEntity, TranslatableText message, Formatting formatting) {
+    public static void sendActionBarMessage(LivingEntity livingEntity, MutableText message, Formatting formatting) {
         if(!(livingEntity instanceof PlayerEntity)) return;
         ((PlayerEntity) livingEntity).sendMessage(message.setStyle(Style.EMPTY.withColor(formatting)), true);
     }

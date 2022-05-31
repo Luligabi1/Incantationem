@@ -4,7 +4,7 @@ import me.luligabi.incantationem.Util;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.*;
-import net.minecraft.text.TranslatableText;
+import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.world.GameRules;
 
@@ -37,7 +37,7 @@ public class ThunderCurse extends Enchantment {
             lightningEntity.refreshPositionAfterTeleport(user.getPos().x, user.getPos().y, user.getPos().z);
             user.getEntityWorld().spawnEntity(lightningEntity);
 
-            Util.sendActionBarMessage(user, new TranslatableText("message.incantationem.thunder.applied"), Formatting.YELLOW);
+            Util.sendActionBarMessage(user, Text.translatable("message.incantationem.thunder.applied"), Formatting.YELLOW);
         }
         super.onUserDamaged(user, attacker, level);
     }
