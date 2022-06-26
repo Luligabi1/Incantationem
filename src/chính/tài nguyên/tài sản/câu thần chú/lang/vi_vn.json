@@ -1,0 +1,43 @@
+{
+  "enchantment.incantationem.bunnys_hop": "Bunny's Hop",
+  "enchantment.incantationem.swine_bane": "Bane of the Swine",
+  "enchantment.incantationem.charmed": "Charmed",
+  "enchantment.incantationem.decay": "Decay",
+  "enchantment.incantationem.forging_touch": "Forging Touch",
+  "enchantment.incantationem.last_stand": "Last Stand",
+  "enchantment.incantationem.magnetic": "Magnetic",
+  "enchantment.incantationem.reaping_rod": "Reaping Rod",
+  "enchantment.incantationem.retreat": "Retreat",
+  "enchantment.incantationem.venomous": "Venomous",
+
+  "enchantment.incantationem.recklessness": "Curse of Recklessness",
+  "enchantment.incantationem.thunder": "Curse of the Thunders",
+  "enchantment.incantationem.tough_luck": "Curse of Tough Luck",
+
+
+  "message.incantationem.decay.applied": "* Decay effect applied! *",
+  "message.incantationem.forging_touch.applied": "* Forging Touch effect applied! *",
+  "message.incantationem.last_stand.applied": "* Last Stand effect applied! *",
+  "message.incantationem.reaping_rod.applied": "* Reaping Rod effect applied! *",
+  "message.incantationem.retreat.applied": "* Retreat effect applied! *",
+  "message.incantationem.venomous.applied": "* Venomous effect applied! *",
+
+  "message.incantationem.thunder.applied": "* Curse of the Thunders applied! :( *",
+
+  "enchantment.incantationem.bunnys_hop.desc": "Tăng khả năng nhảy khi đứng trên cỏ / khối đất.",
+  "enchantment.incantationem.swine_bane.desc": "Tăng sát thương cho mob lợn, chẳng hạn như lợn, lợn lợn và heo.",
+  "enchantment.incantationem.charmed.desc": "Cho hiệu ứng may mắn vĩnh viễn khi sử dụng nó, tăng tỷ lệ cược của bạn trong các sự kiện dựa trên may mắn.",
+  "enchantment.incantationem.decay.desc": "Ngẫu nhiên gây khô héo cho các thực thể.",
+  "enchantment.incantationem.forging_touch.desc": "Các khối vỡ rơi ngẫu nhiên xuống đối tác nấu chảy của chúng (ví dụ: cát -> thủy tinh).",
+  "enchantment.incantationem.last_stand.desc": "Tác dụng ngẫu nhiên sức mạnh lên người dùng khi sức khỏe yếu.",
+  "enchantment.incantationem.magnetic.desc": "Từ hóa các vật phẩm bị rơi và quả cầu kinh nghiệm về phía người chơi.",
+  "enchantment.incantationem.reaping_rod.desc": "Áp dụng các hiệu ứng giống như quả táo vàng bị mê hoặc cho người dùng khi thực hiện đòn kết liễu đối với một đám đông thù địch.",
+  "enchantment.incantationem.retreat.desc": "Cấp tốc độ ngẫu nhiên khi người dùng bị đánh.",
+  "enchantment.incantationem.venomous.desc": "Ngẫu nhiên áp dụng chất độc lên các thực thể trúng đòn.",
+
+
+  "enchantment.incantationem.recklessness.desc": "Làm cho tất cả các khối bị hỏng không bị rơi ra.",
+  "enchantment.incantationem.thunder.desc": "Ngẫu nhiên tấn công người dùng bằng một tiếng sét sau khi họ bị bắn trúng.",
+  "enchantment.incantationem.tough_luck.desc": "Cho hiệu ứng unluck vĩnh viễn khi sử dụng nó, giảm tỷ lệ cược của bạn đối với các sự kiện dựa trên may mắn."
+
+}
