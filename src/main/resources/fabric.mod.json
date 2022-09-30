@@ -18,6 +18,9 @@
   "entrypoints": {
     "main": [
       "me.luligabi.incantationem.Incantationem"
+    ],
+    "preLaunch": [
+      "com.llamalad7.mixinextras.MixinExtrasBootstrap::init"
     ]
   },
   "mixins": [
