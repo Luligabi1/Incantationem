@@ -36,13 +36,14 @@ public abstract class BlockMixin {
     // Recklessness Curse
     @Inject(
             method = "afterBreak",
-            at = @At("HEAD")
+            at = @At("HEAD"),
+            cancellable = true
     )
     public void afterBreak(World world, PlayerEntity player, BlockPos pos, BlockState state, BlockEntity blockEntity, ItemStack stack, CallbackInfo ci) {
-        player.incrementStat(Stats.MINED.getOrCreateStat(((Block) (Object) this)));
-        player.addExhaustion(0.005F);
-        if(EnchantmentHelper.getEquipmentLevel(CurseRegistry.RECKLESSNESS, player) < 1) {
-            Block.dropStacks(state, world, pos, blockEntity, player, stack);
+        if(EnchantmentHelper.getEquipmentLevel(CurseRegistry.RECKLESSNESS, player) > 0) {
+            player.incrementStat(Stats.MINED.getOrCreateStat((Block) (Object) this));
+            player.addExhaustion(0.005F);
+            ci.cancel();
         }
     }
 
@@ -53,13 +54,14 @@ public abstract class BlockMixin {
     )
     private static List<ItemStack> getDroppedStacks(List<ItemStack> original, BlockState state, ServerWorld world, BlockPos pos, BlockEntity blockEntity, Entity entity, ItemStack stack) {
         List<ItemStack> itemsToDropList = new ArrayList<>();
-
         int forgingTouchLevel = EnchantmentHelper.getLevel(EnchantmentRegistry.FORGING_TOUCH, stack);
+
         if (forgingTouchLevel <= 0) return original;
 
         for (ItemStack preForgingItems : original) {
-            Optional<SmeltingRecipe> recipe = world.getRecipeManager().listAllOfType(RecipeType.SMELTING).stream().filter((
-                    smeltingRecipe -> smeltingRecipe.getIngredients().get(0).test(preForgingItems))).findFirst();
+            Optional<SmeltingRecipe> recipe = world.getRecipeManager().listAllOfType(RecipeType.SMELTING).stream().filter(
+                    smeltingRecipe -> smeltingRecipe.getIngredients().get(0).test(preForgingItems))
+            .findFirst();
 
             if (recipe.isPresent() && Util.neutralEffectRandomNumber(new Random(), 0, 10) < (forgingTouchLevel*1.5)) {
                 ItemStack forgedItems = recipe.get().getOutput().copy();
