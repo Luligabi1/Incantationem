@@ -1,0 +1,43 @@
+{
+    "enchantment.incantationem.bunnys_hop": "Králičí skok",
+    "enchantment.incantationem.swine_bane": "Sviňákova záhuba",
+    "enchantment.incantationem.charmed": "Okouzlení",
+    "enchantment.incantationem.decay": "Rozklad",
+    "enchantment.incantationem.forging_touch": "Dotek okování",
+    "enchantment.incantationem.last_stand": "Poslední šance",
+    "enchantment.incantationem.magnetic": "Magnet",
+    "enchantment.incantationem.reaping_rod": "Prut sklizně",
+    "enchantment.incantationem.retreat": "Ústup",
+    "enchantment.incantationem.venomous": "Jed",
+  
+    "enchantment.incantationem.recklessness": "Kletba bezohlednosti",
+    "enchantment.incantationem.thunder": "Kletba hřmění",
+    "enchantment.incantationem.tough_luck": "Kletba smůly",
+  
+  
+    "message.incantationem.decay.applied": "* Rozklad byl uplatněn! *",
+    "message.incantationem.forging_touch.applied": "* Dotek okování byl uplatněn! *",
+    "message.incantationem.last_stand.applied": "* Poslední šance byl uplatněn! *",
+    "message.incantationem.reaping_rod.applied": "* Prut sklizně byl uplatněn! *",
+    "message.incantationem.retreat.applied": "* Ústup byl uplatněn! *",
+    "message.incantationem.venomous.applied": "* Jed byl uplatněn! *",
+  
+    "message.incantationem.thunder.applied": "* Kletba hřmění byla uplatněna! :( *",
+  
+    "enchantment.incantationem.bunnys_hop.desc": "Pokud uživatel stojí na travnatých/hlíněných blocích, zvýší sílu skoku.",
+    "enchantment.incantationem.swine_bane.desc": "Zvyšuje poškození proti prasečím mobům, jako jsou prasata, piglini a hoglini.",
+    "enchantment.incantationem.charmed.desc": "Zvyšuje štěstí s Incantationem kouzly/prokletími a kvalitu kořisti při rybaření.",
+    "enchantment.incantationem.decay.desc": "Náhodně uplatní wither efekt na zasažený cíl.",
+    "enchantment.incantationem.forging_touch.desc": "Těžené bloky náhodně upustí své vytavené produkty (např. písek -> sklo).",
+    "enchantment.incantationem.last_stand.desc": "Pokud má uživatel málo životů, náhodně na něj uplatní efekt síly.",
+    "enchantment.incantationem.magnetic.desc": "Přitahuje k hráči upuštěné předměty a body zkušenosti.",
+    "enchantment.incantationem.reaping_rod.desc": "Při smrtícím úderu na nepřátelského moba se na uživatele uplatní efekty podobné efektům očarovaného zlatého jablka.",
+    "enchantment.incantationem.retreat.desc": "Pokud je uživatel zasažen, náhodně poskytne zesílení rychlosti.",
+    "enchantment.incantationem.venomous.desc": "Náhodně uplatní efekt otravy na zasažený cíl.",
+  
+  
+    "enchantment.incantationem.recklessness.desc": "Těžené bloky vůbec nic neupustí.",
+    "enchantment.incantationem.thunder.desc": "Pokud je uživatel zasažen, náhodně ho zasáhne bleskem,",
+    "enchantment.incantationem.tough_luck.desc": "Během používání poskytuje trvalý efekt smůly, který snižuje štestí u aktivit, které jsou jim ovlivněny."
+  
+  }
