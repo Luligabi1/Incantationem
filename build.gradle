@@ -1,7 +1,7 @@
 plugins {
     id 'fabric-loom' version '0.12-SNAPSHOT'
-    id "com.matthewprenger.cursegradle" version '1.4.0'
-    id "com.modrinth.minotaur" version '2.2.0'
+    id 'com.matthewprenger.cursegradle' version '1.4.0'
+    id 'com.modrinth.minotaur' version '2.2.0'
     id 'maven-publish'
 }
 
@@ -93,7 +93,7 @@ curseforge {
     }
 }
 
-//Modrinth publishing
+// Modrinth publishing
 import com.modrinth.minotaur.dependencies.ModDependency
 
 modrinth {
@@ -108,7 +108,7 @@ modrinth {
     loaders = ['fabric']
     versionType = "release"
     dependencies = [
-            new ModDependency('P7dR8mSH', 'required'), // Fabric API
+        new ModDependency('P7dR8mSH', 'required'), // Fabric API
     ]
     changelog = getChangeLog()
 }
