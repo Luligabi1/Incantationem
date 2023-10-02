@@ -4,7 +4,13 @@
   "version": "${version}",
   "name": "Incantationem",
   "description": "A vanilla+ mod adding diverse enchantments and curses, all integrated into the vanilla ecosystem",
-  "authors": ["Luligabi"],
+  "authors": [
+    "Luligabi"
+  ],
+  "contributors": [
+    "ghost",
+    "4444Zao9"
+  ],
   "contact": {
     "homepage": "https://www.curseforge.com/minecraft/mc-mods/incantationem",
     "repo": "https://github.com/Luligabi1/Incantationem/",
@@ -20,7 +26,7 @@
   },
   "mixins": ["incantationem.mixins.json"],
   "depends": {
-    "minecraft": ">=1.19.3-rc.1",
+    "minecraft": ">=1.20-beta.1",
     "fabricloader": ">=0.13.3",
     "fabric-api": "*"
   }

@@ -3,7 +3,6 @@ package me.luligabi.incantationem.common.enchantment;
 import me.luligabi.incantationem.common.Incantationem;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.*;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
@@ -37,8 +36,8 @@ public class MagneticEnchantment extends IncantationemEnchantment {
 
     public static void magnetize(LivingEntity entity, World world, int level) {
         Vec3d pos = entity.getPos();
-        BlockPos box1 = new BlockPos(pos.x + (level*2), pos.y + (level*2), pos.z + (level*2));
-        BlockPos box2 = new BlockPos(pos.x - (level*2), pos.y - (level*2), pos.z - (level*2));
+        Vec3d box1 = new Vec3d(pos.x + (level*2), pos.y + (level*2), pos.z + (level*2));
+        Vec3d box2 = new Vec3d(pos.x - (level*2), pos.y - (level*2), pos.z - (level*2));
 
         List<Entity> entities = world.getOtherEntities(null, new Box(box1, box2), e -> e instanceof ItemEntity || e instanceof ExperienceOrbEntity);
 

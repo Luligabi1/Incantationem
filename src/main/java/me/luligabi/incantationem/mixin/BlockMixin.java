@@ -54,16 +54,15 @@ public abstract class BlockMixin {
     private static List<ItemStack> getDroppedStacks(List<ItemStack> original, BlockState state, ServerWorld world, BlockPos pos, BlockEntity blockEntity, Entity entity, ItemStack stack) {
         List<ItemStack> itemsToDropList = new ArrayList<>();
         int forgingTouchLevel = EnchantmentHelper.getLevel(EnchantmentRegistry.FORGING_TOUCH, stack);
-
         if (forgingTouchLevel <= 0) return original;
 
-        for (ItemStack preForgingItems : original) {
+        for(ItemStack preForgingItems : original) {
             Optional<SmeltingRecipe> recipe = world.getRecipeManager().listAllOfType(RecipeType.SMELTING).stream().filter(
-                    smeltingRecipe -> smeltingRecipe.getIngredients().get(0).test(preForgingItems))
-            .findFirst();
+                    smeltingRecipe -> smeltingRecipe.getIngredients().get(0).test(preForgingItems)
+            ).findFirst();
 
-            if (recipe.isPresent() && Util.neutralEffectRandomNumber(world.getRandom(), 0, 10) < (forgingTouchLevel*1.5)) {
-                ItemStack forgedItems = recipe.get().getOutput().copy();
+            if(recipe.isPresent() && Util.neutralEffectRandomNumber(world.getRandom(), 0, 10) < (forgingTouchLevel*1.5)) {
+                ItemStack forgedItems = recipe.get().getOutput(world.getRegistryManager()).copy();
                 forgedItems.setCount(preForgingItems.getCount());
                 itemsToDropList.add(forgedItems);
                 if(entity instanceof LivingEntity) {

@@ -1,7 +1,7 @@
 plugins {
-    id 'fabric-loom' version '0.12-SNAPSHOT'
-    id 'com.matthewprenger.cursegradle' version '1.4.0'
-    id 'com.modrinth.minotaur' version '2.2.0'
+    id 'fabric-loom' version '1.2-SNAPSHOT'
+    id "com.matthewprenger.cursegradle" version '1.4.0'
+    id "com.modrinth.minotaur" version '2.7.5'
     id 'maven-publish'
 }
 
@@ -19,9 +19,9 @@ def getChangeLog() {
 }
 
 repositories {
-    maven { url "https://jitpack.io" }
+    maven { url = "https://jitpack.io" }
     maven { url = "https://maven.isxander.dev/releases/" }
-    maven { url 'https://maven.terraformersmc.com/releases/' }
+    maven { url = "https://maven.terraformersmc.com/releases/" }
 }
 
 dependencies {
@@ -35,7 +35,7 @@ dependencies {
     include "com.github.LlamaLad7:MixinExtras:${project.mixinextras_version}"
     annotationProcessor "com.github.LlamaLad7:MixinExtras:${project.mixinextras_version}"
 
-    include modImplementation("dev.isxander:yet-another-config-lib:${project.yacl_version}") {
+    include modImplementation("dev.isxander.yacl:yet-another-config-lib-fabric:${project.yacl_version}") {
         transitive(false)
     }
 
@@ -43,25 +43,33 @@ dependencies {
     modRuntimeOnly "com.terraformersmc:modmenu:${project.modmenu_version}"
 }
 
+base {
+    archivesName = project.archives_base_name
+}
+
 processResources {
-    inputs.property "1.0", project.version
+    inputs.property "version", project.version
 
     filesMatching("fabric.mod.json") {
         expand "version": project.version
     }
 }
 
-tasks.withType(JavaCompile) {
-    options.encoding = "UTF-8"
+tasks.withType(JavaCompile).configureEach {
+    it.options.release = 17
 }
 
-task sourcesJar(type: Jar, dependsOn: classes) {
-    classifier = "sources"
-    from sourceSets.main.allSource
+java {
+    withSourcesJar()
+
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 }
 
 jar {
-    from "LICENSE"
+    from("LICENSE") {
+        rename { "${it}_${base.archivesName.get()}"}
+    }
 }
 
 curseforge {
@@ -93,22 +101,20 @@ curseforge {
     }
 }
 
-// Modrinth publishing
-import com.modrinth.minotaur.dependencies.ModDependency
 
+//Modrinth publishing
 modrinth {
     if (ENV.MODRINTH_TOKEN) {
         token = ENV.MODRINTH_TOKEN
     }
     projectId = project.modrinth_id
     versionNumber = project.mod_version
-    versionName = RELEASE_NAME
     uploadFile = remapJar
     gameVersions = [project.minecraft_version]
     loaders = ['fabric']
     versionType = "release"
-    dependencies = [
-        new ModDependency('P7dR8mSH', 'required'), // Fabric API
-    ]
     changelog = getChangeLog()
+    dependencies {
+        required.project("fabric-api")
+    }
 }

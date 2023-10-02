@@ -17,12 +17,13 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(LivingEntity.class)
 public abstract class LivingEntityMixin {
 
-    LivingEntity livingEntity = ((LivingEntity) (Object) this);
 
     @Inject(method = "baseTick",
             at = @At("RETURN"),
             cancellable = true)
     public void injectBaseTick(CallbackInfo callbackInfo) {
+        LivingEntity livingEntity = ((LivingEntity) (Object) this);
+
         int bunnysHopLevel = EnchantmentHelper.getEquipmentLevel(EnchantmentRegistry.BUNNYS_HOP, livingEntity);
 
         int charmedLevel = EnchantmentHelper.getEquipmentLevel(EnchantmentRegistry.CHARMED, livingEntity);
@@ -33,7 +34,7 @@ public abstract class LivingEntityMixin {
 
         if(bunnysHopLevel > 0) {
             if(livingEntity.hasStatusEffect(StatusEffects.JUMP_BOOST)) return;
-            BlockState floor = livingEntity.world.getBlockState(((EntityInvoker) livingEntity).invokeGetVelocityAffectingPos());
+            BlockState floor = livingEntity.getWorld().getBlockState(((EntityInvoker) livingEntity).invokeGetVelocityAffectingPos());
 
             if(floor.isIn(TagRegistry.COMMON_DIRT)) {
                 Util.applyEffectIfNotPresent(livingEntity, StatusEffects.JUMP_BOOST, 4, bunnysHopLevel-1);
