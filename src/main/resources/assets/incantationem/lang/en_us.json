@@ -12,6 +12,7 @@
   "enchantment.incantationem.recklessness": "Curse of Recklessness",
   "enchantment.incantationem.thunder": "Curse of the Thunders",
   "enchantment.incantationem.tough_luck": "Curse of Tough Luck",
+  
   "message.incantationem.decay.applied": "* Decay effect applied! *",
   "message.incantationem.forging_touch.applied": "* Forging Touch effect applied! *",
   "message.incantationem.last_stand.applied": "* Last Stand effect applied! *",
@@ -19,6 +20,7 @@
   "message.incantationem.retreat.applied": "* Retreat effect applied! *",
   "message.incantationem.venomous.applied": "* Venomous effect applied! *",
   "message.incantationem.thunder.applied": "* Curse of the Thunders applied! :( *",
+  
   "enchantment.incantationem.bunnys_hop.desc": "Grants jump boost while standing on grass/dirt blocks.",
   "enchantment.incantationem.swine_bane.desc": "Increases damage for swine mobs, such as pigs, piglins, and hoglins.",
   "enchantment.incantationem.charmed.desc": "Increases loot quality while fishing and your luck with Incantationem's enchantments/curses.",
@@ -32,8 +34,10 @@
   "enchantment.incantationem.recklessness.desc": "Makes all broken blocks not drop at all.",
   "enchantment.incantationem.thunder.desc": "Randomly strikes the user with a thunderbolt after they're hit.",
   "enchantment.incantationem.tough_luck.desc": "Grants permanent unluck effect while using it, decreasing your odds in luck-based events.",
+  
   "configCategory.incantationem.enchantment": "Enchantments",
   "configCategory.incantationem.curse": "Curses",
+  
   "configOption.incantationem.maxLevel": "Maximum Level",
   "configOption.incantationem.maxLevel.tooltip": "The maximum level this enchantment can be by normal means",
   "configOption.incantationem.availableRandomly": "Available randomly?",
