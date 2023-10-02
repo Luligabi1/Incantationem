@@ -12,6 +12,7 @@
   "enchantment.incantationem.recklessness": "असावधानता की शाप",
   "enchantment.incantationem.thunder": "गरज की शाप",
   "enchantment.incantationem.tough_luck": "मुश्किल नसीब",
+  
   "message.incantationem.decay.applied": "* सड़न प्रभाव लागू हुआ! *",
   "message.incantationem.forging_touch.applied": "* दोहन छूने का प्रभाव लागू हुआ! *",
   "message.incantationem.last_stand.applied": "* आखिरी संघर्ष प्रभावित हुआ! *",
@@ -19,6 +20,7 @@
   "message.incantationem.retreat.applied": "* वापसी प्रभावित हुई! *",
   "message.incantationem.venomous.applied": "* विषैला प्रभाव लागू हुआ! *",
   "message.incantationem.thunder.applied": "* गरज की शाप लागू हुआ! :( *",
+  
   "enchantment.incantationem.bunnys_hop.desc": "घास या मिट्टी के ब्लॉक पर खड़े होने पर कूद बढ़ाता है।",
   "enchantment.incantationem.swine_bane.desc": "स्वाइन मॉब्स के लिए अधिक हानि पहुंचाता है, जैसे कि पिग, पिगलिंस और हॉगलिंस।",
   "enchantment.incantationem.charmed.desc": "मछली पकड़ने और इंकैंटेशनेम के इन्चैंटमेंट्स/कर्सेस के साथ अपने भाग्य में सुधार करता है।",
@@ -32,8 +34,10 @@
   "enchantment.incantationem.recklessness.desc": "ब्रोकन ब्लॉक को पूरी तरह से नहीं गिराता है।",
   "enchantment.incantationem.thunder.desc": "उपयोगकर्ता को मारा जाने के बाद यादृच्छिक रूप से बिजली का दूरग हो सकता है।",
   "enchantment.incantationem.tough_luck.desc": "उपयोग करते समय स्थायी अशुभता प्रदान करता है, आपके भाग्य पर प्रभाव डालकर आपकी किस्मती घटनाओं के चांस कम करता है।",
+  
   "configCategory.incantationem.enchantment": "इन्चांटमेंट्स",
   "configCategory.incantationem.curse": "कर्स",
+  
   "configOption.incantationem.maxLevel": "अधिकतम स्तर",
   "configOption.incantationem.maxLevel.tooltip": "सामान्य रूप से इस इंचांटमेंट को कितना अधिकतम स्तर हो सकता है,",
   "configOption.incantationem.availableRandomly": "यादृच्छिक रूप से उपलब्ध है?",
