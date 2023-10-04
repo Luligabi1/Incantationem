@@ -13,8 +13,7 @@
     "PiglinBruteEntityMixin",
     "PiglinEntityMixin"
   ],
-  "client": [
-  ],
+  "client": [],
   "injectors": {
     "defaultRequire": 1
   }

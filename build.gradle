@@ -101,6 +101,7 @@ curseforge {
     }
 }
 
+
 //Modrinth publishing
 modrinth {
     if (ENV.MODRINTH_TOKEN) {
