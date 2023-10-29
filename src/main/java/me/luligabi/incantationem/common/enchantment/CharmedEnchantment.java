@@ -37,6 +37,8 @@ public class CharmedEnchantment extends IncantationemEnchantment {
     }
 
     @Override
-    public boolean canAccept(Enchantment other) { return super.canAccept(other) && (other != CurseRegistry.TOUGH_LUCK); }
+    public boolean canAccept(Enchantment other) {
+        return super.canAccept(other) && (other != CurseRegistry.TOUGH_LUCK);
+    }
 
 }

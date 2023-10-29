@@ -8,6 +8,7 @@ import net.minecraft.util.Identifier;
 public class TagRegistry {
 
     public static final TagKey<Block> COMMON_DIRT = TagKey.of(RegistryKeys.BLOCK, new Identifier("c", "dirt"));
+    public static final TagKey<Block> COMMON_STONE = TagKey.of(RegistryKeys.BLOCK, new Identifier("c", "stone"));
 
 
     public static void init() {

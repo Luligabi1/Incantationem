@@ -3,8 +3,8 @@ package me.luligabi.incantationem.common;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonParser;
-import me.luligabi.incantationem.common.enchantment.curse.CurseRegistry;
 import me.luligabi.incantationem.common.enchantment.EnchantmentRegistry;
+import me.luligabi.incantationem.common.enchantment.curse.CurseRegistry;
 import me.luligabi.incantationem.common.tag.TagRegistry;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
@@ -26,6 +26,14 @@ public class Incantationem implements ModInitializer {
         EnchantmentRegistry.init();
 
         TagRegistry.init();
+
+        //Registers an unused, vanilla command for setting and clearing the Sculk Shrieker warning level
+        //This isn't really needed, but saves 40 minutes each time you want to test the Curse of Shrieking enchantment
+//        if(FabricLoader.getInstance().isDevelopmentEnvironment()) {
+//            CommandRegistrationCallback.EVENT.register(((dispatcher, registryAccess, environment) -> {
+//                WardenSpawnTrackerCommand.register(dispatcher);
+//            }));
+//        }
     }
 
 
@@ -36,6 +44,7 @@ public class Incantationem implements ModInitializer {
     public static final String MOD_ID = "incantationem";
 
     public static final EntityGroup SWINE = new EntityGroup();
+    public static final EntityGroup ENDER = new EntityGroup();
 
 
     private static ModConfig createConfig() {

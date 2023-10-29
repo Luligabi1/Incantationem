@@ -5,13 +5,16 @@
   "compatibilityLevel": "JAVA_16",
   "mixins": [
     "BlockMixin",
+    "EndermanEntityMixin",
     "EntityInvoker",
     "HoglinEntityMixin",
     "LivingEntityMixin",
     "PersistentProjectileEntityMixin",
     "PigEntityMixin",
     "PiglinBruteEntityMixin",
-    "PiglinEntityMixin"
+    "PiglinEntityMixin",
+    "SculkShriekerWarningManagerMixin",
+    "ShulkerEntityMixin"
   ],
   "client": [
   ],

@@ -8,6 +8,7 @@ public class CurseRegistry {
 
 
     public static Enchantment RECKLESSNESS = Util.initEnchantment("recklessness", new RecklessnessCurse());
+    public static Enchantment SHRIEKING = Util.initEnchantment("shrieking", new ShriekingCurse());
     public static Enchantment THUNDER = Util.initEnchantment("thunder", new ThunderCurse());
     public static Enchantment TOUGH_LUCK = Util.initEnchantment("tough_luck", new ToughLuckCurse());
 
