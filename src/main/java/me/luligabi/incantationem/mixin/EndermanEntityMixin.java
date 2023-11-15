@@ -9,6 +9,6 @@ import org.spongepowered.asm.mixin.Mixin;
 public class EndermanEntityMixin {
 
     public EntityGroup getGroup() {
-        return Incantationem.ENDER;
+        return Incantationem.VULNERABLE_TO_WATER;
     }
 }

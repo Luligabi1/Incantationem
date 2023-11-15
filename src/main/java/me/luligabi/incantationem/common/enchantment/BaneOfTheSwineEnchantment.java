@@ -56,9 +56,9 @@ public class BaneOfTheSwineEnchantment extends IncantationemEnchantment {
 
     @Override
     public void onTargetDamaged(LivingEntity user, Entity target, int level) {
-        if (target instanceof LivingEntity livingEntity) {
+        if(target instanceof LivingEntity livingEntity) {
 
-            if (livingEntity.getGroup() == Incantationem.SWINE) {
+            if(livingEntity.getGroup() == Incantationem.SWINE) {
                 int randomEffectTimer = 20 + user.getRandom().nextInt(10 * level);
                 livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, randomEffectTimer, 3));
             }

@@ -9,15 +9,13 @@ import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.text.Text;
-import net.minecraft.util.Formatting;
 
 public class DeflectionEnchantment extends IncantationemEnchantment {
 
 
     public DeflectionEnchantment() {
         super(
-                Enchantment.Rarity.RARE,
+                Enchantment.Rarity.VERY_RARE,
                 EnchantmentTarget.ARMOR,
                 new EquipmentSlot[]{EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET},
                 Incantationem.CONFIG.deflectionMaxLevel,
@@ -29,7 +27,7 @@ public class DeflectionEnchantment extends IncantationemEnchantment {
 
     @Override
     public int getMinPower(int level) {
-        return 5 + (level - 1) * 12;
+        return 10 + 20 * (level - 1);
     }
 
     @Override
@@ -44,25 +42,27 @@ public class DeflectionEnchantment extends IncantationemEnchantment {
 
     @Override
     public boolean canAccept(Enchantment other) {
-        return super.canAccept(other) && (other != Enchantments.PROJECTILE_PROTECTION);
+        return super.canAccept(other) &&
+                other != Enchantments.PROJECTILE_PROTECTION &&
+                other != Enchantments.THORNS;
     }
 
     public static boolean shouldDeflect(LivingEntity user) {
-        //Can't use EnchantmentHelper.getEquipmentLevel, as that doesn't seem to account for multiple equipment slots,
-        //Rather, it returns the highest value of the equipment slots(e.g. would return "3" if helmet had Deflection 3, but chestplate had Deflection 1)
-        //Instead, this method gathers the enchantment level of each individual equipment slot, then adds them for one final integer.
-        int headDeflectionLevel = EnchantmentHelper.getLevel(EnchantmentRegistry.DEFLECTION, user.getEquippedStack(EquipmentSlot.HEAD));
-        int chestDeflectionLevel = EnchantmentHelper.getLevel(EnchantmentRegistry.DEFLECTION, user.getEquippedStack(EquipmentSlot.CHEST));
-        int legsDeflectionLevel = EnchantmentHelper.getLevel(EnchantmentRegistry.DEFLECTION, user.getEquippedStack(EquipmentSlot.LEGS));
-        int feetDeflectionLevel = EnchantmentHelper.getLevel(EnchantmentRegistry.DEFLECTION, user.getEquippedStack(EquipmentSlot.FEET));
-        int deflectionLevel = headDeflectionLevel + chestDeflectionLevel + legsDeflectionLevel + feetDeflectionLevel;
+        // Sum the Deflection level on all armor pieces
+        int deflectionLevel = 0;
+        for(EquipmentSlot slot : EquipmentSlot.values()) {
+            if(!slot.isArmorSlot()) continue;
+            deflectionLevel += EnchantmentHelper.getLevel(
+                    EnchantmentRegistry.DEFLECTION,
+                    user.getEquippedStack(slot)
+            );
+        }
         if(deflectionLevel > 0) {
-            //If an entity has Deflection 3 on all four armor pieces,
-            //gives ~50%(about 50.4%) chance of deflecting an arrow, slightly in the enchantment wearer's favor
-            if(Util.positiveEffectRandomNumber(user, user.getRandom(), 0, 100) < deflectionLevel * 4.2) {
-                Util.sendActionBarMessage(user, Text.translatable("message.incantationem.deflection.applied"), Formatting.LIGHT_PURPLE);
-                return true;
-            }
+            /*
+             * When using Deflection 3 on all 4 armor pieces, the user
+             * has ~50% chance of deflecting an arrow.
+             */
+            return Util.positiveEffectRandomNumber(user, user.getRandom(), 0, 100) < deflectionLevel * 4.2;
         }
         return false;
     }
