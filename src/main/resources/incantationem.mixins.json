@@ -16,7 +16,8 @@
     "PiglinEntityMixin",
     "SculkShriekerWarningManagerMixin",
     "ShulkerEntityMixin",
-    "SnowGolemEntityMixin"
+    "SnowGolemEntityMixin",
+    "StriderEntityMixin"
   ],
   "client": [
   ],
