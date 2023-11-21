@@ -1,8 +1,6 @@
 package me.luligabi.incantationem.common.enchantment;
 
 import me.luligabi.incantationem.common.Incantationem;
-import me.luligabi.incantationem.common.Util;
-import me.luligabi.incantationem.common.tag.TagRegistry;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.Entity;
@@ -18,13 +16,14 @@ public class WaterSlashEnchantment extends IncantationemEnchantment {
 
     public WaterSlashEnchantment() {
         super(
-                Rarity.UNCOMMON,
-                EnchantmentTarget.WEAPON,
-                new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND},
-                Incantationem.CONFIG.waterSlashMaxLevel,
-                Incantationem.CONFIG.waterSlashAvailableForBookOffer,
-                Incantationem.CONFIG.waterSlashAvailableRandomly,
-                Incantationem.CONFIG.waterSlashAvailableAsTreasure
+            "water_slash",
+            Rarity.UNCOMMON,
+            EnchantmentTarget.WEAPON,
+            new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND},
+            Incantationem.CONFIG.waterSlashMaxLevel,
+            Incantationem.CONFIG.waterSlashAvailableForBookOffer,
+            Incantationem.CONFIG.waterSlashAvailableRandomly,
+            Incantationem.CONFIG.waterSlashAvailableAsTreasure
         );
     }
 
@@ -41,7 +40,7 @@ public class WaterSlashEnchantment extends IncantationemEnchantment {
 
     @Override
     public boolean canAccept(Enchantment enchantment) {
-        return !(enchantment instanceof WaterSlashEnchantment) && !Util.isEnchantmentInTag(enchantment, TagRegistry.WATER_SLASH_INCOMPATIBLE);
+        return super.canAccept(enchantment) && !(enchantment instanceof WaterSlashEnchantment);
     }
 
     @Override

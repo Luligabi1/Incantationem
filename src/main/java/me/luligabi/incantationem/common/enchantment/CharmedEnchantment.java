@@ -12,12 +12,13 @@ public class CharmedEnchantment extends IncantationemEnchantment {
 
     public CharmedEnchantment() {
         super(
-                Enchantment.Rarity.RARE,
-                EnchantmentTarget.BREAKABLE,
-                EquipmentSlot.values(),
-                Incantationem.CONFIG.charmedAvailableForBookOffer,
-                Incantationem.CONFIG.charmedAvailableRandomly,
-                Incantationem.CONFIG.charmedAvailableAsTreasure
+            "charmed",
+            Enchantment.Rarity.RARE,
+            EnchantmentTarget.BREAKABLE,
+            EquipmentSlot.values(),
+            Incantationem.CONFIG.charmedAvailableForBookOffer,
+            Incantationem.CONFIG.charmedAvailableRandomly,
+            Incantationem.CONFIG.charmedAvailableAsTreasure
         );
     }
 

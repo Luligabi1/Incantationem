@@ -9,13 +9,14 @@ public class ShriekingCurse extends IncantationemEnchantment {
 
     public ShriekingCurse() {
         super(
-                Rarity.VERY_RARE,
-                EnchantmentTarget.ARMOR_FEET,
-                new EquipmentSlot[]{EquipmentSlot.FEET},
-                1,
-                Incantationem.CONFIG.shriekingAvailableForBookOffer,
-                true,
-                Incantationem.CONFIG.shriekingAvailableAsTreasure
+            "shrieking",
+            Rarity.VERY_RARE,
+            EnchantmentTarget.ARMOR_FEET,
+            new EquipmentSlot[]{EquipmentSlot.FEET},
+            1,
+            Incantationem.CONFIG.shriekingAvailableForBookOffer,
+            true,
+            Incantationem.CONFIG.shriekingAvailableAsTreasure
         );
     }
 

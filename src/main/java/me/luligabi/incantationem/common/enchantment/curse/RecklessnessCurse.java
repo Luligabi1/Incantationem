@@ -1,11 +1,8 @@
 package me.luligabi.incantationem.common.enchantment.curse;
 
 import me.luligabi.incantationem.common.Incantationem;
-import me.luligabi.incantationem.common.enchantment.EnchantmentRegistry;
 import me.luligabi.incantationem.common.enchantment.IncantationemEnchantment;
-import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
-import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.EquipmentSlot;
 
 /*
@@ -15,13 +12,14 @@ public class RecklessnessCurse extends IncantationemEnchantment {
 
     public RecklessnessCurse() {
         super(
-                Rarity.VERY_RARE,
-                EnchantmentTarget.DIGGER,
-                new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND},
-                1,
-                Incantationem.CONFIG.recklessnessAvailableForBookOffer,
-                true,
-                Incantationem.CONFIG.recklessnessAvailableAsTreasure
+            "recklessness",
+            Rarity.VERY_RARE,
+            EnchantmentTarget.DIGGER,
+            new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND},
+            1,
+            Incantationem.CONFIG.recklessnessAvailableForBookOffer,
+            true,
+            Incantationem.CONFIG.recklessnessAvailableAsTreasure
         );
     }
 
@@ -37,10 +35,5 @@ public class RecklessnessCurse extends IncantationemEnchantment {
 
     @Override
     public boolean isCursed() { return true; }
-
-    @Override
-    public boolean canAccept(Enchantment other) {
-        return super.canAccept(other) && (other != EnchantmentRegistry.FORGING_TOUCH || other != Enchantments.FORTUNE);
-    }
 
 }

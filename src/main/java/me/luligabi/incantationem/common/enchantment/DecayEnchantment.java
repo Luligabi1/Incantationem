@@ -14,13 +14,14 @@ public class DecayEnchantment extends IncantationemEnchantment {
 
     public DecayEnchantment() {
         super(
-                Rarity.RARE,
-                EnchantmentTarget.WEAPON,
-                new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND},
-                Incantationem.CONFIG.decayMaxLevel,
-                Incantationem.CONFIG.decayAvailableForBookOffer,
-                Incantationem.CONFIG.decayAvailableRandomly,
-                Incantationem.CONFIG.decayAvailableAsTreasure
+            "decay",
+            Rarity.RARE,
+            EnchantmentTarget.WEAPON,
+            new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND},
+            Incantationem.CONFIG.decayMaxLevel,
+            Incantationem.CONFIG.decayAvailableForBookOffer,
+            Incantationem.CONFIG.decayAvailableRandomly,
+            Incantationem.CONFIG.decayAvailableAsTreasure
         );
     }
 

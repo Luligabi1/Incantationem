@@ -19,13 +19,14 @@ public class BaneOfTheSwineEnchantment extends IncantationemEnchantment {
 
     public BaneOfTheSwineEnchantment() {
         super(
-                Rarity.UNCOMMON,
-                EnchantmentTarget.WEAPON,
-                new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND},
-                Incantationem.CONFIG.baneOfTheSwineMaxLevel,
-                Incantationem.CONFIG.baneOfTheSwineAvailableForBookOffer,
-                Incantationem.CONFIG.baneOfTheSwineAvailableRandomly,
-                Incantationem.CONFIG.baneOfTheSwineAvailableAsTreasure
+            "swine_bane",
+            Rarity.UNCOMMON,
+            EnchantmentTarget.WEAPON,
+            new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND},
+            Incantationem.CONFIG.baneOfTheSwineMaxLevel,
+            Incantationem.CONFIG.baneOfTheSwineAvailableForBookOffer,
+            Incantationem.CONFIG.baneOfTheSwineAvailableRandomly,
+            Incantationem.CONFIG.baneOfTheSwineAvailableAsTreasure
         );
     }
 
@@ -41,7 +42,7 @@ public class BaneOfTheSwineEnchantment extends IncantationemEnchantment {
 
     @Override
     public boolean canAccept(Enchantment enchantment) {
-        return !(enchantment instanceof BaneOfTheSwineEnchantment);
+        return super.canAccept(enchantment) && !(enchantment instanceof BaneOfTheSwineEnchantment);
     }
 
     @Override

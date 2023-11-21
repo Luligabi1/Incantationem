@@ -9,13 +9,14 @@ public class VenomousEnchantment extends IncantationemEnchantment {
 
     public VenomousEnchantment() {
         super(
-                Enchantment.Rarity.RARE,
-                EnchantmentTarget.BOW,
-                new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND},
-                Incantationem.CONFIG.venomousMaxLevel,
-                Incantationem.CONFIG.venomousAvailableForBookOffer,
-                Incantationem.CONFIG.venomousAvailableRandomly,
-                Incantationem.CONFIG.venomousAvailableAsTreasure
+            "venomous",
+            Enchantment.Rarity.RARE,
+            EnchantmentTarget.BOW,
+            new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND},
+            Incantationem.CONFIG.venomousMaxLevel,
+            Incantationem.CONFIG.venomousAvailableForBookOffer,
+            Incantationem.CONFIG.venomousAvailableRandomly,
+            Incantationem.CONFIG.venomousAvailableAsTreasure
         );
     }
 

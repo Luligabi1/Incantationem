@@ -14,12 +14,13 @@ public class RetreatEnchantment extends IncantationemEnchantment {
 
     public RetreatEnchantment() {
         super(
-                Rarity.UNCOMMON,
-                EnchantmentTarget.ARMOR_LEGS,
-                new EquipmentSlot[]{EquipmentSlot.LEGS},
-                Incantationem.CONFIG.retreatAvailableForBookOffer,
-                Incantationem.CONFIG.retreatAvailableRandomly,
-                Incantationem.CONFIG.retreatAvailableAsTreasure
+            "retreat",
+            Rarity.UNCOMMON,
+            EnchantmentTarget.ARMOR_LEGS,
+            new EquipmentSlot[]{EquipmentSlot.LEGS},
+            Incantationem.CONFIG.retreatAvailableForBookOffer,
+            Incantationem.CONFIG.retreatAvailableRandomly,
+            Incantationem.CONFIG.retreatAvailableAsTreasure
         );
     }
 

@@ -1,8 +1,6 @@
 package me.luligabi.incantationem.common.enchantment;
 
 import me.luligabi.incantationem.common.Incantationem;
-import me.luligabi.incantationem.common.Util;
-import me.luligabi.incantationem.common.tag.TagRegistry;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.Entity;
@@ -22,13 +20,14 @@ public class FuseShotEnchantment extends IncantationemEnchantment {
 
     public FuseShotEnchantment() {
         super(
-                Enchantment.Rarity.RARE,
-                EnchantmentTarget.BOW,
-                new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND},
-                Incantationem.CONFIG.fuseShotMaxLevel,
-                Incantationem.CONFIG.fuseShotAvailableForBookOffer,
-                Incantationem.CONFIG.fuseShotAvailableRandomly,
-                Incantationem.CONFIG.fuseShotAvailableAsTreasure
+            "fuse_shot",
+            Enchantment.Rarity.RARE,
+            EnchantmentTarget.BOW,
+            new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND},
+            Incantationem.CONFIG.fuseShotMaxLevel,
+            Incantationem.CONFIG.fuseShotAvailableForBookOffer,
+            Incantationem.CONFIG.fuseShotAvailableRandomly,
+            Incantationem.CONFIG.fuseShotAvailableAsTreasure
         );
     }
 
@@ -40,11 +39,6 @@ public class FuseShotEnchantment extends IncantationemEnchantment {
     @Override
     public int getMaxPower(int level) {
         return 42;
-    }
-
-    @Override
-    protected boolean canAccept(Enchantment other) {
-        return super.canAccept(other) && !Util.isEnchantmentInTag(other, TagRegistry.FUSE_SHOT_INCOMPATIBLE);
     }
 
 
