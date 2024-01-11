@@ -1,16 +1,20 @@
 {
   "enchantment.incantationem.bunnys_hop": "Salto de Coelho",
   "enchantment.incantationem.swine_bane": "Ruína dos Suínos",
-  "enchantment.incantationem.charmed": "Sortudo",
+  "enchantment.incantationem.charmed": "Talismã",
   "enchantment.incantationem.decay": "Deterioração",
+  "enchantment.incantationem.deflection": "Deflexão",
+  "enchantment.incantationem.fuse_shot": "Tiro de Fissão",
   "enchantment.incantationem.forging_touch": "Toque da Fundição",
   "enchantment.incantationem.last_stand": "Última Resistência",
   "enchantment.incantationem.magnetic": "Magnético",
   "enchantment.incantationem.reaping_rod": "Vara Ceifadora",
   "enchantment.incantationem.retreat": "Retirada",
   "enchantment.incantationem.venomous": "Peçonhento",
+  "enchantment.incantationem.water_slash": "Golpe d'Água",
 
   "enchantment.incantationem.recklessness": "Maldição da Imprudência",
+  "enchantment.incantationem.shrieking": "Maldição do Tumulto Sculk",
   "enchantment.incantationem.thunder": "Maldição dos Trovões",
   "enchantment.incantationem.tough_luck": "Maldição da Má Sorte",
 
@@ -28,15 +32,18 @@
   "enchantment.incantationem.swine_bane.desc": "Aumenta o dano causado a suínos, como porcos, piglins e hoglins.",
   "enchantment.incantationem.charmed.desc": "Melhora a qualidade do loot de pesca e sua sorte com enchantamentos/maldições do Incantationem.",
   "enchantment.incantationem.decay.desc": "Aplica aleatoriamente decomposição em entidades acertadas.",
+  "enchantment.incantationem.deflection.desc": "Aleatoriamente desvia projéteis atirados no usuário. A chance de ativação aumenta com cada peça.",
+  "enchantment.incantationem.fuse_shot.desc": "Cria uma explosão ao acertar uma entidade.",
   "enchantment.incantationem.forging_touch.desc": "Blocos quebrados aleatoriamente serão esquentados (ex.: areia -> vidro).",
   "enchantment.incantationem.last_stand.desc": "Aplica aleatoriamente força ao usuário quando machucado com vida baixa.",
   "enchantment.incantationem.magnetic.desc": "Magnetiza items e orbes de experiência em sua direção.",
   "enchantment.incantationem.reaping_rod.desc": "Aplica efeitos similares a uma Mação Dourada Encantada ao usuário quando aplicando o golpe final a um inimigo.",
   "enchantment.incantationem.retreat.desc": "Aplica aleatoriamente velocidade quando o usuário é acertado.",
   "enchantment.incantationem.venomous.desc": "Aplica aleatoriamente veneno a alvos acertados.",
-
+  "enchantment.incantationem.water_slash.desc": "Aumenta o dano causado aos vulneráveis à água.",
 
   "enchantment.incantationem.recklessness.desc": "Faz com que blocos quebrados não sejam coletáveis.",
+  "enchantment.incantationem.shrieking.desc": "Aumenta a severidade dos avisos causados por Emissores de Sculk.",
   "enchantment.incantationem.thunder.desc": "Trovões cairão aleatoriamente no usuário após ser machucado.",
   "enchantment.incantationem.tough_luck.desc": "Garante permanentemente o efeito de Má Sorte enquanto usa, diminuindo suas chances em eventos de sorte.",
 

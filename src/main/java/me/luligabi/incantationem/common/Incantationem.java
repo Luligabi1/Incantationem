@@ -3,12 +3,14 @@ package me.luligabi.incantationem.common;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonParser;
-import me.luligabi.incantationem.common.enchantment.curse.CurseRegistry;
 import me.luligabi.incantationem.common.enchantment.EnchantmentRegistry;
+import me.luligabi.incantationem.common.enchantment.curse.CurseRegistry;
 import me.luligabi.incantationem.common.tag.TagRegistry;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.entity.EntityGroup;
+import net.minecraft.server.command.WardenSpawnTrackerCommand;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,6 +28,13 @@ public class Incantationem implements ModInitializer {
         EnchantmentRegistry.init();
 
         TagRegistry.init();
+
+        // Setting and clearing the Sculk Shrieker warning level, used to test Curse of Shrieking
+        if(FabricLoader.getInstance().isDevelopmentEnvironment()) {
+            CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
+                WardenSpawnTrackerCommand.register(dispatcher);
+            });
+        }
     }
 
 
@@ -36,6 +45,7 @@ public class Incantationem implements ModInitializer {
     public static final String MOD_ID = "incantationem";
 
     public static final EntityGroup SWINE = new EntityGroup();
+    public static final EntityGroup VULNERABLE_TO_WATER = new EntityGroup();
 
 
     private static ModConfig createConfig() {

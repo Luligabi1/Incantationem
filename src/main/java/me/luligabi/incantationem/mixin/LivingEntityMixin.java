@@ -1,14 +1,18 @@
 package me.luligabi.incantationem.mixin;
 
+import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import me.luligabi.incantationem.common.Util;
+import me.luligabi.incantationem.common.enchantment.DeflectionEnchantment;
+import me.luligabi.incantationem.common.enchantment.EnchantmentRegistry;
 import me.luligabi.incantationem.common.enchantment.MagneticEnchantment;
 import me.luligabi.incantationem.common.enchantment.curse.CurseRegistry;
-import me.luligabi.incantationem.common.enchantment.EnchantmentRegistry;
 import me.luligabi.incantationem.common.tag.TagRegistry;
 import net.minecraft.block.BlockState;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.registry.tag.DamageTypeTags;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -52,6 +56,22 @@ public abstract class LivingEntityMixin {
         if(toughLuckLevel > 0) {
             Util.applyEffectIfNotPresent(livingEntity, StatusEffects.UNLUCK, 3, 0);
             callbackInfo.cancel();
+        }
+    }
+
+    @ModifyExpressionValue(
+            method = "damage",
+            at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;isInvulnerableTo(Lnet/minecraft/entity/damage/DamageSource;)Z")
+    )
+    public boolean shouldDeflect(boolean original, DamageSource source, float amount) {
+        if(!source.isIn(DamageTypeTags.IS_PROJECTILE)) return original;
+
+        LivingEntity livingEntity = ((LivingEntity) (Object) this);
+
+        if(DeflectionEnchantment.shouldDeflect(livingEntity)) {
+            return true;
+        } else {
+            return original;
         }
     }
 

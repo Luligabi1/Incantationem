@@ -9,13 +9,14 @@ public class BunnysHopEnchantment extends IncantationemEnchantment {
 
     public BunnysHopEnchantment() {
         super(
-                Enchantment.Rarity.UNCOMMON,
-                EnchantmentTarget.ARMOR_FEET,
-                new EquipmentSlot[]{EquipmentSlot.FEET},
-                Incantationem.CONFIG.bunnysHopMaxLevel,
-                Incantationem.CONFIG.bunnysHopAvailableForBookOffer,
-                Incantationem.CONFIG.bunnysHopAvailableRandomly,
-                Incantationem.CONFIG.bunnysHopAvailableAsTreasure
+            "bunnys_hop",
+            Enchantment.Rarity.UNCOMMON,
+            EnchantmentTarget.ARMOR_FEET,
+            new EquipmentSlot[]{EquipmentSlot.FEET},
+            Incantationem.CONFIG.bunnysHopMaxLevel,
+            Incantationem.CONFIG.bunnysHopAvailableForBookOffer,
+            Incantationem.CONFIG.bunnysHopAvailableRandomly,
+            Incantationem.CONFIG.bunnysHopAvailableAsTreasure
         );
     }
 
@@ -25,6 +26,5 @@ public class BunnysHopEnchantment extends IncantationemEnchantment {
     @Override
     public int getMaxPower(int level) {
             return 50;
-        }
-
+    }
 }

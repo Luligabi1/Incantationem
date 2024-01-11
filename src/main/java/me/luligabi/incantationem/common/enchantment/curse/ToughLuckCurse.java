@@ -11,12 +11,13 @@ public class ToughLuckCurse extends IncantationemEnchantment {
 
     public ToughLuckCurse() {
         super(
-                Rarity.VERY_RARE,
-                EnchantmentTarget.BREAKABLE,
-                EquipmentSlot.values(),
-                Incantationem.CONFIG.toughLuckAvailableForBookOffer,
-                true,
-                Incantationem.CONFIG.toughLuckAvailableAsTreasure
+            "tough_luck",
+            Rarity.VERY_RARE,
+            EnchantmentTarget.BREAKABLE,
+            EquipmentSlot.values(),
+            Incantationem.CONFIG.toughLuckAvailableForBookOffer,
+            true,
+            Incantationem.CONFIG.toughLuckAvailableAsTreasure
         );
     }
 

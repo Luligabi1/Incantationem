@@ -12,12 +12,13 @@ public class CharmedEnchantment extends IncantationemEnchantment {
 
     public CharmedEnchantment() {
         super(
-                Enchantment.Rarity.RARE,
-                EnchantmentTarget.BREAKABLE,
-                EquipmentSlot.values(),
-                Incantationem.CONFIG.charmedAvailableForBookOffer,
-                Incantationem.CONFIG.charmedAvailableRandomly,
-                Incantationem.CONFIG.charmedAvailableAsTreasure
+            "charmed",
+            Enchantment.Rarity.RARE,
+            EnchantmentTarget.BREAKABLE,
+            EquipmentSlot.values(),
+            Incantationem.CONFIG.charmedAvailableForBookOffer,
+            Incantationem.CONFIG.charmedAvailableRandomly,
+            Incantationem.CONFIG.charmedAvailableAsTreasure
         );
     }
 
@@ -37,6 +38,8 @@ public class CharmedEnchantment extends IncantationemEnchantment {
     }
 
     @Override
-    public boolean canAccept(Enchantment other) { return super.canAccept(other) && (other != CurseRegistry.TOUGH_LUCK); }
+    public boolean canAccept(Enchantment other) {
+        return super.canAccept(other) && (other != CurseRegistry.TOUGH_LUCK);
+    }
 
 }

@@ -1,8 +1,6 @@
 package me.luligabi.incantationem.common.enchantment;
 
 import me.luligabi.incantationem.common.Incantationem;
-import me.luligabi.incantationem.common.enchantment.curse.CurseRegistry;
-import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.EquipmentSlot;
 
@@ -10,13 +8,14 @@ public class ForgingTouchEnchantment extends IncantationemEnchantment {
 
     public ForgingTouchEnchantment() {
         super(
-                Rarity.RARE,
-                EnchantmentTarget.DIGGER,
-                new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND},
-                Incantationem.CONFIG.forgingTouchMaxLevel,
-                Incantationem.CONFIG.forgingTouchAvailableForBookOffer,
-                Incantationem.CONFIG.forgingTouchAvailableRandomly,
-                Incantationem.CONFIG.forgingTouchAvailableAsTreasure
+            "forging_touch",
+            Rarity.RARE,
+            EnchantmentTarget.DIGGER,
+            new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND},
+            Incantationem.CONFIG.forgingTouchMaxLevel,
+            Incantationem.CONFIG.forgingTouchAvailableForBookOffer,
+            Incantationem.CONFIG.forgingTouchAvailableRandomly,
+            Incantationem.CONFIG.forgingTouchAvailableAsTreasure
         );
     }
 
@@ -28,11 +27,6 @@ public class ForgingTouchEnchantment extends IncantationemEnchantment {
     @Override
     public int getMaxPower(int level) {
         return super.getMinPower(level) + 50;
-    }
-
-    @Override
-    public boolean canAccept(Enchantment other) {
-        return super.canAccept(other) && other != CurseRegistry.RECKLESSNESS;
     }
 
 }

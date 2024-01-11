@@ -4,14 +4,20 @@
   "package": "me.luligabi.incantationem.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
+    "BlazeEntityMixin",
     "BlockMixin",
+    "EndermanEntityMixin",
     "EntityInvoker",
     "HoglinEntityMixin",
     "LivingEntityMixin",
     "PersistentProjectileEntityMixin",
     "PigEntityMixin",
     "PiglinBruteEntityMixin",
-    "PiglinEntityMixin"
+    "PiglinEntityMixin",
+    "SculkShriekerWarningManagerMixin",
+    "ShulkerEntityMixin",
+    "SnowGolemEntityMixin",
+    "StriderEntityMixin"
   ],
   "client": [
   ],

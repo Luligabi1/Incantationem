@@ -13,13 +13,14 @@ public class MagneticEnchantment extends IncantationemEnchantment {
 
     public MagneticEnchantment() {
         super(
-                Rarity.VERY_RARE,
-                EnchantmentTarget.ARMOR_LEGS,
-                new EquipmentSlot[]{EquipmentSlot.LEGS},
-                Incantationem.CONFIG.magneticMaxLevel,
-                Incantationem.CONFIG.magneticAvailableForBookOffer,
-                Incantationem.CONFIG.magneticAvailableRandomly,
-                Incantationem.CONFIG.magneticAvailableAsTreasure
+            "magnetic",
+            Rarity.VERY_RARE,
+            EnchantmentTarget.ARMOR_LEGS,
+            new EquipmentSlot[]{EquipmentSlot.LEGS},
+            Incantationem.CONFIG.magneticMaxLevel,
+            Incantationem.CONFIG.magneticAvailableForBookOffer,
+            Incantationem.CONFIG.magneticAvailableRandomly,
+            Incantationem.CONFIG.magneticAvailableAsTreasure
         );
     }
 

@@ -14,12 +14,13 @@ public class ThunderCurse extends IncantationemEnchantment {
 
     public ThunderCurse() {
         super(
-                Rarity.VERY_RARE,
-                EnchantmentTarget.ARMOR_HEAD,
-                new EquipmentSlot[]{EquipmentSlot.HEAD},
-                Incantationem.CONFIG.thunderAvailableForBookOffer,
-                true,
-                Incantationem.CONFIG.thunderAvailableAsTreasure
+            "thunder",
+            Rarity.VERY_RARE,
+            EnchantmentTarget.ARMOR_HEAD,
+            new EquipmentSlot[]{EquipmentSlot.HEAD},
+            Incantationem.CONFIG.thunderAvailableForBookOffer,
+            true,
+            Incantationem.CONFIG.thunderAvailableAsTreasure
         );
     }
 

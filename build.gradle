@@ -1,22 +1,13 @@
 plugins {
     id 'fabric-loom' version '1.2-SNAPSHOT'
-    id "com.matthewprenger.cursegradle" version '1.4.0'
-    id "com.modrinth.minotaur" version '2.7.5'
+    id 'me.modmuss50.mod-publish-plugin' version '0.4.5'
     id 'maven-publish'
 }
 
 archivesBaseName = project.archives_base_name
 version = project.mod_version
 
-def ENV = System.getenv()
-
-def RELEASE_NAME = "Incantationem ${version}"
-def RELEASE_FILE = "${buildDir}/libs/${archivesBaseName}-${version}.jar"
-
-@SuppressWarnings('GrMethodMayBeStatic')
-def getChangeLog() {
-    return ""
-}
+def modName = project.mod_name
 
 repositories {
     maven { url = "https://jitpack.io" }
@@ -72,48 +63,48 @@ jar {
     }
 }
 
-curseforge {
-    if (ENV.CURSEFORGE_API_KEY) {
-        apiKey = ENV.CURSEFORGE_API_KEY
-    }
+publishMods {
+    file = remapJar.archiveFile
+    displayName = (project.mod_version as String)
+    type = STABLE
+    modLoaders.add("fabric")
+    changelog =
+    """
+- Added 3 new enchantments;
+    - Deflection;
+    - Fuse Shot;
+    - Water Slash.
+- Added Curse of Shrieking;
+- Incompatible enchantments and curses are now defined through an enchantment tag.
+    """
 
-    project {
-        id = project.curseforge_id
-        changelog = getChangeLog()
-        releaseType = "release"
-        addGameVersion project.minecraft_version
-        addGameVersion "Fabric"
+    curseforge {
+        projectId = project.curseforge_id
+        projectSlug = project.curseforge_slug
+        accessToken = providers.environmentVariable("CURSEFORGE_API_KEY")
+        minecraftVersions.add(project.minecraft_version)
 
-        mainArtifact(file(RELEASE_FILE)) {
-            displayName = RELEASE_NAME
-            relations {
-                requiredDependency 'fabric-api'
-            }
+        requires {
+            slug = "fabric-api"
         }
+    }
 
-        afterEvaluate {
-            uploadTask.dependsOn("remapJar")
+    modrinth {
+        projectId = project.modrinth_id
+        accessToken = providers.environmentVariable("MODRINTH_TOKEN")
+        minecraftVersions.add(project.minecraft_version)
+
+        requires {
+            slug = "fabric-api"
         }
     }
 
-    options {
-        forgeGradleIntegration = false
-    }
-}
 
-//Modrinth publishing
-modrinth {
-    if (ENV.MODRINTH_TOKEN) {
-        token = ENV.MODRINTH_TOKEN
-    }
-    projectId = project.modrinth_id
-    versionNumber = project.mod_version
-    uploadFile = remapJar
-    gameVersions = [project.minecraft_version]
-    loaders = ['fabric']
-    versionType = "release"
-    changelog = getChangeLog()
-    dependencies {
-        required.project("fabric-api")
+    discord {
+        webhookUrl = providers.environmentVariable("CAFETERIA_MOD_RELEASE_WEBHOOK")
+        username = modName
+        avatarUrl = project.webhook_icon
+
+        content = changelog.map { "# " + (modName as String) + " " + (project.mod_version as String) + " has been released \n" + it}
     }
 }

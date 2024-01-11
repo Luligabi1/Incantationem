@@ -15,12 +15,13 @@ public class ReapingRodEnchantment extends IncantationemEnchantment {
 
     public ReapingRodEnchantment() {
         super(
-                Rarity.VERY_RARE,
-                EnchantmentTarget.FISHING_ROD,
-                new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND},
-                Incantationem.CONFIG.reapingRodAvailableForBookOffer,
-                Incantationem.CONFIG.reapingRodAvailableRandomly,
-                Incantationem.CONFIG.reapingRodAvailableAsTreasure
+            "reaping_rod",
+            Rarity.VERY_RARE,
+            EnchantmentTarget.FISHING_ROD,
+            new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND},
+            Incantationem.CONFIG.reapingRodAvailableForBookOffer,
+            Incantationem.CONFIG.reapingRodAvailableRandomly,
+            Incantationem.CONFIG.reapingRodAvailableAsTreasure
         );
     }
 

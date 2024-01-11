@@ -15,13 +15,14 @@ public class LastStandEnchantment extends IncantationemEnchantment {
 
     public LastStandEnchantment() {
         super(
-                Enchantment.Rarity.RARE,
-                EnchantmentTarget.ARMOR_CHEST,
-                new EquipmentSlot[]{EquipmentSlot.CHEST},
-                Incantationem.CONFIG.lastStandMaxLevel,
-                Incantationem.CONFIG.lastStandAvailableForBookOffer,
-                Incantationem.CONFIG.lastStandAvailableRandomly,
-                Incantationem.CONFIG.lastStandAvailableAsTreasure
+            "last_stand",
+            Enchantment.Rarity.RARE,
+            EnchantmentTarget.ARMOR_CHEST,
+            new EquipmentSlot[]{EquipmentSlot.CHEST},
+            Incantationem.CONFIG.lastStandMaxLevel,
+            Incantationem.CONFIG.lastStandAvailableForBookOffer,
+            Incantationem.CONFIG.lastStandAvailableRandomly,
+            Incantationem.CONFIG.lastStandAvailableAsTreasure
         );
     }
 

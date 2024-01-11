@@ -193,6 +193,96 @@ public class ConfigScreenEntrypoint implements ModMenuApi {
                 .controller(option -> BooleanControllerBuilder.create(option).yesNoFormatter().coloured(true))
                 .build();
 
+        // Deflection
+        Option<Integer> deflectionMaxLevel = Option.<Integer>createBuilder()
+                .name(Text.translatable("configOption.incantationem.maxLevel"))
+                .description(OptionDescription.of(Text.translatable("configOption.incantationem.maxLevel.tooltip")))
+                .binding(
+                        3,
+                        () -> config.deflectionMaxLevel,
+                        newValue -> config.deflectionMaxLevel = newValue
+                )
+                .controller(option -> IntegerFieldControllerBuilder.create(option).min(1).max(10))
+                .build();
+
+        Option<Boolean> deflectionAvailableRandomly = Option.<Boolean>createBuilder()
+                .name(Text.translatable("configOption.incantationem.availableRandomly"))
+                .description(OptionDescription.of(Text.translatable("configOption.incantationem.availableRandomly.tooltip")))
+                .binding(
+                        true,
+                        () -> config.deflectionAvailableRandomly,
+                        newValue -> config.deflectionAvailableRandomly = newValue
+                )
+                .controller(option -> BooleanControllerBuilder.create(option).yesNoFormatter().coloured(true))
+                .build();
+
+        Option<Boolean> deflectionAvailableForBookOffer = Option.<Boolean>createBuilder()
+                .name(Text.translatable("configOption.incantationem.availableForBookOffer"))
+                .description(OptionDescription.of(Text.translatable("configOption.incantationem.availableForBookOffer.tooltip")))
+                .binding(
+                        true,
+                        () -> config.deflectionAvailableForBookOffer,
+                        newValue -> config.deflectionAvailableForBookOffer = newValue
+                )
+                .controller(option -> BooleanControllerBuilder.create(option).yesNoFormatter().coloured(true))
+                .build();
+
+        Option<Boolean> deflectionAvailableAsTreasure = Option.<Boolean>createBuilder()
+                .name(Text.translatable("configOption.incantationem.availableAsTreasure"))
+                .description(OptionDescription.of(Text.translatable("configOption.incantationem.availableAsTreasure.tooltip")))
+                .binding(
+                        false,
+                        () -> config.deflectionAvailableAsTreasure,
+                        newValue -> config.deflectionAvailableAsTreasure = newValue
+                )
+                .controller(option -> BooleanControllerBuilder.create(option).yesNoFormatter().coloured(true))
+                .build();
+
+        // Explosive
+        Option<Integer> explosiveMaxLevel = Option.<Integer>createBuilder()
+                .name(Text.translatable("configOption.incantationem.maxLevel"))
+                .description(OptionDescription.of(Text.translatable("configOption.incantationem.maxLevel.tooltip")))
+                .binding(
+                        3,
+                        () -> config.fuseShotMaxLevel,
+                        newValue -> config.fuseShotMaxLevel = newValue
+                )
+                .controller(option -> IntegerFieldControllerBuilder.create(option).min(1).max(10))
+                .build();
+
+        Option<Boolean> fuseShotAvailableRandomly = Option.<Boolean>createBuilder()
+                .name(Text.translatable("configOption.incantationem.availableRandomly"))
+                .description(OptionDescription.of(Text.translatable("configOption.incantationem.availableRandomly.tooltip")))
+                .binding(
+                        false,
+                        () -> config.fuseShotAvailableRandomly,
+                        newValue -> config.fuseShotAvailableRandomly = newValue
+                )
+                .controller(option -> BooleanControllerBuilder.create(option).yesNoFormatter().coloured(true))
+                .build();
+
+        Option<Boolean> fuseShotAvailableForBookOffer = Option.<Boolean>createBuilder()
+                .name(Text.translatable("configOption.incantationem.availableForBookOffer"))
+                .description(OptionDescription.of(Text.translatable("configOption.incantationem.availableForBookOffer.tooltip")))
+                .binding(
+                        true,
+                        () -> config.fuseShotAvailableForBookOffer,
+                        newValue -> config.fuseShotAvailableForBookOffer = newValue
+                )
+                .controller(option -> BooleanControllerBuilder.create(option).yesNoFormatter().coloured(true))
+                .build();
+
+        Option<Boolean> fuseShotAvailableAsTreasure = Option.<Boolean>createBuilder()
+                .name(Text.translatable("configOption.incantationem.availableAsTreasure"))
+                .description(OptionDescription.of(Text.translatable("configOption.incantationem.availableAsTreasure.tooltip")))
+                .binding(
+                        true,
+                        () -> config.fuseShotAvailableAsTreasure,
+                        newValue -> config.fuseShotAvailableAsTreasure = newValue
+                )
+                .controller(option -> BooleanControllerBuilder.create(option).yesNoFormatter().coloured(true))
+                .build();
+
         // Forging Touch
         Option<Integer> forgingTouchMaxLevel = Option.<Integer>createBuilder()
                 .name(Text.translatable("configOption.incantationem.maxLevel"))
@@ -441,6 +531,51 @@ public class ConfigScreenEntrypoint implements ModMenuApi {
                 .controller(option -> BooleanControllerBuilder.create(option).yesNoFormatter().coloured(true))
                 .build();
 
+        // Water Slash
+        Option<Integer> waterSlashMaxLevel = Option.<Integer>createBuilder()
+                .name(Text.translatable("configOption.incantationem.maxLevel"))
+                .description(OptionDescription.of(Text.translatable("configOption.incantationem.maxLevel.tooltip")))
+                .binding(
+                        5,
+                        () -> config.waterSlashMaxLevel,
+                        newValue -> config.waterSlashMaxLevel = newValue
+                )
+                .controller(option -> IntegerFieldControllerBuilder.create(option).range(1, 10))
+                .build();
+
+        Option<Boolean> waterSlashAvailableRandomly = Option.<Boolean>createBuilder()
+                .name(Text.translatable("configOption.incantationem.availableRandomly"))
+                .description(OptionDescription.of(Text.translatable("configOption.incantationem.availableRandomly.tooltip")))
+                .binding(
+                        true,
+                        () -> config.waterSlashAvailableRandomly,
+                        newValue -> config.waterSlashAvailableRandomly = newValue
+                )
+                .controller(option -> BooleanControllerBuilder.create(option).yesNoFormatter().coloured(true))
+                .build();
+
+        Option<Boolean> waterSlashAvailableForBookOffer = Option.<Boolean>createBuilder()
+                .name(Text.translatable("configOption.incantationem.availableForBookOffer"))
+                .description(OptionDescription.of(Text.translatable("configOption.incantationem.availableForBookOffer.tooltip")))
+                .binding(
+                        true,
+                        () -> config.waterSlashAvailableForBookOffer,
+                        newValue -> config.waterSlashAvailableForBookOffer = newValue
+                )
+                .controller(option -> BooleanControllerBuilder.create(option).yesNoFormatter().coloured(true))
+                .build();
+
+        Option<Boolean> waterSlashAvailableAsTreasure = Option.<Boolean>createBuilder()
+                .name(Text.translatable("configOption.incantationem.availableAsTreasure"))
+                .description(OptionDescription.of(Text.translatable("configOption.incantationem.availableAsTreasure.tooltip")))
+                .binding(
+                        false,
+                        () -> config.waterSlashAvailableAsTreasure,
+                        newValue -> config.waterSlashAvailableAsTreasure = newValue
+                )
+                .controller(option -> BooleanControllerBuilder.create(option).yesNoFormatter().coloured(true))
+                .build();
+
         /*
          * CURSES
          */
@@ -463,6 +598,29 @@ public class ConfigScreenEntrypoint implements ModMenuApi {
                         true,
                         () -> config.recklessnessAvailableAsTreasure,
                         newValue -> config.recklessnessAvailableAsTreasure = newValue
+                )
+                .controller(option -> BooleanControllerBuilder.create(option).yesNoFormatter().coloured(true))
+                .build();
+
+        // Curse of Shrieking
+        Option<Boolean> shriekingAvailableForBookOffer = Option.<Boolean>createBuilder()
+                .name(Text.translatable("configOption.incantationem.availableForBookOffer"))
+                .description(OptionDescription.of(Text.translatable("configOption.incantationem.availableForBookOffer.tooltip")))
+                .binding(
+                        true,
+                        () -> config.shriekingAvailableForBookOffer,
+                        newValue -> config.shriekingAvailableForBookOffer = newValue
+                )
+                .controller(option -> BooleanControllerBuilder.create(option).yesNoFormatter().coloured(true))
+                .build();
+
+        Option<Boolean> shriekingAvailableAsTreasure = Option.<Boolean>createBuilder()
+                .name(Text.translatable("configOption.incantationem.availableAsTreasure"))
+                .description(OptionDescription.of(Text.translatable("configOption.incantationem.availableAsTreasure.tooltip")))
+                .binding(
+                        true,
+                        () -> config.shriekingAvailableAsTreasure,
+                        newValue -> config.shriekingAvailableAsTreasure = newValue
                 )
                 .controller(option -> BooleanControllerBuilder.create(option).yesNoFormatter().coloured(true))
                 .build();
@@ -555,6 +713,24 @@ public class ConfigScreenEntrypoint implements ModMenuApi {
                         )
                         .group(
                                 createEnchantmentGroup(
+                                        "deflection",
+                                        deflectionMaxLevel,
+                                        deflectionAvailableRandomly,
+                                        deflectionAvailableForBookOffer,
+                                        deflectionAvailableAsTreasure
+                                )
+                        )
+                        .group(
+                                createEnchantmentGroup(
+                                        "explosive",
+                                        explosiveMaxLevel,
+                                        fuseShotAvailableRandomly,
+                                        fuseShotAvailableForBookOffer,
+                                        fuseShotAvailableAsTreasure
+                                )
+                        )
+                        .group(
+                                createEnchantmentGroup(
                                         "forging_touch",
                                         forgingTouchMaxLevel,
                                         forgingTouchAvailableRandomly,
@@ -605,6 +781,15 @@ public class ConfigScreenEntrypoint implements ModMenuApi {
                                         venomousAvailableAsTreasure
                                 )
                         )
+                        .group(
+                                createEnchantmentGroup(
+                                        "water_slash",
+                                        waterSlashMaxLevel,
+                                        waterSlashAvailableRandomly,
+                                        waterSlashAvailableForBookOffer,
+                                        waterSlashAvailableAsTreasure
+                                )
+                        )
                         .build())
                 .category(ConfigCategory.createBuilder()
                         .name(Text.translatable("configCategory.incantationem.curse"))
@@ -613,6 +798,13 @@ public class ConfigScreenEntrypoint implements ModMenuApi {
                                         "recklessness",
                                         recklessnessAvailableForBookOffer,
                                         recklessnessAvailableAsTreasure
+                                )
+                        )
+                        .group(
+                                createCurseGroup(
+                                        "shrieking",
+                                        shriekingAvailableForBookOffer,
+                                        shriekingAvailableAsTreasure
                                 )
                         )
                         .group(

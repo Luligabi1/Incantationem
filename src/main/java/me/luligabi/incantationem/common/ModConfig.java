@@ -29,6 +29,18 @@ public class ModConfig {
     public boolean decayAvailableForBookOffer = true;
     public boolean decayAvailableAsTreasure = false;
 
+    // Deflection
+    public int deflectionMaxLevel = 3;
+    public boolean deflectionAvailableRandomly = true;
+    public boolean deflectionAvailableForBookOffer = true;
+    public boolean deflectionAvailableAsTreasure = false;
+
+    // Fuse Shot
+    public int fuseShotMaxLevel = 3;
+    public boolean fuseShotAvailableRandomly = false;
+    public boolean fuseShotAvailableForBookOffer = true;
+    public boolean fuseShotAvailableAsTreasure = true;
+
     // Forging Touch
     public int forgingTouchMaxLevel = 3;
     public boolean forgingTouchAvailableRandomly = true;
@@ -63,6 +75,12 @@ public class ModConfig {
     public boolean venomousAvailableForBookOffer = true;
     public boolean venomousAvailableAsTreasure = false;
 
+    // Water Slash
+    public int waterSlashMaxLevel = 5;
+    public boolean waterSlashAvailableRandomly = true;
+    public boolean waterSlashAvailableForBookOffer = true;
+    public boolean waterSlashAvailableAsTreasure = false;
+
 
     /*
      * CURSES
@@ -70,6 +88,10 @@ public class ModConfig {
     // Curse of Recklessness
     public boolean recklessnessAvailableForBookOffer = true;
     public boolean recklessnessAvailableAsTreasure = true;
+
+    // Curse of Shrieking
+    public boolean shriekingAvailableForBookOffer = true;
+    public boolean shriekingAvailableAsTreasure = true;
 
     // Curse of the Thunders
     public boolean thunderAvailableForBookOffer = true;

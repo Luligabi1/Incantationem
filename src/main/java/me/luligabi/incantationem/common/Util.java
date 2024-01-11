@@ -1,5 +1,6 @@
 package me.luligabi.incantationem.common;
 
+import me.luligabi.incantationem.common.enchantment.IncantationemEnchantment;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
@@ -8,6 +9,7 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.tag.TagKey;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Style;
 import net.minecraft.util.Formatting;
@@ -48,8 +50,16 @@ public class Util {
     }
 
 
-    public static Enchantment initEnchantment(String id, Enchantment enchantment) {
-        return Registry.register(Registries.ENCHANTMENT, Incantationem.modId(id), enchantment);
+    public static Enchantment initEnchantment(IncantationemEnchantment enchantment) {
+        return Registry.register(
+            Registries.ENCHANTMENT,
+            Incantationem.modId(enchantment.id),
+            enchantment
+        );
+    }
+
+    public static boolean isEnchantmentInTag(Enchantment enchantment, TagKey<Enchantment> tag) {
+        return Registries.ENCHANTMENT.getEntry(enchantment).isIn(tag);
     }
 
 }

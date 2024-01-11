@@ -5,21 +5,18 @@ import me.luligabi.incantationem.common.enchantment.IncantationemEnchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.EquipmentSlot;
 
-/*
- * Original idea by u/celerysatan @ https://reddit.com/r/minecraftsuggestions/comments/mzyf9q/a_curse_with_a_compromise_curse_of_recklessness/
- */
-public class RecklessnessCurse extends IncantationemEnchantment {
+public class ShriekingCurse extends IncantationemEnchantment {
 
-    public RecklessnessCurse() {
+    public ShriekingCurse() {
         super(
-            "recklessness",
+            "shrieking",
             Rarity.VERY_RARE,
-            EnchantmentTarget.DIGGER,
-            new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND},
+            EnchantmentTarget.ARMOR_FEET,
+            new EquipmentSlot[]{EquipmentSlot.FEET},
             1,
-            Incantationem.CONFIG.recklessnessAvailableForBookOffer,
+            Incantationem.CONFIG.shriekingAvailableForBookOffer,
             true,
-            Incantationem.CONFIG.recklessnessAvailableAsTreasure
+            Incantationem.CONFIG.shriekingAvailableAsTreasure
         );
     }
 
@@ -34,6 +31,7 @@ public class RecklessnessCurse extends IncantationemEnchantment {
     }
 
     @Override
-    public boolean isCursed() { return true; }
-
+    public boolean isCursed() {
+        return true;
+    }
 }
