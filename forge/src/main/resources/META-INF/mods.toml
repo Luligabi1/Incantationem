@@ -1,27 +1,27 @@
 modLoader="javafml"
 loaderVersion="[2,)"
 license="Apache 2.0"
-issueTrackerURL="https://github.com/Luligabi1/FuelInfo/issues"
+issueTrackerURL="https://github.com/Luligabi1/Incantationem/issues"
 [[mods]] 
-   modId="fuelinfo"
+   modId="incantationem"
    version="${version}"
-   displayName="FuelInfo"
-   displayURL="https://www.curseforge.com/minecraft/mc-mods/fuel-info"
+   displayName="Incantationem"
+   displayURL="https://www.curseforge.com/minecraft/mc-mods/incantationem"
    logoFile="icon.png"
    authors="Luligabi1"
-   credits="With translations by EvanHsieh0415, Rad233, JonnyBro and Calvineries."
-   description="Extra info on your fuels whenever you're smelting stuff."
+   credits="dummy"
+   description="dummy"
 [[mixins]]
-   config="fuelinfo-common.mixins.json"
-[[dependencies.fuelinfo]]
+   config="incantationem-common.mixins.json"
+[[dependencies.incantationem]]
    modId="neoforge"
    type="required"
    versionRange="[20.4,)"
    ordering="NONE"
-   side="CLIENT"
-[[dependencies.fuelinfo]]
+   side="BOTH"
+[[dependencies.incantationem]]
    modId="minecraft"
    type="required"
    versionRange="[1.20.4,1.21)"
    ordering="NONE"
-   side="CLIENT"
+   side="BOTH"

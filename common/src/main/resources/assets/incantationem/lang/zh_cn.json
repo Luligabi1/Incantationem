@@ -1,0 +1,60 @@
+{
+  "enchantment.incantationem.bunnys_hop": "兔跳",
+  "enchantment.incantationem.swine_bane": "猪类杀手",
+  "enchantment.incantationem.charmed": "庇佑",
+  "enchantment.incantationem.decay": "破败",
+  "enchantment.incantationem.forging_touch": "煅烧之触",
+  "enchantment.incantationem.last_stand": "背水一战",
+  "enchantment.incantationem.magnetic": "磁性",
+  "enchantment.incantationem.reaping_rod": "收割之竿",
+  "enchantment.incantationem.retreat": "撤退",
+  "enchantment.incantationem.venomous": "淬毒",
+
+  "enchantment.incantationem.recklessness": "鲁莽诅咒",
+  "enchantment.incantationem.thunder": "引雷诅咒",
+  "enchantment.incantationem.tough_luck": "不幸诅咒",
+
+
+  "message.incantationem.decay.applied": "*已施加破败效果！*",
+  "message.incantationem.forging_touch.applied": "*已施加煅烧之触效果！*",
+  "message.incantationem.last_stand.applied": "*已施加背水一战效果！*",
+  "message.incantationem.reaping_rod.applied":"*已施加收割之竿效果！*",
+  "message.incantationem.retreat.applied": "*已施加撤退效果！*",
+  "message.incantationem.venomous.applied": "*已施加淬毒效果！*",
+
+  "message.incantationem.thunder.applied": "*引雷诅咒出现了！:(*",
+
+  "enchantment.incantationem.bunnys_hop.desc": "站在泥土/草方块类方块上提供跳跃提升效果。",
+  "enchantment.incantationem.swine_bane.desc": "提高对猪类生物的伤害，例如猪，猪灵，疣猪兽等。",
+  "enchantment.incantationem.charmed.desc": "提高获得高质量战利品的概率和触发本模组增益效果的概率，降低本模组诅咒触发的概率",
+  "enchantment.incantationem.decay.desc": "攻击有一定概率造成凋零效果。",
+  "enchantment.incantationem.forging_touch.desc": "破坏方块有一定几率掉落其烧制后的产物。（比如：沙子->玻璃）",
+  "enchantment.incantationem.last_stand.desc": "低生命值时受到攻击有概率获得力量效果。",
+  "enchantment.incantationem.magnetic.desc": "吸引玩家周围的物品和经验球。",
+  "enchantment.incantationem.reaping_rod.desc": "用鱼竿类物品击杀敌对生物时给予类似附魔金苹果的效果。",
+  "enchantment.incantationem.retreat.desc": "受到攻击时有概率获得速度效果。",
+  "enchantment.incantationem.venomous.desc": "有概率对敌人施加中毒效果。",
+
+
+  "enchantment.incantationem.recklessness.desc": "破坏方块没有掉落物。",
+  "enchantment.incantationem.thunder.desc": "受攻击时有概率雷击使用者。",
+  "enchantment.incantationem.tough_luck.desc": "使用时给予永久霉运效果，降低幸运值相关事件判定成功的概率。",
+  
+
+  "configcategory.incantationem.enchantment": "附魔",
+  "configCategory.incantationem.curse": "诅咒",
+
+  "configOption.incantationem.maxLevel": "最大等级",
+  "configOption.incantationem.maxLevel.tooltip": "最大等级指该附魔一般情况下可以达到的最大值",
+
+  "configOption.incantationem.availableRandomly": "允许随机得到吗？",
+  "configOption.incantationem.availableRandomly.tooltip": "允许该附魔通过附魔台附魔、在低等级的战利品箱子中搜刮得到",
+
+  "configOption.incantationem.availableForBookOffer": "允许村民交易得到吗？",
+  "configOption.incantationem.availableForBookOffer.tooltip": "允许该附魔出现在村民交易中",
+
+  "configOption.incantationem.availableAsTreasure": "允许作为宝藏附魔出现吗？",
+  "configOption.incantationem.availableAsTreasure.tooltip": "允许该附魔出现在非常高层级的战利品箱子中"
+
+
+}

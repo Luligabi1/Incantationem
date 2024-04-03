@@ -1,0 +1,39 @@
+package me.luligabi.incantationem.common.common;
+
+import com.google.common.base.Supplier;
+import com.google.common.base.Suppliers;
+import dev.architectury.registry.registries.Registrar;
+import dev.architectury.registry.registries.RegistrarManager;
+import me.luligabi.incantationem.common.common.enchantment.EnchantmentRegistry;
+import me.luligabi.incantationem.common.common.enchantment.curse.CurseRegistry;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.MobType;
+import net.minecraft.world.item.enchantment.Enchantment;
+
+public class Incantationem {
+
+	public static void init() {
+		CurseRegistry.init();
+		EnchantmentRegistry.init();
+	}
+
+
+	public static final MobType SWINE = new MobType();
+	public static final MobType VULNERABLE_TO_WATER = new MobType();
+
+	public static final ModConfig CONFIG = new ModConfig(); // FIXME readd config
+
+	public static ResourceLocation modId(String id) {
+		return new ResourceLocation(MOD_ID, id);
+	}
+	public static final String MOD_ID = "incantationem";
+
+	public static final Registrar<Enchantment> ENCHANTMENTS;
+	private static final Supplier<RegistrarManager> MANAGER;
+
+	static {
+		MANAGER = Suppliers.memoize(() -> RegistrarManager.get(Incantationem.MOD_ID));
+		ENCHANTMENTS = Incantationem.MANAGER.get().get(Registries.ENCHANTMENT);
+	}
+}
