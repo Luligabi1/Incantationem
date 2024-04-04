@@ -15,7 +15,6 @@ public class ShriekingCurse extends IncantationemEnchantment {
             Rarity.VERY_RARE,
             EnchantmentCategory.ARMOR_FEET,
             new EquipmentSlot[]{EquipmentSlot.FEET},
-            1,
             Incantationem.CONFIG.shriekingAvailableForBookOffer,
             true,
             Incantationem.CONFIG.shriekingAvailableAsTreasure
