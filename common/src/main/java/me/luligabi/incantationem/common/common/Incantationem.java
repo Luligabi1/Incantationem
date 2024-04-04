@@ -2,12 +2,15 @@ package me.luligabi.incantationem.common.common;
 
 import com.google.common.base.Supplier;
 import com.google.common.base.Suppliers;
+import dev.architectury.event.events.common.CommandRegistrationEvent;
+import dev.architectury.platform.Platform;
 import dev.architectury.registry.registries.Registrar;
 import dev.architectury.registry.registries.RegistrarManager;
 import me.luligabi.incantationem.common.common.enchantment.EnchantmentRegistry;
 import me.luligabi.incantationem.common.common.enchantment.curse.CurseRegistry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.commands.WardenSpawnTrackerCommand;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.item.enchantment.Enchantment;
 
@@ -16,6 +19,12 @@ public class Incantationem {
 	public static void init() {
 		CurseRegistry.init();
 		EnchantmentRegistry.init();
+
+		if(Platform.isDevelopmentEnvironment()) {
+			CommandRegistrationEvent.EVENT.register((dispatcher, registry, selection) -> {
+				WardenSpawnTrackerCommand.register(dispatcher);
+			});
+		}
 	}
 
 
