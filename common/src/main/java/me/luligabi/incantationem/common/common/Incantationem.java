@@ -31,7 +31,7 @@ public class Incantationem {
 	public static final MobType SWINE = new MobType();
 	public static final MobType VULNERABLE_TO_WATER = new MobType();
 
-	public static final ModConfig CONFIG = new ModConfig(); // FIXME readd config
+	public static final ModConfig CONFIG;
 
 	public static ResourceLocation modId(String id) {
 		return new ResourceLocation(MOD_ID, id);
@@ -44,5 +44,8 @@ public class Incantationem {
 	static {
 		MANAGER = Suppliers.memoize(() -> RegistrarManager.get(Incantationem.MOD_ID));
 		ENCHANTMENTS = Incantationem.MANAGER.get().get(Registries.ENCHANTMENT);
+
+		ModConfig.HANDLER.load();
+		CONFIG = ModConfig.HANDLER.instance();
 	}
 }

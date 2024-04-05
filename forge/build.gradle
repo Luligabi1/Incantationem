@@ -8,19 +8,29 @@ architectury {
 
 configurations {
     common
-    shadowCommon // Don't use shadow from the shadow plugin since it *excludes* files.
+    shadowCommon
     compileClasspath.extendsFrom common
     runtimeClasspath.extendsFrom common
     developmentNeoForge.extendsFrom common
 }
 
+/*repositories {
+    maven { url "https://maven.isxander.dev/releases" }
+    maven { url "https://maven.quiltmc.org/repository/release/" }
+    maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+}*/
+
 dependencies {
-    neoForge "net.neoforged:neoforge:${rootProject.neoforge_version}"
-
-    modApi "dev.architectury:architectury-neoforge:${rootProject.architectury_version}"
-
+    neoForge("net.neoforged:neoforge:${rootProject.neoforge_version}")
+    modApi("dev.architectury:architectury-neoforge:${rootProject.architectury_version}")
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
-    shadowCommon(project(path: ":common", configuration: "transformProductionNeoForge")) { transitive = false }
+    shadowCommon(project(path: ":common", configuration: "transformProductionNeoForge")) { transitive false }
+
+    modImplementation("dev.isxander.yacl:yet-another-config-lib-neoforge:${rootProject.yacl_version}") { transitive false }
+    include("dev.isxander.yacl:yet-another-config-lib-neoforge:${rootProject.yacl_version}")
+
+    forgeRuntimeLibrary("org.quiltmc.parsers:json:0.2.1")
+    forgeRuntimeLibrary("org.quiltmc.parsers:gson:0.2.1")
 }
 
 processResources {

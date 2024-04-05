@@ -19,6 +19,9 @@
   "entrypoints": {
     "main": [
       "me.luligabi.incantationem.fabric.common.IncantationemFabric"
+    ],
+    "modmenu": [
+      "me.luligabi.incantationem.fabric.client.ConfigScreenEntrypoint"
     ]
   },
   "mixins": [

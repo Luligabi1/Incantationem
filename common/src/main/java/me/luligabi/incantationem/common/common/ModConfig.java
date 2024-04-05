@@ -1,103 +1,116 @@
 package me.luligabi.incantationem.common.common;
 
+import dev.architectury.platform.Platform;
+import dev.isxander.yacl3.config.v2.api.ConfigClassHandler;
+import dev.isxander.yacl3.config.v2.api.SerialEntry;
+import dev.isxander.yacl3.config.v2.api.serializer.GsonConfigSerializerBuilder;
+
 public class ModConfig {
+
+    public static final ConfigClassHandler<ModConfig> HANDLER = ConfigClassHandler.createBuilder(ModConfig.class)
+        .id(Incantationem.modId("config"))
+        .serializer(config -> GsonConfigSerializerBuilder.create(config)
+            .setPath(Platform.getConfigFolder().resolve("incantationem.json5"))
+            .setJson5(true)
+            .build())
+        .build();
 
     /*
      * ENCHANTMENTS
      */
     // Bane of The Swine
-    public int baneOfTheSwineMaxLevel = 5;
-    public boolean baneOfTheSwineAvailableRandomly = true;
-    public boolean baneOfTheSwineAvailableForBookOffer = true;
-    public boolean baneOfTheSwineAvailableAsTreasure = false;
+    @SerialEntry public int baneOfTheSwineMaxLevel = 5;
+    @SerialEntry public boolean baneOfTheSwineAvailableRandomly = true;
+    @SerialEntry public boolean baneOfTheSwineAvailableForBookOffer = true;
+    @SerialEntry public boolean baneOfTheSwineAvailableAsTreasure = false;
 
     // Bunny's Hop
-    public int bunnysHopMaxLevel = 3;
-    public boolean bunnysHopAvailableRandomly = true;
-    public boolean bunnysHopAvailableForBookOffer = true;
-    public boolean bunnysHopAvailableAsTreasure = false;
+    @SerialEntry public int bunnysHopMaxLevel = 3;
+    @SerialEntry public boolean bunnysHopAvailableRandomly = true;
+    @SerialEntry public boolean bunnysHopAvailableForBookOffer = true;
+    @SerialEntry public boolean bunnysHopAvailableAsTreasure = false;
 
     // Charmed
-    public boolean charmedAvailableRandomly = true;
-    public boolean charmedAvailableForBookOffer = true;
-    public boolean charmedAvailableAsTreasure = false;
+    @SerialEntry public boolean charmedAvailableRandomly = true;
+    @SerialEntry public boolean charmedAvailableForBookOffer = true;
+    @SerialEntry public boolean charmedAvailableAsTreasure = false;
 
     // Decay
-    public int decayMaxLevel = 3;
-    public boolean decayAvailableRandomly = true;
-    public boolean decayAvailableForBookOffer = true;
-    public boolean decayAvailableAsTreasure = false;
+    @SerialEntry public int decayMaxLevel = 3;
+    @SerialEntry public boolean decayAvailableRandomly = true;
+    @SerialEntry public boolean decayAvailableForBookOffer = true;
+    @SerialEntry public boolean decayAvailableAsTreasure = false;
 
     // Deflection
-    public int deflectionMaxLevel = 3;
-    public boolean deflectionAvailableRandomly = true;
-    public boolean deflectionAvailableForBookOffer = true;
-    public boolean deflectionAvailableAsTreasure = false;
+    @SerialEntry public int deflectionMaxLevel = 3;
+    @SerialEntry public boolean deflectionAvailableRandomly = true;
+    @SerialEntry public boolean deflectionAvailableForBookOffer = true;
+    @SerialEntry public boolean deflectionAvailableAsTreasure = false;
 
     // Fuse Shot
-    public int fuseShotMaxLevel = 3;
-    public boolean fuseShotAvailableRandomly = false;
-    public boolean fuseShotAvailableForBookOffer = true;
-    public boolean fuseShotAvailableAsTreasure = true;
+    @SerialEntry public int fuseShotMaxLevel = 3;
+    @SerialEntry public boolean fuseShotAvailableRandomly = false;
+    @SerialEntry public boolean fuseShotAvailableForBookOffer = true;
+    @SerialEntry public boolean fuseShotAvailableAsTreasure = true;
 
     // Forging Touch
-    public int forgingTouchMaxLevel = 3;
-    public boolean forgingTouchAvailableRandomly = true;
-    public boolean forgingTouchAvailableForBookOffer = true;
-    public boolean forgingTouchAvailableAsTreasure = true;
+    @SerialEntry public int forgingTouchMaxLevel = 3;
+    @SerialEntry public boolean forgingTouchAvailableRandomly = true;
+    @SerialEntry public boolean forgingTouchAvailableForBookOffer = true;
+    @SerialEntry public boolean forgingTouchAvailableAsTreasure = true;
 
     // Last Stand
-    public int lastStandMaxLevel = 3;
-    public boolean lastStandAvailableRandomly = true;
-    public boolean lastStandAvailableForBookOffer = true;
-    public boolean lastStandAvailableAsTreasure = false;
+    @SerialEntry public int lastStandMaxLevel = 3;
+    @SerialEntry public boolean lastStandAvailableRandomly = true;
+    @SerialEntry public boolean lastStandAvailableForBookOffer = true;
+    @SerialEntry public boolean lastStandAvailableAsTreasure = false;
 
     // Magnetic
-    public int magneticMaxLevel = 3;
-    public boolean magneticAvailableRandomly = true;
-    public boolean magneticAvailableForBookOffer = true;
-    public boolean magneticAvailableAsTreasure = false;
+    @SerialEntry public int magneticMaxLevel = 3;
+    @SerialEntry public boolean magneticAvailableRandomly = true;
+    @SerialEntry public boolean magneticAvailableForBookOffer = true;
+    @SerialEntry public boolean magneticAvailableAsTreasure = false;
 
     // Reaping Rod
-    public boolean reapingRodAvailableRandomly = true;
-    public boolean reapingRodAvailableForBookOffer = true;
-    public boolean reapingRodAvailableAsTreasure = false;
+    @SerialEntry public boolean reapingRodAvailableRandomly = true;
+    @SerialEntry public boolean reapingRodAvailableForBookOffer = true;
+    @SerialEntry public boolean reapingRodAvailableAsTreasure = false;
 
     // Retreat
-    public boolean retreatAvailableRandomly = true;
-    public boolean retreatAvailableForBookOffer = true;
-    public boolean retreatAvailableAsTreasure = false;
+    @SerialEntry public boolean retreatAvailableRandomly = true;
+    @SerialEntry public boolean retreatAvailableForBookOffer = true;
+    @SerialEntry public boolean retreatAvailableAsTreasure = false;
 
     // Venomous
-    public int venomousMaxLevel = 3;
-    public boolean venomousAvailableRandomly = true;
-    public boolean venomousAvailableForBookOffer = true;
-    public boolean venomousAvailableAsTreasure = false;
+    @SerialEntry public int venomousMaxLevel = 3;
+    @SerialEntry public boolean venomousAvailableRandomly = true;
+    @SerialEntry public boolean venomousAvailableForBookOffer = true;
+    @SerialEntry public boolean venomousAvailableAsTreasure = false;
 
     // Water Slash
-    public int waterSlashMaxLevel = 5;
-    public boolean waterSlashAvailableRandomly = true;
-    public boolean waterSlashAvailableForBookOffer = true;
-    public boolean waterSlashAvailableAsTreasure = false;
+    @SerialEntry public int waterSlashMaxLevel = 5;
+    @SerialEntry public boolean waterSlashAvailableRandomly = true;
+    @SerialEntry public boolean waterSlashAvailableForBookOffer = true;
+    @SerialEntry public boolean waterSlashAvailableAsTreasure = false;
 
 
     /*
      * CURSES
      */
     // Curse of Recklessness
-    public boolean recklessnessAvailableForBookOffer = true;
-    public boolean recklessnessAvailableAsTreasure = true;
+    @SerialEntry public boolean recklessnessAvailableForBookOffer = true;
+    @SerialEntry public boolean recklessnessAvailableAsTreasure = true;
 
     // Curse of Shrieking
-    public boolean shriekingAvailableForBookOffer = true;
-    public boolean shriekingAvailableAsTreasure = true;
+    @SerialEntry public boolean shriekingAvailableForBookOffer = true;
+    @SerialEntry public boolean shriekingAvailableAsTreasure = true;
 
     // Curse of the Thunders
-    public boolean thunderAvailableForBookOffer = true;
-    public boolean thunderAvailableAsTreasure = true;
+    @SerialEntry public boolean thunderAvailableForBookOffer = true;
+    @SerialEntry public boolean thunderAvailableAsTreasure = true;
 
     // Curse of Tough Luck
-    public boolean toughLuckAvailableForBookOffer = true;
-    public boolean toughLuckAvailableAsTreasure = true;
+    @SerialEntry public boolean toughLuckAvailableForBookOffer = true;
+    @SerialEntry public boolean toughLuckAvailableAsTreasure = true;
 
 }
