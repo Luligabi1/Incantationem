@@ -18,9 +18,9 @@ public class RetreatEnchantment extends IncantationemEnchantment {
             Rarity.UNCOMMON,
             EnchantmentCategory.ARMOR_LEGS,
             new EquipmentSlot[]{EquipmentSlot.LEGS},
-            Incantationem.CONFIG.retreatAvailableForBookOffer,
-            Incantationem.CONFIG.retreatAvailableRandomly,
-            Incantationem.CONFIG.retreatAvailableAsTreasure
+            Incantationem.CONFIG.enchantments.retreat.availableForBookOffer,
+            Incantationem.CONFIG.enchantments.retreat.availableRandomly,
+            Incantationem.CONFIG.enchantments.retreat.availableAsTreasure
         );
     }
 

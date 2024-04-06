@@ -18,10 +18,10 @@ public class VenomousEnchantment extends IncantationemEnchantment {
             Enchantment.Rarity.RARE,
             EnchantmentCategory.BOW,
             new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND},
-            Incantationem.CONFIG.venomousMaxLevel,
-            Incantationem.CONFIG.venomousAvailableForBookOffer,
-            Incantationem.CONFIG.venomousAvailableRandomly,
-            Incantationem.CONFIG.venomousAvailableAsTreasure
+            Incantationem.CONFIG.enchantments.venomous.maxLevel,
+            Incantationem.CONFIG.enchantments.venomous.availableForBookOffer,
+            Incantationem.CONFIG.enchantments.venomous.availableRandomly,
+            Incantationem.CONFIG.enchantments.venomous.availableAsTreasure
         );
     }
 

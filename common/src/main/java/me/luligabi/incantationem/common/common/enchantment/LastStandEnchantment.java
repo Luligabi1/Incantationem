@@ -19,10 +19,10 @@ public class LastStandEnchantment extends IncantationemEnchantment {
             Rarity.RARE,
             EnchantmentCategory.ARMOR_CHEST,
             new EquipmentSlot[]{EquipmentSlot.CHEST},
-            Incantationem.CONFIG.lastStandMaxLevel,
-            Incantationem.CONFIG.lastStandAvailableForBookOffer,
-            Incantationem.CONFIG.lastStandAvailableRandomly,
-            Incantationem.CONFIG.lastStandAvailableAsTreasure
+            Incantationem.CONFIG.enchantments.lastStand.maxLevel,
+            Incantationem.CONFIG.enchantments.lastStand.availableForBookOffer,
+            Incantationem.CONFIG.enchantments.lastStand.availableRandomly,
+            Incantationem.CONFIG.enchantments.lastStand.availableAsTreasure
         );
     }
 

@@ -19,9 +19,9 @@ public class ReapingRodEnchantment extends IncantationemEnchantment {
             Rarity.VERY_RARE,
             EnchantmentCategory.FISHING_ROD,
             new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND},
-            Incantationem.CONFIG.reapingRodAvailableForBookOffer,
-            Incantationem.CONFIG.reapingRodAvailableRandomly,
-            Incantationem.CONFIG.reapingRodAvailableAsTreasure
+            Incantationem.CONFIG.enchantments.reapingRod.availableForBookOffer,
+            Incantationem.CONFIG.enchantments.reapingRod.availableRandomly,
+            Incantationem.CONFIG.enchantments.reapingRod.availableAsTreasure
         );
     }
 

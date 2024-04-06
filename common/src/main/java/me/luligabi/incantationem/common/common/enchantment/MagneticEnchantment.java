@@ -21,10 +21,10 @@ public class MagneticEnchantment extends IncantationemEnchantment {
             Rarity.VERY_RARE,
             EnchantmentCategory.ARMOR_LEGS,
             new EquipmentSlot[]{EquipmentSlot.LEGS},
-            Incantationem.CONFIG.magneticMaxLevel,
-            Incantationem.CONFIG.magneticAvailableForBookOffer,
-            Incantationem.CONFIG.magneticAvailableRandomly,
-            Incantationem.CONFIG.magneticAvailableAsTreasure
+            Incantationem.CONFIG.enchantments.magnetic.maxLevel,
+            Incantationem.CONFIG.enchantments.magnetic.availableForBookOffer,
+            Incantationem.CONFIG.enchantments.magnetic.availableRandomly,
+            Incantationem.CONFIG.enchantments.magnetic.availableAsTreasure
         );
     }
 

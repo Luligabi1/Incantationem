@@ -21,9 +21,9 @@ public class RecklessnessCurse extends IncantationemEnchantment {
             Rarity.VERY_RARE,
             EnchantmentCategory.DIGGER,
             new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND},
-            Incantationem.CONFIG.recklessnessAvailableForBookOffer,
+            Incantationem.CONFIG.curses.recklessness.availableForBookOffer,
             true,
-            Incantationem.CONFIG.recklessnessAvailableAsTreasure
+            Incantationem.CONFIG.curses.recklessness.availableAsTreasure
         );
     }
 

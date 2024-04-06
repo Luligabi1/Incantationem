@@ -18,10 +18,10 @@ public class DecayEnchantment extends IncantationemEnchantment {
             Rarity.RARE,
             EnchantmentCategory.WEAPON,
             new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND},
-            Incantationem.CONFIG.decayMaxLevel,
-            Incantationem.CONFIG.decayAvailableForBookOffer,
-            Incantationem.CONFIG.decayAvailableRandomly,
-            Incantationem.CONFIG.decayAvailableAsTreasure
+            Incantationem.CONFIG.enchantments.decay.maxLevel,
+            Incantationem.CONFIG.enchantments.decay.availableForBookOffer,
+            Incantationem.CONFIG.enchantments.decay.availableRandomly,
+            Incantationem.CONFIG.enchantments.decay.availableAsTreasure
         );
     }
 

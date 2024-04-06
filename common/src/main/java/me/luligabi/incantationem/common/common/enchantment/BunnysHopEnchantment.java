@@ -2,7 +2,6 @@ package me.luligabi.incantationem.common.common.enchantment;
 
 import me.luligabi.incantationem.common.common.Incantationem;
 import me.luligabi.incantationem.common.common.Util;
-import me.luligabi.incantationem.common.common.enchantment.IncantationemEnchantment;
 import me.luligabi.incantationem.common.mixin.EntityInvoker;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.effect.MobEffects;
@@ -19,10 +18,10 @@ public class BunnysHopEnchantment extends IncantationemEnchantment {
             Rarity.UNCOMMON,
             EnchantmentCategory.ARMOR_FEET,
             new EquipmentSlot[]{EquipmentSlot.FEET},
-            Incantationem.CONFIG.bunnysHopMaxLevel,
-            Incantationem.CONFIG.bunnysHopAvailableForBookOffer,
-            Incantationem.CONFIG.bunnysHopAvailableRandomly,
-            Incantationem.CONFIG.bunnysHopAvailableAsTreasure
+            Incantationem.CONFIG.enchantments.bunnysHop.maxLevel,
+            Incantationem.CONFIG.enchantments.bunnysHop.availableForBookOffer,
+            Incantationem.CONFIG.enchantments.bunnysHop.availableRandomly,
+            Incantationem.CONFIG.enchantments.bunnysHop.availableAsTreasure
         );
     }
 

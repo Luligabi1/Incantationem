@@ -27,10 +27,10 @@ public class ForgingTouchEnchantment extends IncantationemEnchantment {
             Rarity.RARE,
             EnchantmentCategory.DIGGER,
             new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND},
-            Incantationem.CONFIG.forgingTouchMaxLevel,
-            Incantationem.CONFIG.forgingTouchAvailableForBookOffer,
-            Incantationem.CONFIG.forgingTouchAvailableRandomly,
-            Incantationem.CONFIG.forgingTouchAvailableAsTreasure
+            Incantationem.CONFIG.enchantments.forgingTouch.maxLevel,
+            Incantationem.CONFIG.enchantments.forgingTouch.availableForBookOffer,
+            Incantationem.CONFIG.enchantments.forgingTouch.availableRandomly,
+            Incantationem.CONFIG.enchantments.forgingTouch.availableAsTreasure
         );
     }
 

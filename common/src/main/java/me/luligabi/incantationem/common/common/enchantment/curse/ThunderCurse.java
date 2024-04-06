@@ -17,9 +17,9 @@ public class ThunderCurse extends IncantationemEnchantment {
             Rarity.VERY_RARE,
             EnchantmentCategory.ARMOR_HEAD,
             new EquipmentSlot[]{EquipmentSlot.HEAD},
-            Incantationem.CONFIG.thunderAvailableForBookOffer,
+            Incantationem.CONFIG.curses.thunder.availableForBookOffer,
             true,
-            Incantationem.CONFIG.thunderAvailableAsTreasure
+            Incantationem.CONFIG.curses.thunder.availableAsTreasure
         );
     }
 

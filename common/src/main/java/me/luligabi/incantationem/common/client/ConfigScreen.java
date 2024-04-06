@@ -21,32 +21,32 @@ public class ConfigScreen {
         Option<Integer> baneOfTheSwineMaxLevel = maxLevel()
             .binding(
                 5,
-                () -> config.baneOfTheSwineMaxLevel,
-                newValue -> config.baneOfTheSwineMaxLevel = newValue
+                () -> config.enchantments.baneOfTheSwine.maxLevel,
+                newValue -> config.enchantments.baneOfTheSwine.maxLevel = newValue
             )
             .build();
 
         Option<Boolean> baneOfTheSwineAvailableRandomly = availableRandomly()
             .binding(
                 true,
-                () -> config.baneOfTheSwineAvailableRandomly,
-                newValue -> config.baneOfTheSwineAvailableRandomly = newValue
+                () -> config.enchantments.baneOfTheSwine.availableRandomly,
+                newValue -> config.enchantments.baneOfTheSwine.availableRandomly = newValue
             )
             .build();
 
         Option<Boolean> baneOfTheSwineAvailableForBookOffer = availableForBookOffer()
             .binding(
                 true,
-                () -> config.baneOfTheSwineAvailableForBookOffer,
-                newValue -> config.baneOfTheSwineAvailableForBookOffer = newValue
+                () -> config.enchantments.baneOfTheSwine.availableForBookOffer,
+                newValue -> config.enchantments.baneOfTheSwine.availableForBookOffer = newValue
             )
             .build();
 
         Option<Boolean> baneOfTheSwineAvailableAsTreasure = availableAsTreasure()
             .binding(
                 false,
-                () -> config.baneOfTheSwineAvailableAsTreasure,
-                newValue -> config.baneOfTheSwineAvailableAsTreasure = newValue
+                () -> config.enchantments.baneOfTheSwine.availableAsTreasure,
+                newValue -> config.enchantments.baneOfTheSwine.availableAsTreasure = newValue
             )
             .build();
 
@@ -54,32 +54,32 @@ public class ConfigScreen {
         Option<Integer> bunnysHopMaxLevel = maxLevel()
             .binding(
                 3,
-                () -> config.bunnysHopMaxLevel,
-                newValue -> config.bunnysHopMaxLevel = newValue
+                () -> config.enchantments.bunnysHop.maxLevel,
+                newValue -> config.enchantments.bunnysHop.maxLevel = newValue
             )
             .build();
 
         Option<Boolean> bunnysHopAvailableRandomly = availableRandomly()
             .binding(
                 true,
-                () -> config.bunnysHopAvailableRandomly,
-                newValue -> config.bunnysHopAvailableRandomly = newValue
+                () -> config.enchantments.bunnysHop.availableRandomly,
+                newValue -> config.enchantments.bunnysHop.availableRandomly = newValue
             )
             .build();
 
         Option<Boolean> bunnysHopAvailableForBookOffer = availableForBookOffer()
             .binding(
                 true,
-                () -> config.bunnysHopAvailableForBookOffer,
-                newValue -> config.bunnysHopAvailableForBookOffer = newValue
+                () -> config.enchantments.bunnysHop.availableForBookOffer,
+                newValue -> config.enchantments.bunnysHop.availableForBookOffer = newValue
             )
             .build();
 
         Option<Boolean> bunnysHopAvailableAsTreasure = availableAsTreasure()
             .binding(
                 false,
-                () -> config.bunnysHopAvailableAsTreasure,
-                newValue -> config.bunnysHopAvailableAsTreasure = newValue
+                () -> config.enchantments.bunnysHop.availableAsTreasure,
+                newValue -> config.enchantments.bunnysHop.availableAsTreasure = newValue
             )
             .build();
 
@@ -87,24 +87,24 @@ public class ConfigScreen {
         Option<Boolean> charmedAvailableRandomly = availableRandomly()
             .binding(
                 true,
-                () -> config.charmedAvailableRandomly,
-                newValue -> config.charmedAvailableRandomly = newValue
+                () -> config.enchantments.charmed.availableRandomly,
+                newValue -> config.enchantments.charmed.availableRandomly = newValue
             )
             .build();
 
         Option<Boolean> charmedAvailableForBookOffer = availableForBookOffer()
             .binding(
                 true,
-                () -> config.charmedAvailableForBookOffer,
-                newValue -> config.charmedAvailableForBookOffer = newValue
+                () -> config.enchantments.charmed.availableForBookOffer,
+                newValue -> config.enchantments.charmed.availableForBookOffer = newValue
             )
             .build();
 
         Option<Boolean> charmedAvailableAsTreasure = availableAsTreasure()
             .binding(
                 false,
-                () -> config.charmedAvailableAsTreasure,
-                newValue -> config.charmedAvailableAsTreasure = newValue
+                () -> config.enchantments.charmed.availableAsTreasure,
+                newValue -> config.enchantments.charmed.availableAsTreasure = newValue
             )
             .build();
 
@@ -112,32 +112,32 @@ public class ConfigScreen {
         Option<Integer> decayMaxLevel = maxLevel()
             .binding(
                 3,
-                () -> config.decayMaxLevel,
-                newValue -> config.decayMaxLevel = newValue
+                () -> config.enchantments.decay.maxLevel,
+                newValue -> config.enchantments.decay.maxLevel = newValue
             )
             .build();
 
         Option<Boolean> decayAvailableRandomly = availableRandomly()
             .binding(
                 true,
-                () -> config.decayAvailableRandomly,
-                newValue -> config.decayAvailableRandomly = newValue
+                () -> config.enchantments.decay.availableRandomly,
+                newValue -> config.enchantments.decay.availableRandomly = newValue
             )
             .build();
 
         Option<Boolean> decayAvailableForBookOffer = availableForBookOffer()
             .binding(
                 true,
-                () -> config.decayAvailableForBookOffer,
-                newValue -> config.decayAvailableForBookOffer = newValue
+                () -> config.enchantments.decay.availableForBookOffer,
+                newValue -> config.enchantments.decay.availableForBookOffer = newValue
             )
             .build();
 
         Option<Boolean> decayAvailableAsTreasure = availableAsTreasure()
             .binding(
                 false,
-                () -> config.decayAvailableAsTreasure,
-                newValue -> config.decayAvailableAsTreasure = newValue
+                () -> config.enchantments.decay.availableAsTreasure,
+                newValue -> config.enchantments.decay.availableAsTreasure = newValue
             )
             .build();
 
@@ -145,32 +145,32 @@ public class ConfigScreen {
         Option<Integer> deflectionMaxLevel = maxLevel()
             .binding(
                 3,
-                () -> config.deflectionMaxLevel,
-                newValue -> config.deflectionMaxLevel = newValue
+                () -> config.enchantments.deflection.maxLevel,
+                newValue -> config.enchantments.deflection.maxLevel = newValue
             )
             .build();
 
         Option<Boolean> deflectionAvailableRandomly = availableRandomly()
             .binding(
                 true,
-                () -> config.deflectionAvailableRandomly,
-                newValue -> config.deflectionAvailableRandomly = newValue
+                () -> config.enchantments.deflection.availableRandomly,
+                newValue -> config.enchantments.deflection.availableRandomly = newValue
             )
             .build();
 
         Option<Boolean> deflectionAvailableForBookOffer = availableForBookOffer()
             .binding(
                 true,
-                () -> config.deflectionAvailableForBookOffer,
-                newValue -> config.deflectionAvailableForBookOffer = newValue
+                () -> config.enchantments.deflection.availableForBookOffer,
+                newValue -> config.enchantments.deflection.availableForBookOffer = newValue
             )
             .build();
 
         Option<Boolean> deflectionAvailableAsTreasure = availableAsTreasure()
             .binding(
                 false,
-                () -> config.deflectionAvailableAsTreasure,
-                newValue -> config.deflectionAvailableAsTreasure = newValue
+                () -> config.enchantments.deflection.availableAsTreasure,
+                newValue -> config.enchantments.deflection.availableAsTreasure = newValue
             )
             .build();
 
@@ -178,32 +178,32 @@ public class ConfigScreen {
         Option<Integer> fuseShotMaxLevel = maxLevel()
             .binding(
                 3,
-                () -> config.fuseShotMaxLevel,
-                newValue -> config.fuseShotMaxLevel = newValue
+                () -> config.enchantments.fuseShot.maxLevel,
+                newValue -> config.enchantments.fuseShot.maxLevel = newValue
             )
             .build();
 
         Option<Boolean> fuseShotAvailableRandomly = availableRandomly()
             .binding(
                 false,
-                () -> config.fuseShotAvailableRandomly,
-                newValue -> config.fuseShotAvailableRandomly = newValue
+                () -> config.enchantments.fuseShot.availableRandomly,
+                newValue -> config.enchantments.fuseShot.availableRandomly = newValue
             )
             .build();
 
         Option<Boolean> fuseShotAvailableForBookOffer = availableForBookOffer()
             .binding(
                 true,
-                () -> config.fuseShotAvailableForBookOffer,
-                newValue -> config.fuseShotAvailableForBookOffer = newValue
+                () -> config.enchantments.fuseShot.availableForBookOffer,
+                newValue -> config.enchantments.fuseShot.availableForBookOffer = newValue
             )
             .build();
 
         Option<Boolean> fuseShotAvailableAsTreasure = availableAsTreasure()
             .binding(
                 true,
-                () -> config.fuseShotAvailableAsTreasure,
-                newValue -> config.fuseShotAvailableAsTreasure = newValue
+                () -> config.enchantments.fuseShot.availableAsTreasure,
+                newValue -> config.enchantments.fuseShot.availableAsTreasure = newValue
             )
             .build();
 
@@ -211,32 +211,32 @@ public class ConfigScreen {
         Option<Integer> forgingTouchMaxLevel = maxLevel()
             .binding(
                 3,
-                () -> config.forgingTouchMaxLevel,
-                newValue -> config.forgingTouchMaxLevel = newValue
+                () -> config.enchantments.forgingTouch.maxLevel,
+                newValue -> config.enchantments.forgingTouch.maxLevel = newValue
             )
             .build();
 
         Option<Boolean> forgingTouchAvailableRandomly = availableRandomly()
             .binding(
                 true,
-                () -> config.forgingTouchAvailableRandomly,
-                newValue -> config.forgingTouchAvailableRandomly = newValue
+                () -> config.enchantments.forgingTouch.availableRandomly,
+                newValue -> config.enchantments.forgingTouch.availableRandomly = newValue
             )
             .build();
 
         Option<Boolean> forgingTouchAvailableForBookOffer = availableForBookOffer()
             .binding(
                 true,
-                () -> config.forgingTouchAvailableForBookOffer,
-                newValue -> config.forgingTouchAvailableForBookOffer = newValue
+                () -> config.enchantments.forgingTouch.availableForBookOffer,
+                newValue -> config.enchantments.forgingTouch.availableForBookOffer = newValue
             )
             .build();
 
         Option<Boolean> forgingTouchAvailableAsTreasure = availableAsTreasure()
             .binding(
                 true,
-                () -> config.forgingTouchAvailableAsTreasure,
-                newValue -> config.forgingTouchAvailableAsTreasure = newValue
+                () -> config.enchantments.forgingTouch.availableAsTreasure,
+                newValue -> config.enchantments.forgingTouch.availableAsTreasure = newValue
             )
             .build();
 
@@ -244,32 +244,32 @@ public class ConfigScreen {
         Option<Integer> lastStandMaxLevel = maxLevel()
             .binding(
                 3,
-                () -> config.lastStandMaxLevel,
-                newValue -> config.lastStandMaxLevel = newValue
+                () -> config.enchantments.lastStand.maxLevel,
+                newValue -> config.enchantments.lastStand.maxLevel = newValue
             )
             .build();
 
         Option<Boolean> lastStandAvailableRandomly = availableRandomly()
             .binding(
                 true,
-                () -> config.lastStandAvailableRandomly,
-                newValue -> config.lastStandAvailableRandomly = newValue
+                () -> config.enchantments.lastStand.availableRandomly,
+                newValue -> config.enchantments.lastStand.availableRandomly = newValue
             )
             .build();
 
         Option<Boolean> lastStandAvailableForBookOffer = availableForBookOffer()
             .binding(
                 true,
-                () -> config.lastStandAvailableForBookOffer,
-                newValue -> config.lastStandAvailableForBookOffer = newValue
+                () -> config.enchantments.lastStand.availableForBookOffer,
+                newValue -> config.enchantments.lastStand.availableForBookOffer = newValue
             )
             .build();
 
         Option<Boolean> lastStandAvailableAsTreasure = availableAsTreasure()
             .binding(
                 false,
-                () -> config.lastStandAvailableAsTreasure,
-                newValue -> config.lastStandAvailableAsTreasure = newValue
+                () -> config.enchantments.lastStand.availableAsTreasure,
+                newValue -> config.enchantments.lastStand.availableAsTreasure = newValue
             )
             .build();
 
@@ -277,32 +277,32 @@ public class ConfigScreen {
         Option<Integer> magneticMaxLevel = maxLevel()
             .binding(
                 3,
-                () -> config.magneticMaxLevel,
-                newValue -> config.magneticMaxLevel = newValue
+                () -> config.enchantments.magnetic.maxLevel,
+                newValue -> config.enchantments.magnetic.maxLevel = newValue
             )
             .build();
 
         Option<Boolean> magneticAvailableRandomly = availableRandomly()
             .binding(
                 true,
-                () -> config.magneticAvailableRandomly,
-                newValue -> config.magneticAvailableRandomly = newValue
+                () -> config.enchantments.magnetic.availableRandomly,
+                newValue -> config.enchantments.magnetic.availableRandomly = newValue
             )
             .build();
 
         Option<Boolean> magneticAvailableForBookOffer = availableForBookOffer()
             .binding(
                 true,
-                () -> config.magneticAvailableForBookOffer,
-                newValue -> config.magneticAvailableForBookOffer = newValue
+                () -> config.enchantments.magnetic.availableForBookOffer,
+                newValue -> config.enchantments.magnetic.availableForBookOffer = newValue
             )
             .build();
 
         Option<Boolean> magneticAvailableAsTreasure = availableAsTreasure()
             .binding(
                 false,
-                () -> config.magneticAvailableAsTreasure,
-                newValue -> config.magneticAvailableAsTreasure = newValue
+                () -> config.enchantments.magnetic.availableAsTreasure,
+                newValue -> config.enchantments.magnetic.availableAsTreasure = newValue
             )
             .build();
 
@@ -310,24 +310,24 @@ public class ConfigScreen {
         Option<Boolean> reapingRodAvailableRandomly = availableRandomly()
             .binding(
                 true,
-                () -> config.reapingRodAvailableRandomly,
-                newValue -> config.reapingRodAvailableRandomly = newValue
+                () -> config.enchantments.reapingRod.availableRandomly,
+                newValue -> config.enchantments.reapingRod.availableRandomly = newValue
             )
             .build();
 
         Option<Boolean> reapingRodAvailableForBookOffer = availableForBookOffer()
             .binding(
                 true,
-                () -> config.reapingRodAvailableForBookOffer,
-                newValue -> config.reapingRodAvailableForBookOffer = newValue
+                () -> config.enchantments.reapingRod.availableForBookOffer,
+                newValue -> config.enchantments.reapingRod.availableForBookOffer = newValue
             )
             .build();
 
         Option<Boolean> reapingRodAvailableAsTreasure = availableAsTreasure()
             .binding(
                 false,
-                () -> config.reapingRodAvailableAsTreasure,
-                newValue -> config.reapingRodAvailableAsTreasure = newValue
+                () -> config.enchantments.reapingRod.availableAsTreasure,
+                newValue -> config.enchantments.reapingRod.availableAsTreasure = newValue
             )
             .build();
 
@@ -335,24 +335,24 @@ public class ConfigScreen {
         Option<Boolean> retreatAvailableRandomly = availableRandomly()
             .binding(
                 true,
-                () -> config.retreatAvailableRandomly,
-                newValue -> config.retreatAvailableRandomly = newValue
+                () -> config.enchantments.retreat.availableRandomly,
+                newValue -> config.enchantments.retreat.availableRandomly = newValue
             )
             .build();
 
         Option<Boolean> retreatAvailableForBookOffer = availableForBookOffer()
             .binding(
                 true,
-                () -> config.retreatAvailableForBookOffer,
-                newValue -> config.retreatAvailableForBookOffer = newValue
+                () -> config.enchantments.retreat.availableForBookOffer,
+                newValue -> config.enchantments.retreat.availableForBookOffer = newValue
             )
             .build();
 
         Option<Boolean> retreatAvailableAsTreasure = availableAsTreasure()
             .binding(
                 false,
-                () -> config.retreatAvailableAsTreasure,
-                newValue -> config.retreatAvailableAsTreasure = newValue
+                () -> config.enchantments.retreat.availableAsTreasure,
+                newValue -> config.enchantments.retreat.availableAsTreasure = newValue
             )
             .build();
 
@@ -360,32 +360,32 @@ public class ConfigScreen {
         Option<Integer> venomousMaxLevel = maxLevel()
             .binding(
                 3,
-                () -> config.venomousMaxLevel,
-                newValue -> config.venomousMaxLevel = newValue
+                () -> config.enchantments.venomous.maxLevel,
+                newValue -> config.enchantments.venomous.maxLevel = newValue
             )
             .build();
 
         Option<Boolean> venomousAvailableRandomly = availableRandomly()
             .binding(
                 true,
-                () -> config.venomousAvailableRandomly,
-                newValue -> config.venomousAvailableRandomly = newValue
+                () -> config.enchantments.venomous.availableRandomly,
+                newValue -> config.enchantments.venomous.availableRandomly = newValue
             )
             .build();
 
         Option<Boolean> venomousAvailableForBookOffer = availableForBookOffer()
             .binding(
                 true,
-                () -> config.venomousAvailableForBookOffer,
-                newValue -> config.venomousAvailableForBookOffer = newValue
+                () -> config.enchantments.venomous.availableForBookOffer,
+                newValue -> config.enchantments.venomous.availableForBookOffer = newValue
             )
             .build();
 
         Option<Boolean> venomousAvailableAsTreasure = availableAsTreasure()
             .binding(
                 false,
-                () -> config.venomousAvailableAsTreasure,
-                newValue -> config.venomousAvailableAsTreasure = newValue
+                () -> config.enchantments.venomous.availableAsTreasure,
+                newValue -> config.enchantments.venomous.availableAsTreasure = newValue
             )
             .build();
 
@@ -393,32 +393,32 @@ public class ConfigScreen {
         Option<Integer> waterSlashMaxLevel = maxLevel()
             .binding(
                 5,
-                () -> config.waterSlashMaxLevel,
-                newValue -> config.waterSlashMaxLevel = newValue
+                () -> config.enchantments.waterSlash.maxLevel,
+                newValue -> config.enchantments.waterSlash.maxLevel = newValue
             )
             .build();
 
         Option<Boolean> waterSlashAvailableRandomly = availableRandomly()
             .binding(
                 true,
-                () -> config.waterSlashAvailableRandomly,
-                newValue -> config.waterSlashAvailableRandomly = newValue
+                () -> config.enchantments.waterSlash.availableRandomly,
+                newValue -> config.enchantments.waterSlash.availableRandomly = newValue
             )
             .build();
 
         Option<Boolean> waterSlashAvailableForBookOffer = availableForBookOffer()
             .binding(
                 true,
-                () -> config.waterSlashAvailableForBookOffer,
-                newValue -> config.waterSlashAvailableForBookOffer = newValue
+                () -> config.enchantments.waterSlash.availableForBookOffer,
+                newValue -> config.enchantments.waterSlash.availableForBookOffer = newValue
             )
             .build();
 
         Option<Boolean> waterSlashAvailableAsTreasure = availableAsTreasure()
             .binding(
                 false,
-                () -> config.waterSlashAvailableAsTreasure,
-                newValue -> config.waterSlashAvailableAsTreasure = newValue
+                () -> config.enchantments.waterSlash.availableAsTreasure,
+                newValue -> config.enchantments.waterSlash.availableAsTreasure = newValue
             )
             .build();
 
@@ -429,16 +429,16 @@ public class ConfigScreen {
         Option<Boolean> recklessnessAvailableForBookOffer = availableForBookOffer()
             .binding(
                 true,
-                () -> config.recklessnessAvailableForBookOffer,
-                newValue -> config.recklessnessAvailableForBookOffer = newValue
+                () -> config.curses.recklessness.availableForBookOffer,
+                newValue -> config.curses.recklessness.availableForBookOffer = newValue
             )
             .build();
 
         Option<Boolean> recklessnessAvailableAsTreasure = availableAsTreasure()
             .binding(
                 true,
-                () -> config.recklessnessAvailableAsTreasure,
-                newValue -> config.recklessnessAvailableAsTreasure = newValue
+                () -> config.curses.recklessness.availableAsTreasure,
+                newValue -> config.curses.recklessness.availableAsTreasure = newValue
             )
             .build();
 
@@ -446,16 +446,16 @@ public class ConfigScreen {
         Option<Boolean> shriekingAvailableForBookOffer = availableForBookOffer()
             .binding(
                 true,
-                () -> config.shriekingAvailableForBookOffer,
-                newValue -> config.shriekingAvailableForBookOffer = newValue
+                () -> config.curses.shrieking.availableForBookOffer,
+                newValue -> config.curses.shrieking.availableForBookOffer = newValue
             )
             .build();
 
         Option<Boolean> shriekingAvailableAsTreasure = availableAsTreasure()
             .binding(
                 true,
-                () -> config.shriekingAvailableAsTreasure,
-                newValue -> config.shriekingAvailableAsTreasure = newValue
+                () -> config.curses.shrieking.availableAsTreasure,
+                newValue -> config.curses.shrieking.availableAsTreasure = newValue
             )
             .build();
 
@@ -463,16 +463,16 @@ public class ConfigScreen {
         Option<Boolean> thunderAvailableForBookOffer = availableForBookOffer()
             .binding(
                 true,
-                () -> config.thunderAvailableForBookOffer,
-                newValue -> config.thunderAvailableForBookOffer = newValue
+                () -> config.curses.thunder.availableForBookOffer,
+                newValue -> config.curses.thunder.availableForBookOffer = newValue
             )
             .build();
 
         Option<Boolean> thunderAvailableAsTreasure = availableAsTreasure()
             .binding(
                 true,
-                () -> config.thunderAvailableAsTreasure,
-                newValue -> config.thunderAvailableAsTreasure = newValue
+                () -> config.curses.thunder.availableAsTreasure,
+                newValue -> config.curses.thunder.availableAsTreasure = newValue
             )
             .build();
 
@@ -480,16 +480,16 @@ public class ConfigScreen {
         Option<Boolean> toughLuckAvailableForBookOffer = availableForBookOffer()
             .binding(
                 true,
-                () -> config.toughLuckAvailableForBookOffer,
-                newValue -> config.toughLuckAvailableForBookOffer = newValue
+                () -> config.curses.toughLuck.availableForBookOffer,
+                newValue -> config.curses.toughLuck.availableForBookOffer = newValue
             )
             .build();
 
         Option<Boolean> toughLuckAvailableAsTreasure = availableAsTreasure()
             .binding(
                 true,
-                () -> config.toughLuckAvailableAsTreasure,
-                newValue -> config.toughLuckAvailableAsTreasure = newValue
+                () -> config.curses.toughLuck.availableAsTreasure,
+                newValue -> config.curses.toughLuck.availableAsTreasure = newValue
             )
             .build();
 

@@ -23,10 +23,10 @@ public class BaneOfTheSwineEnchantment extends IncantationemEnchantment {
             Rarity.UNCOMMON,
             EnchantmentCategory.WEAPON,
             new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND},
-            Incantationem.CONFIG.baneOfTheSwineMaxLevel,
-            Incantationem.CONFIG.baneOfTheSwineAvailableForBookOffer,
-            Incantationem.CONFIG.baneOfTheSwineAvailableRandomly,
-            Incantationem.CONFIG.baneOfTheSwineAvailableAsTreasure
+            Incantationem.CONFIG.enchantments.baneOfTheSwine.maxLevel,
+            Incantationem.CONFIG.enchantments.baneOfTheSwine.availableForBookOffer,
+            Incantationem.CONFIG.enchantments.baneOfTheSwine.availableRandomly,
+            Incantationem.CONFIG.enchantments.baneOfTheSwine.availableAsTreasure
         );
     }
 

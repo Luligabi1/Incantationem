@@ -19,10 +19,10 @@ public class DeflectionEnchantment extends IncantationemEnchantment {
             Rarity.VERY_RARE,
             EnchantmentCategory.ARMOR,
             new EquipmentSlot[]{EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET},
-            Incantationem.CONFIG.deflectionMaxLevel,
-            Incantationem.CONFIG.deflectionAvailableForBookOffer,
-            Incantationem.CONFIG.deflectionAvailableRandomly,
-            Incantationem.CONFIG.deflectionAvailableAsTreasure
+            Incantationem.CONFIG.enchantments.deflection.maxLevel,
+            Incantationem.CONFIG.enchantments.deflection.availableForBookOffer,
+            Incantationem.CONFIG.enchantments.deflection.availableRandomly,
+            Incantationem.CONFIG.enchantments.deflection.availableAsTreasure
         );
     }
 
