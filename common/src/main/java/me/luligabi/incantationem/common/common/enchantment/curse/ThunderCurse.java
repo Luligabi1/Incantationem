@@ -1,10 +1,9 @@
 package me.luligabi.incantationem.common.common.enchantment.curse;
 
 import me.luligabi.incantationem.common.common.Incantationem;
-import me.luligabi.incantationem.common.common.Util;
 import me.luligabi.incantationem.common.common.enchantment.IncantationemEnchantment;
-import net.minecraft.ChatFormatting;
-import net.minecraft.network.chat.Component;
+import me.luligabi.incantationem.common.common.util.EffectAppliedMessage;
+import me.luligabi.incantationem.common.common.util.Util;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import net.minecraft.world.level.GameRules;
@@ -48,7 +47,7 @@ public class ThunderCurse extends IncantationemEnchantment {
         lightningEntity.moveTo(user.blockPosition().getX(), user.blockPosition().getY(), user.blockPosition().getZ());
         user.level().addFreshEntity(lightningEntity);
 
-        Util.sendActionBarMessage(user, Component.translatable("message.incantationem.thunder.applied"), ChatFormatting.YELLOW);
+        Util.sendEffectAppliedMessage(user, EffectAppliedMessage.THUNDER);
     }
 
 }

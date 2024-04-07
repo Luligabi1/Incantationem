@@ -1,9 +1,9 @@
-package me.luligabi.incantationem.common.common;
+package me.luligabi.incantationem.common.common.util;
 
-import net.minecraft.ChatFormatting;
+import me.luligabi.incantationem.common.common.packet.EffectAppliedPacket;
+import me.luligabi.incantationem.common.common.packet.NetworkRegistry;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.network.chat.MutableComponent;
-import net.minecraft.network.chat.Style;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffect;
@@ -44,9 +44,13 @@ public class Util {
         livingEntity.addEffect(new MobEffectInstance(statusEffect, duration * 20, strength, true, false));
     }
 
-    public static void sendActionBarMessage(LivingEntity livingEntity, MutableComponent message, ChatFormatting formatting) {
-        if(!(livingEntity instanceof Player)) return;
-        ((Player) livingEntity).displayClientMessage(message.setStyle(Style.EMPTY.withColor(formatting)), true);
+    public static void sendEffectAppliedMessage(LivingEntity entity, EffectAppliedMessage msg) {
+        if(!(entity instanceof ServerPlayer)) return;
+        if(!msg.canShow) return;
+        NetworkRegistry.NETWORK_CHANNEL.sendToPlayer(
+            (ServerPlayer) entity,
+            new EffectAppliedPacket(msg)
+        );
     }
 
 

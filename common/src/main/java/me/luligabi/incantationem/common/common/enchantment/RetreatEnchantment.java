@@ -1,9 +1,8 @@
 package me.luligabi.incantationem.common.common.enchantment;
 
 import me.luligabi.incantationem.common.common.Incantationem;
-import me.luligabi.incantationem.common.common.Util;
-import net.minecraft.ChatFormatting;
-import net.minecraft.network.chat.Component;
+import me.luligabi.incantationem.common.common.util.EffectAppliedMessage;
+import me.luligabi.incantationem.common.common.util.Util;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -38,7 +37,7 @@ public class RetreatEnchantment extends IncantationemEnchantment {
     public void doPostHurt(LivingEntity user, Entity attacker, int level) {
         if(Util.positiveEffectRandomNumber(user, user.getRandom(),0, 10) < 2) {
             Util.applyEffectIfNotPresent(user, MobEffects.MOVEMENT_SPEED, 7, 0);
-            Util.sendActionBarMessage(user, Component.translatable("message.incantationem.retreat.applied"), ChatFormatting.AQUA);
+            Util.sendEffectAppliedMessage(user, EffectAppliedMessage.RETREAT);
         }
     }
 

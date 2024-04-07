@@ -1,9 +1,8 @@
 package me.luligabi.incantationem.common.common.enchantment;
 
 import me.luligabi.incantationem.common.common.Incantationem;
-import me.luligabi.incantationem.common.common.Util;
-import net.minecraft.ChatFormatting;
-import net.minecraft.network.chat.Component;
+import me.luligabi.incantationem.common.common.util.EffectAppliedMessage;
+import me.luligabi.incantationem.common.common.util.Util;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -45,7 +44,7 @@ public class DecayEnchantment extends IncantationemEnchantment {
         if(Util.positiveEffectRandomNumber(user, user.getRandom(),0, 10) < 1) {
             if(attacker instanceof LivingEntity) {
                 Util.applyEffectIfNotPresent((LivingEntity) attacker, MobEffects.WITHER, 3 + level, level - 1);
-                Util.sendActionBarMessage(user, Component.translatable("message.incantationem.decay.applied"), ChatFormatting.GRAY);
+                Util.sendEffectAppliedMessage(user, EffectAppliedMessage.DECAY);
             }
         }
         super.doPostAttack(user, attacker, level);

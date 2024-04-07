@@ -1,9 +1,8 @@
 package me.luligabi.incantationem.common.common.enchantment;
 
 import me.luligabi.incantationem.common.common.Incantationem;
-import me.luligabi.incantationem.common.common.Util;
-import net.minecraft.ChatFormatting;
-import net.minecraft.network.chat.Component;
+import me.luligabi.incantationem.common.common.util.EffectAppliedMessage;
+import me.luligabi.incantationem.common.common.util.Util;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -39,7 +38,7 @@ public class LastStandEnchantment extends IncantationemEnchantment {
         if(user.getHealth() <= 4) {
             if(Util.positiveEffectRandomNumber(user, user.getRandom(), 0, 10) < level*0.35) {
                 Util.applyEffectIfNotPresent(user, MobEffects.DAMAGE_BOOST, (int) Math.ceil(level * 2.5), level-1);
-                Util.sendActionBarMessage(user, Component.translatable("message.incantationem.last_stand.applied"), ChatFormatting.GOLD);
+                Util.sendEffectAppliedMessage(user, EffectAppliedMessage.LAST_STAND);
             }
         }
     }

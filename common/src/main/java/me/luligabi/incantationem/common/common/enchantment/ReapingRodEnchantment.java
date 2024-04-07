@@ -1,9 +1,8 @@
 package me.luligabi.incantationem.common.common.enchantment;
 
 import me.luligabi.incantationem.common.common.Incantationem;
-import me.luligabi.incantationem.common.common.Util;
-import net.minecraft.ChatFormatting;
-import net.minecraft.network.chat.Component;
+import me.luligabi.incantationem.common.common.util.EffectAppliedMessage;
+import me.luligabi.incantationem.common.common.util.Util;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -40,7 +39,7 @@ public class ReapingRodEnchantment extends IncantationemEnchantment {
         Util.applyEffectIfNotPresent(user, MobEffects.REGENERATION, 10, 1);
         Util.applyEffectIfNotPresent(user, MobEffects.ABSORPTION, 25, 2);
         Util.applyEffectIfNotPresent(user, MobEffects.DAMAGE_RESISTANCE, 30, 0);
-        Util.sendActionBarMessage(user, Component.translatable("message.incantationem.reaping_rod.applied"), ChatFormatting.LIGHT_PURPLE);
+        Util.sendEffectAppliedMessage(user, EffectAppliedMessage.REAPING_ROD);
     }
 
 }

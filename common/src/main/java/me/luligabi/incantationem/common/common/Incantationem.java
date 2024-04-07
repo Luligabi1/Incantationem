@@ -8,6 +8,7 @@ import dev.architectury.registry.registries.Registrar;
 import dev.architectury.registry.registries.RegistrarManager;
 import me.luligabi.incantationem.common.common.enchantment.EnchantmentRegistry;
 import me.luligabi.incantationem.common.common.enchantment.curse.CurseRegistry;
+import me.luligabi.incantationem.common.common.packet.NetworkRegistry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.commands.WardenSpawnTrackerCommand;
@@ -19,6 +20,7 @@ public class Incantationem {
 	public static void init() {
 		CurseRegistry.init();
 		EnchantmentRegistry.init();
+		NetworkRegistry.init();
 
 		if(Platform.isDevelopmentEnvironment()) {
 			CommandRegistrationEvent.EVENT.register((dispatcher, registry, selection) -> {

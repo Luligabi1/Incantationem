@@ -1,7 +1,7 @@
 package me.luligabi.incantationem.common.common.enchantment;
 
 import me.luligabi.incantationem.common.common.Incantationem;
-import me.luligabi.incantationem.common.common.Util;
+import me.luligabi.incantationem.common.common.util.Util;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EquipmentSlot;

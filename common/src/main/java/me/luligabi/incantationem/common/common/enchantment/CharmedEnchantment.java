@@ -1,8 +1,8 @@
 package me.luligabi.incantationem.common.common.enchantment;
 
 import me.luligabi.incantationem.common.common.Incantationem;
-import me.luligabi.incantationem.common.common.Util;
 import me.luligabi.incantationem.common.common.enchantment.curse.CurseRegistry;
+import me.luligabi.incantationem.common.common.util.Util;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;

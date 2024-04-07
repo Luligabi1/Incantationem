@@ -1,7 +1,7 @@
 package me.luligabi.incantationem.common.common.enchantment;
 
 import me.luligabi.incantationem.common.common.Incantationem;
-import me.luligabi.incantationem.common.common.Util;
+import me.luligabi.incantationem.common.common.util.Util;
 import me.luligabi.incantationem.common.mixin.EntityInvoker;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.effect.MobEffects;

@@ -15,7 +15,7 @@ public class ModConfig {
         .build();
 
 
-    @SerialEntry public Enchantments enchantments = new Enchantments();
+    @SerialEntry public Enchantments enchantments = new Enchantments(); // TODO Add new options to screen
     public static class Enchantments {
         @SerialEntry public BaneOfTheSwine baneOfTheSwine = new BaneOfTheSwine();
         @SerialEntry public BunnysHop bunnysHop = new BunnysHop();
@@ -53,6 +53,7 @@ public class ModConfig {
             @SerialEntry public boolean availableRandomly = true;
             @SerialEntry public boolean availableForBookOffer = true;
             @SerialEntry public boolean availableAsTreasure = false;
+            @SerialEntry public boolean showApplyMessage = true;
         }
         public static class Deflection {
             @SerialEntry public int maxLevel = 3;
@@ -71,12 +72,14 @@ public class ModConfig {
             @SerialEntry public boolean availableRandomly = true;
             @SerialEntry public boolean availableForBookOffer = true;
             @SerialEntry public boolean availableAsTreasure = true;
+            @SerialEntry public boolean showApplyMessage = true;
         }
         public static class LastStand {
             @SerialEntry public int maxLevel = 3;
             @SerialEntry public boolean availableRandomly = true;
             @SerialEntry public boolean availableForBookOffer = true;
             @SerialEntry public boolean availableAsTreasure = false;
+            @SerialEntry public boolean showApplyMessage = true;
         }
         public static class Magnetic {
             @SerialEntry public int maxLevel = 3;
@@ -88,17 +91,20 @@ public class ModConfig {
             @SerialEntry public boolean availableRandomly = true;
             @SerialEntry public boolean availableForBookOffer = true;
             @SerialEntry public boolean availableAsTreasure = false;
+            @SerialEntry public boolean showApplyMessage = true;
         }
         public static class Retreat {
             @SerialEntry public boolean availableRandomly = true;
             @SerialEntry public boolean availableForBookOffer = true;
             @SerialEntry public boolean availableAsTreasure = false;
+            @SerialEntry public boolean showApplyMessage = true;
         }
         public static class Venomous {
             @SerialEntry public int maxLevel = 3;
             @SerialEntry public boolean availableRandomly = true;
             @SerialEntry public boolean availableForBookOffer = true;
             @SerialEntry public boolean availableAsTreasure = false;
+            @SerialEntry public boolean showApplyMessage = true;
         }
         public static class WaterSlash {
             @SerialEntry public int maxLevel = 5;
@@ -128,6 +134,7 @@ public class ModConfig {
         public static class Thunder {
             @SerialEntry public boolean availableForBookOffer = true;
             @SerialEntry public boolean availableAsTreasure = true;
+            @SerialEntry public boolean showApplyMessage = true;
         }
 
         public static class ToughLuck {

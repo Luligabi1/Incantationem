@@ -1,9 +1,8 @@
 package me.luligabi.incantationem.common.common.enchantment;
 
 import me.luligabi.incantationem.common.common.Incantationem;
-import me.luligabi.incantationem.common.common.Util;
-import net.minecraft.ChatFormatting;
-import net.minecraft.network.chat.Component;
+import me.luligabi.incantationem.common.common.util.EffectAppliedMessage;
+import me.luligabi.incantationem.common.common.util.Util;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -40,7 +39,7 @@ public class VenomousEnchantment extends IncantationemEnchantment {
         if(Util.positiveEffectRandomNumber(attacker, attacker.getRandom(), 0, 10) > (i * 1.5)) return;
 
         Util.applyEffectIfNotPresent(hitEntity, MobEffects.POISON, Util.neutralEffectRandomNumber(hitEntity.getRandom(), 2, 4), i - 1);
-        Util.sendActionBarMessage(attacker, Component.translatable("message.incantationem.venomous.applied"), ChatFormatting.DARK_GREEN);
+        Util.sendEffectAppliedMessage(attacker, EffectAppliedMessage.VENOMOUS);
     }
 
 }

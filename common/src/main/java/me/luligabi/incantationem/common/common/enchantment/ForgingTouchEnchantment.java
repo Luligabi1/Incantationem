@@ -1,9 +1,8 @@
 package me.luligabi.incantationem.common.common.enchantment;
 
 import me.luligabi.incantationem.common.common.Incantationem;
-import me.luligabi.incantationem.common.common.Util;
-import net.minecraft.ChatFormatting;
-import net.minecraft.network.chat.Component;
+import me.luligabi.incantationem.common.common.util.EffectAppliedMessage;
+import me.luligabi.incantationem.common.common.util.Util;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -60,7 +59,7 @@ public class ForgingTouchEnchantment extends IncantationemEnchantment {
                 forgedItems.setCount(preForgingItems.getCount());
                 itemsToDropList.add(forgedItems);
                 if(entity instanceof LivingEntity) {
-                    Util.sendActionBarMessage((LivingEntity) entity, Component.translatable("message.incantationem.forging_touch.applied"), ChatFormatting.GOLD);
+                    Util.sendEffectAppliedMessage((LivingEntity) entity, EffectAppliedMessage.FORGING_TOUCH);
                 }
             } else {
                 itemsToDropList.add(preForgingItems);
