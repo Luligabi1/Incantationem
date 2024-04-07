@@ -14,6 +14,12 @@ issueTrackerURL="https://github.com/Luligabi1/Incantationem/issues"
 [[mixins]]
    config="incantationem-common.mixins.json"
 [[dependencies.incantationem]]
+   modId = "architectury"
+   type = "required"
+   versionRange = "[11,)"
+   ordering = "NONE"
+   side = "BOTH"
+[[dependencies.incantationem]]
    modId="neoforge"
    type="required"
    versionRange="[20.4,)"
