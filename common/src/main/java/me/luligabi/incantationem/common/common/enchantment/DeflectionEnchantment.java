@@ -42,13 +42,6 @@ public class DeflectionEnchantment extends IncantationemEnchantment {
         return stack.isDamageableItem() || super.canEnchant(stack);
     }
 
-    @Override
-    public boolean checkCompatibility(Enchantment other) { // FIXME use tag for all compatibility checks
-        return super.checkCompatibility(other) &&
-            other != Enchantments.PROJECTILE_PROTECTION &&
-            other != Enchantments.THORNS;
-    }
-
     public static boolean apply(LivingEntity user) {
         // Sum the Deflection level on all armor pieces
         int deflectionLevel = 0;

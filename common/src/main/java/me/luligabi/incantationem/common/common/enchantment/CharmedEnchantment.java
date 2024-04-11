@@ -37,11 +37,6 @@ public class CharmedEnchantment extends IncantationemEnchantment {
     }
 
     @Override
-    public boolean checkCompatibility(Enchantment other) {
-        return super.checkCompatibility(other) && (other != CurseRegistry.TOUGH_LUCK);
-    }
-
-    @Override
     public boolean canEnchant(ItemStack stack) {
         return stack.isDamageableItem() || super.canEnchant(stack);
     }

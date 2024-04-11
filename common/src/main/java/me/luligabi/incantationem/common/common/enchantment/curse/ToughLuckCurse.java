@@ -40,11 +40,6 @@ public class ToughLuckCurse extends IncantationemEnchantment {
         return true;
     }
 
-    @Override
-    public boolean checkCompatibility(Enchantment other) {
-        return super.checkCompatibility(other) && (other != EnchantmentRegistry.CHARMED);
-    }
-
 
     public static void apply(LivingEntity user) {
         if(EnchantmentHelper.getEnchantmentLevel(CurseRegistry.TOUGH_LUCK.get(), user) < 1) return;

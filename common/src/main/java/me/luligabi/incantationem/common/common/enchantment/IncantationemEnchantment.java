@@ -42,12 +42,12 @@ public abstract class IncantationemEnchantment extends Enchantment {
         return maxLevel;
     }
 
+    // keeping yarn-like field names for clarity, common mojmap L
     @Override
     public boolean isDiscoverable() {
         return availableRandomly;
     }
 
-    // keeping yarn-like field names for clarity, common mojmap L
     @Override
     public boolean isTradeable() {
         return availableForBookOffer;
