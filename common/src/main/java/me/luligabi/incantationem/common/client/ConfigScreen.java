@@ -141,6 +141,22 @@ public class ConfigScreen {
             )
             .build();
 
+        Option<Boolean> decayIsLuckBased = isLuckBased()
+            .binding(
+                true,
+                () -> config.enchantments.decay.isLuckBased,
+                newValue -> config.enchantments.decay.isLuckBased = newValue
+            )
+            .build();
+
+        Option<Boolean> decayShowApplyMessage = showApplyMessage()
+            .binding(
+                true,
+                () -> config.enchantments.decay.showApplyMessage,
+                newValue -> config.enchantments.decay.showApplyMessage = newValue
+            )
+            .build();
+
         // Deflection
         Option<Integer> deflectionMaxLevel = maxLevel()
             .binding(
@@ -171,6 +187,22 @@ public class ConfigScreen {
                 false,
                 () -> config.enchantments.deflection.availableAsTreasure,
                 newValue -> config.enchantments.deflection.availableAsTreasure = newValue
+            )
+            .build();
+
+        Option<Boolean> deflectionIsLuckBased = isLuckBased()
+            .binding(
+                true,
+                () -> config.enchantments.deflection.isLuckBased,
+                newValue -> config.enchantments.deflection.isLuckBased = newValue
+            )
+            .build();
+
+        Option<Boolean> deflectionShowApplyMessage = showApplyMessage()
+            .binding(
+                true,
+                () -> config.enchantments.deflection.showApplyMessage,
+                newValue -> config.enchantments.deflection.showApplyMessage = newValue
             )
             .build();
 
@@ -240,6 +272,22 @@ public class ConfigScreen {
             )
             .build();
 
+        Option<Boolean> forgingTouchIsLuckBased = isLuckBased()
+            .binding(
+                true,
+                () -> config.enchantments.forgingTouch.isLuckBased,
+                newValue -> config.enchantments.forgingTouch.isLuckBased = newValue
+            )
+            .build();
+
+        Option<Boolean> forgingTouchShowApplyMessage = showApplyMessage()
+            .binding(
+                true,
+                () -> config.enchantments.forgingTouch.showApplyMessage,
+                newValue -> config.enchantments.forgingTouch.showApplyMessage = newValue
+            )
+            .build();
+
         // Last Stand
         Option<Integer> lastStandMaxLevel = maxLevel()
             .binding(
@@ -270,6 +318,22 @@ public class ConfigScreen {
                 false,
                 () -> config.enchantments.lastStand.availableAsTreasure,
                 newValue -> config.enchantments.lastStand.availableAsTreasure = newValue
+            )
+            .build();
+
+        Option<Boolean> lastStandIsLuckBased = isLuckBased()
+            .binding(
+                true,
+                () -> config.enchantments.lastStand.isLuckBased,
+                newValue -> config.enchantments.lastStand.isLuckBased = newValue
+            )
+            .build();
+
+        Option<Boolean> lastStandShowApplyMessage = showApplyMessage()
+            .binding(
+                true,
+                () -> config.enchantments.lastStand.showApplyMessage,
+                newValue -> config.enchantments.lastStand.showApplyMessage = newValue
             )
             .build();
 
@@ -356,6 +420,22 @@ public class ConfigScreen {
             )
             .build();
 
+        Option<Boolean> retreatIsLuckBased = isLuckBased()
+            .binding(
+                true,
+                () -> config.enchantments.retreat.isLuckBased,
+                newValue -> config.enchantments.retreat.isLuckBased = newValue
+            )
+            .build();
+
+        Option<Boolean> retreatShowApplyMessage = showApplyMessage()
+            .binding(
+                true,
+                () -> config.enchantments.retreat.showApplyMessage,
+                newValue -> config.enchantments.retreat.showApplyMessage = newValue
+            )
+            .build();
+
         // Venomous
         Option<Integer> venomousMaxLevel = maxLevel()
             .binding(
@@ -386,6 +466,22 @@ public class ConfigScreen {
                 false,
                 () -> config.enchantments.venomous.availableAsTreasure,
                 newValue -> config.enchantments.venomous.availableAsTreasure = newValue
+            )
+            .build();
+
+        Option<Boolean> venomousIsLuckBased = isLuckBased()
+            .binding(
+                true,
+                () -> config.enchantments.venomous.isLuckBased,
+                newValue -> config.enchantments.venomous.isLuckBased = newValue
+            )
+            .build();
+
+        Option<Boolean> venomousShowApplyMessage = showApplyMessage()
+            .binding(
+                true,
+                () -> config.enchantments.venomous.showApplyMessage,
+                newValue -> config.enchantments.venomous.showApplyMessage = newValue
             )
             .build();
 
@@ -426,6 +522,14 @@ public class ConfigScreen {
          * CURSES
          */
         // Curse of Recklessness
+        Option<Boolean> recklessnessAvailableRandomly = availableRandomly()
+            .binding(
+                true,
+                () -> config.curses.recklessness.availableRandomly,
+                newValue -> config.curses.recklessness.availableRandomly = newValue
+            )
+            .build();
+
         Option<Boolean> recklessnessAvailableForBookOffer = availableForBookOffer()
             .binding(
                 true,
@@ -443,6 +547,14 @@ public class ConfigScreen {
             .build();
 
         // Curse of Shrieking
+        Option<Boolean> shriekingAvailableRandomly = availableRandomly()
+            .binding(
+                true,
+                () -> config.curses.shrieking.availableRandomly,
+                newValue -> config.curses.shrieking.availableRandomly = newValue
+            )
+            .build();
+
         Option<Boolean> shriekingAvailableForBookOffer = availableForBookOffer()
             .binding(
                 true,
@@ -460,6 +572,14 @@ public class ConfigScreen {
             .build();
 
         // Curse of the Thunders
+        Option<Boolean> thunderAvailableRandomly = availableRandomly()
+            .binding(
+                true,
+                () -> config.curses.thunder.availableRandomly,
+                newValue -> config.curses.thunder.availableRandomly = newValue
+            )
+            .build();
+
         Option<Boolean> thunderAvailableForBookOffer = availableForBookOffer()
             .binding(
                 true,
@@ -476,7 +596,31 @@ public class ConfigScreen {
             )
             .build();
 
+        Option<Boolean> thunderIsLuckBased = isLuckBased()
+            .binding(
+                true,
+                () -> config.curses.thunder.isLuckBased,
+                newValue -> config.curses.thunder.isLuckBased = newValue
+            )
+            .build();
+
+        Option<Boolean> thunderShowApplyMessage = showApplyMessage()
+            .binding(
+                true,
+                () -> config.curses.thunder.showApplyMessage,
+                newValue -> config.curses.thunder.showApplyMessage = newValue
+            )
+            .build();
+
         // Curse of Tough Luck
+        Option<Boolean> toughLuckAvailableRandomly = availableRandomly()
+            .binding(
+                true,
+                () -> config.curses.toughLuck.availableRandomly,
+                newValue -> config.curses.toughLuck.availableRandomly = newValue
+            )
+            .build();
+
         Option<Boolean> toughLuckAvailableForBookOffer = availableForBookOffer()
             .binding(
                 true,
@@ -525,21 +669,25 @@ public class ConfigScreen {
                     )
                 )
                 .group(
-                    createEnchantmentGroup(
+                    createLuckBasedEnchantmentGroup(
                         "decay",
                         decayMaxLevel,
                         decayAvailableRandomly,
                         decayAvailableForBookOffer,
-                        decayAvailableAsTreasure
+                        decayAvailableAsTreasure,
+                        decayIsLuckBased,
+                        decayShowApplyMessage
                     )
                 )
                 .group(
-                    createEnchantmentGroup(
+                    createLuckBasedEnchantmentGroup(
                         "deflection",
                         deflectionMaxLevel,
                         deflectionAvailableRandomly,
                         deflectionAvailableForBookOffer,
-                        deflectionAvailableAsTreasure
+                        deflectionAvailableAsTreasure,
+                        deflectionIsLuckBased,
+                        deflectionShowApplyMessage
                     )
                 )
                 .group(
@@ -552,21 +700,25 @@ public class ConfigScreen {
                     )
                 )
                 .group(
-                    createEnchantmentGroup(
+                    createLuckBasedEnchantmentGroup(
                         "forging_touch",
                         forgingTouchMaxLevel,
                         forgingTouchAvailableRandomly,
                         forgingTouchAvailableForBookOffer,
-                        forgingTouchAvailableAsTreasure
+                        forgingTouchAvailableAsTreasure,
+                        forgingTouchIsLuckBased,
+                        forgingTouchShowApplyMessage
                     )
                 )
                 .group(
-                    createEnchantmentGroup(
+                    createLuckBasedEnchantmentGroup(
                         "last_stand",
                         lastStandMaxLevel,
                         lastStandAvailableRandomly,
                         lastStandAvailableForBookOffer,
-                        lastStandAvailableAsTreasure
+                        lastStandAvailableAsTreasure,
+                        lastStandIsLuckBased,
+                        lastStandShowApplyMessage
                     )
                 )
                 .group(
@@ -587,20 +739,24 @@ public class ConfigScreen {
                     )
                 )
                 .group(
-                    createLevellessEnchantmentGroup(
+                    createLevellessLuckBasedEnchantmentGroup(
                         "retreat",
                         retreatAvailableRandomly,
                         retreatAvailableForBookOffer,
-                        retreatAvailableAsTreasure
+                        retreatAvailableAsTreasure,
+                        retreatIsLuckBased,
+                        retreatShowApplyMessage
                     )
                 )
                 .group(
-                    createEnchantmentGroup(
+                    createLuckBasedEnchantmentGroup(
                         "venomous",
                         venomousMaxLevel,
                         venomousAvailableRandomly,
                         venomousAvailableForBookOffer,
-                        venomousAvailableAsTreasure
+                        venomousAvailableAsTreasure,
+                        venomousIsLuckBased,
+                        venomousShowApplyMessage
                     )
                 )
                 .group(
@@ -616,29 +772,35 @@ public class ConfigScreen {
             .category(ConfigCategory.createBuilder()
                 .name(Component.translatable("configCategory.incantationem.curse"))
                 .group(
-                    createCurseGroup(
+                    createLevellessEnchantmentGroup(
                         "recklessness",
+                        recklessnessAvailableRandomly,
                         recklessnessAvailableForBookOffer,
                         recklessnessAvailableAsTreasure
                     )
                 )
                 .group(
-                    createCurseGroup(
+                    createLevellessEnchantmentGroup(
                         "shrieking",
+                        shriekingAvailableRandomly,
                         shriekingAvailableForBookOffer,
                         shriekingAvailableAsTreasure
                     )
                 )
                 .group(
-                    createCurseGroup(
+                    createLevellessLuckBasedEnchantmentGroup(
                         "thunder",
+                        thunderAvailableRandomly,
                         thunderAvailableForBookOffer,
-                        thunderAvailableAsTreasure
+                        thunderAvailableAsTreasure,
+                        thunderIsLuckBased,
+                        thunderShowApplyMessage
                     )
                 )
                 .group(
-                    createCurseGroup(
+                    createLevellessEnchantmentGroup(
                         "tough_luck",
+                        toughLuckAvailableRandomly,
                         toughLuckAvailableForBookOffer,
                         toughLuckAvailableAsTreasure
                     )
@@ -678,11 +840,26 @@ public class ConfigScreen {
             .controller(option -> BooleanControllerBuilder.create(option).yesNoFormatter().coloured(true));
     }
 
+    private static Option.Builder<Boolean> isLuckBased() {
+        return Option.<Boolean>createBuilder()
+            .name(Component.translatable("configOption.incantationem.isLuckBased"))
+            .description(OptionDescription.of(Component.translatable("configOption.incantationem.isLuckBased.tooltip")))
+            .controller(option -> BooleanControllerBuilder.create(option).yesNoFormatter().coloured(true));
+    }
+
+    private static Option.Builder<Boolean> showApplyMessage() {
+        return Option.<Boolean>createBuilder()
+            .name(Component.translatable("configOption.incantationem.showApplyMessage"))
+            .description(OptionDescription.of(Component.translatable("configOption.incantationem.showApplyMessage.tooltip")))
+            .controller(option -> BooleanControllerBuilder.create(option).yesNoFormatter().coloured(true));
+    }
+
 
     private static OptionGroup createEnchantmentGroup(String enchantmentId, Option<Integer> maxLevel, Option<Boolean> availableRandomly, Option<Boolean> availableForBookOffer, Option<Boolean> availableAsTreasure) {
         return OptionGroup.createBuilder()
             .name(Component.translatable("enchantment.incantationem." + enchantmentId))
             .description(OptionDescription.of(Component.translatable(String.format("enchantment.incantationem.%s.desc", enchantmentId))))
+            .collapsed(true)
             .option(maxLevel)
             .option(availableRandomly)
             .option(availableForBookOffer)
@@ -690,22 +867,42 @@ public class ConfigScreen {
             .build();
     }
 
+    private static OptionGroup createLuckBasedEnchantmentGroup(String enchantmentId, Option<Integer> maxLevel, Option<Boolean> availableRandomly, Option<Boolean> availableForBookOffer, Option<Boolean> availableAsTreasure, Option<Boolean> isLuckBased, Option<Boolean> showApplyMessage) {
+        return OptionGroup.createBuilder()
+            .name(Component.translatable("enchantment.incantationem." + enchantmentId))
+            .description(OptionDescription.of(Component.translatable(String.format("enchantment.incantationem.%s.desc", enchantmentId))))
+            .collapsed(true)
+            .option(maxLevel)
+            .option(availableRandomly)
+            .option(availableForBookOffer)
+            .option(availableAsTreasure)
+            .option(isLuckBased)
+            .option(showApplyMessage)
+            .build();
+    }
+
     private static OptionGroup createLevellessEnchantmentGroup(String enchantmentId, Option<Boolean> availableRandomly, Option<Boolean> availableForBookOffer, Option<Boolean> availableAsTreasure) {
         return OptionGroup.createBuilder()
             .name(Component.translatable("enchantment.incantationem." + enchantmentId))
             .description(OptionDescription.of(Component.translatable(String.format("enchantment.incantationem.%s.desc", enchantmentId))))
+            .collapsed(true)
             .option(availableRandomly)
             .option(availableForBookOffer)
             .option(availableAsTreasure)
             .build();
     }
 
-    private static OptionGroup createCurseGroup(String enchantmentId, Option<Boolean> availableForBookOffer, Option<Boolean> availableAsTreasure) {
+    // Winner for longest, somewhat cohesive method name I've ever written
+    private static OptionGroup createLevellessLuckBasedEnchantmentGroup(String enchantmentId, Option<Boolean> availableRandomly, Option<Boolean> availableForBookOffer, Option<Boolean> availableAsTreasure, Option<Boolean> isLuckBased, Option<Boolean> showApplyMessage) {
         return OptionGroup.createBuilder()
             .name(Component.translatable("enchantment.incantationem." + enchantmentId))
             .description(OptionDescription.of(Component.translatable(String.format("enchantment.incantationem.%s.desc", enchantmentId))))
+            .collapsed(true)
+            .option(availableRandomly)
             .option(availableForBookOffer)
             .option(availableAsTreasure)
+            .option(isLuckBased)
+            .option(showApplyMessage)
             .build();
     }
 

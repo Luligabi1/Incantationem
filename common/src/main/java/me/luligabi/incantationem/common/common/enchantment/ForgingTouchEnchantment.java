@@ -27,8 +27,8 @@ public class ForgingTouchEnchantment extends IncantationemEnchantment {
             EnchantmentCategory.DIGGER,
             new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND},
             Incantationem.CONFIG.enchantments.forgingTouch.maxLevel,
-            Incantationem.CONFIG.enchantments.forgingTouch.availableForBookOffer,
             Incantationem.CONFIG.enchantments.forgingTouch.availableRandomly,
+            Incantationem.CONFIG.enchantments.forgingTouch.availableForBookOffer,
             Incantationem.CONFIG.enchantments.forgingTouch.availableAsTreasure
         );
     }
@@ -50,11 +50,11 @@ public class ForgingTouchEnchantment extends IncantationemEnchantment {
 
         for(ItemStack preForgingItems : original) {
             Optional<RecipeHolder<SmeltingRecipe>> recipe = level.getRecipeManager().getAllRecipesFor(RecipeType.SMELTING)
-                    .stream()
-                    .filter(smeltingRecipe -> smeltingRecipe.value().getIngredients().get(0).test(preForgingItems))
-                    .findFirst();
+                .stream()
+                .filter(smeltingRecipe -> smeltingRecipe.value().getIngredients().get(0).test(preForgingItems))
+                .findFirst();
 
-            if(recipe.isPresent() && Util.neutralEffectRandomNumber(level.getRandom(), 0, 10) < (forgingTouchLevel * 1.5)) {
+            if(recipe.isPresent() && Util.neutralEffectRandomNumber(level.getRandom(), (100 - (forgingTouchLevel * 15)), Incantationem.CONFIG.enchantments.forgingTouch.isLuckBased)) {
                 ItemStack forgedItems = recipe.get().value().getResultItem(level.registryAccess()).copy();
                 forgedItems.setCount(preForgingItems.getCount());
                 itemsToDropList.add(forgedItems);

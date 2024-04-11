@@ -1,6 +1,7 @@
 package me.luligabi.incantationem.common.common.enchantment;
 
 import me.luligabi.incantationem.common.common.Incantationem;
+import me.luligabi.incantationem.common.common.util.EffectAppliedMessage;
 import me.luligabi.incantationem.common.common.util.Util;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -20,8 +21,8 @@ public class DeflectionEnchantment extends IncantationemEnchantment {
             EnchantmentCategory.ARMOR,
             new EquipmentSlot[]{EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET},
             Incantationem.CONFIG.enchantments.deflection.maxLevel,
-            Incantationem.CONFIG.enchantments.deflection.availableForBookOffer,
             Incantationem.CONFIG.enchantments.deflection.availableRandomly,
+            Incantationem.CONFIG.enchantments.deflection.availableForBookOffer,
             Incantationem.CONFIG.enchantments.deflection.availableAsTreasure
         );
     }
@@ -42,7 +43,7 @@ public class DeflectionEnchantment extends IncantationemEnchantment {
     }
 
     @Override
-    public boolean checkCompatibility(Enchantment other) {
+    public boolean checkCompatibility(Enchantment other) { // FIXME use tag for all compatibility checks
         return super.checkCompatibility(other) &&
             other != Enchantments.PROJECTILE_PROTECTION &&
             other != Enchantments.THORNS;
@@ -53,14 +54,20 @@ public class DeflectionEnchantment extends IncantationemEnchantment {
         int deflectionLevel = 0;
         for(EquipmentSlot slot : EquipmentSlot.values()) {
             if(!slot.isArmor()) continue;
-            deflectionLevel += EnchantmentHelper.getItemEnchantmentLevel(EnchantmentRegistry.DEFLECTION.get(), user.getItemBySlot(slot));
+            deflectionLevel += EnchantmentHelper.getItemEnchantmentLevel(
+                EnchantmentRegistry.DEFLECTION.get(),
+                user.getItemBySlot(slot)
+            );
         }
         if(deflectionLevel > 0) {
-            /*
-             * When using Deflection 3 on all 4 armor pieces, the user
-             * has ~50% chance of deflecting an arrow.
-             */
-            return Util.positiveEffectRandomNumber(user, user.getRandom(), 0, 100) < deflectionLevel * 4.2;
+            boolean apply = Util.positiveEffectRandomNumber(
+                user, user.getRandom(),
+                Math.round(100 - deflectionLevel * 4.2F),
+                Incantationem.CONFIG.enchantments.deflection.isLuckBased
+            );
+            if(apply) Util.sendEffectAppliedMessage(user, EffectAppliedMessage.DEFLECTION);
+
+            return apply;
         }
         return false;
     }

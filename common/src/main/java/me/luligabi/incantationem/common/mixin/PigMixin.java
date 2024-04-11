@@ -8,5 +8,7 @@ import org.spongepowered.asm.mixin.Mixin;
 @Mixin(Pig.class)
 public class PigMixin {
 
-    public MobType getMobType() { return Incantationem.SWINE; }
+    public MobType getMobType() {
+        return Incantationem.SWINE;
+    }
 }

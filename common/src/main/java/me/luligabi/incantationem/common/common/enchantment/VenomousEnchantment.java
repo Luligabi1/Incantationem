@@ -18,8 +18,8 @@ public class VenomousEnchantment extends IncantationemEnchantment {
             EnchantmentCategory.BOW,
             new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND},
             Incantationem.CONFIG.enchantments.venomous.maxLevel,
-            Incantationem.CONFIG.enchantments.venomous.availableForBookOffer,
             Incantationem.CONFIG.enchantments.venomous.availableRandomly,
+            Incantationem.CONFIG.enchantments.venomous.availableForBookOffer,
             Incantationem.CONFIG.enchantments.venomous.availableAsTreasure
         );
     }
@@ -36,9 +36,9 @@ public class VenomousEnchantment extends IncantationemEnchantment {
 
     public static void apply(LivingEntity attacker, LivingEntity hitEntity, int i) {
         if(i < 1) return;
-        if(Util.positiveEffectRandomNumber(attacker, attacker.getRandom(), 0, 10) > (i * 1.5)) return;
+        if(!Util.positiveEffectRandomNumber(attacker, attacker.getRandom(), (100 - (i * 15)), Incantationem.CONFIG.enchantments.venomous.isLuckBased)) return;
 
-        Util.applyEffectIfNotPresent(hitEntity, MobEffects.POISON, Util.neutralEffectRandomNumber(hitEntity.getRandom(), 2, 4), i - 1);
+        Util.applyEffectIfNotPresent(hitEntity, MobEffects.POISON, hitEntity.getRandom().nextInt(i + 2), i - 1);
         Util.sendEffectAppliedMessage(attacker, EffectAppliedMessage.VENOMOUS);
     }
 

@@ -19,14 +19,16 @@ public class LastStandEnchantment extends IncantationemEnchantment {
             EnchantmentCategory.ARMOR_CHEST,
             new EquipmentSlot[]{EquipmentSlot.CHEST},
             Incantationem.CONFIG.enchantments.lastStand.maxLevel,
-            Incantationem.CONFIG.enchantments.lastStand.availableForBookOffer,
             Incantationem.CONFIG.enchantments.lastStand.availableRandomly,
+            Incantationem.CONFIG.enchantments.lastStand.availableForBookOffer,
             Incantationem.CONFIG.enchantments.lastStand.availableAsTreasure
         );
     }
 
     @Override
-    public int getMinCost(int level) { return 10 + 20 * (level - 1); }
+    public int getMinCost(int level) {
+        return 10 + 20 * (level - 1);
+    }
 
     @Override
     public int getMaxCost(int level) {
@@ -34,13 +36,11 @@ public class LastStandEnchantment extends IncantationemEnchantment {
     }
 
     @Override
-    public void doPostHurt(LivingEntity user, Entity attacker, int level) {
-        if(user.getHealth() <= 4) {
-            if(Util.positiveEffectRandomNumber(user, user.getRandom(), 0, 10) < level*0.35) {
-                Util.applyEffectIfNotPresent(user, MobEffects.DAMAGE_BOOST, (int) Math.ceil(level * 2.5), level-1);
-                Util.sendEffectAppliedMessage(user, EffectAppliedMessage.LAST_STAND);
-            }
-        }
+    public void doPostHurt(LivingEntity user, Entity attacker, int i) {
+        if(user.getHealth() >= 5) return;
+        if(!Util.positiveEffectRandomNumber(user, user.getRandom(), (100 - (i * 30)), Incantationem.CONFIG.enchantments.lastStand.isLuckBased)) return;
+        Util.applyEffectIfNotPresent(user, MobEffects.DAMAGE_BOOST, (int) Math.ceil(i * 2.5), i - 1);
+        Util.sendEffectAppliedMessage(user, EffectAppliedMessage.LAST_STAND);
     }
 
 }

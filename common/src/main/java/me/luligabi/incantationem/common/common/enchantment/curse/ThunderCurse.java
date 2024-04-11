@@ -16,8 +16,8 @@ public class ThunderCurse extends IncantationemEnchantment {
             Rarity.VERY_RARE,
             EnchantmentCategory.ARMOR_HEAD,
             new EquipmentSlot[]{EquipmentSlot.HEAD},
+            Incantationem.CONFIG.curses.thunder.availableRandomly,
             Incantationem.CONFIG.curses.thunder.availableForBookOffer,
-            true,
             Incantationem.CONFIG.curses.thunder.availableAsTreasure
         );
     }
@@ -37,16 +37,14 @@ public class ThunderCurse extends IncantationemEnchantment {
         return true;
     }
 
-
-
     @Override
     public void doPostHurt(LivingEntity user, Entity attacker, int level) {
-        if(Util.negativeEffectRandomNumber(user, user.getRandom(), 1, 10) != 1) return;
+        if(!Util.negativeEffectRandomNumber(user, user.getRandom(), 85, Incantationem.CONFIG.curses.thunder.isLuckBased))
+            return;
         LightningBolt lightningEntity = EntityType.LIGHTNING_BOLT.create(user.level());
         lightningEntity.setVisualOnly(!user.level().getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING));
         lightningEntity.moveTo(user.blockPosition().getX(), user.blockPosition().getY(), user.blockPosition().getZ());
         user.level().addFreshEntity(lightningEntity);
-
         Util.sendEffectAppliedMessage(user, EffectAppliedMessage.THUNDER);
     }
 

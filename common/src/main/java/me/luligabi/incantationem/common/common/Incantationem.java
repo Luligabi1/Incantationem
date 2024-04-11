@@ -17,37 +17,38 @@ import net.minecraft.world.item.enchantment.Enchantment;
 
 public class Incantationem {
 
-	public static void init() {
-		CurseRegistry.init();
-		EnchantmentRegistry.init();
-		NetworkRegistry.init();
+    public static void init() {
+        CurseRegistry.init();
+        EnchantmentRegistry.init();
+        NetworkRegistry.init();
 
-		if(Platform.isDevelopmentEnvironment()) {
-			CommandRegistrationEvent.EVENT.register((dispatcher, registry, selection) -> {
-				WardenSpawnTrackerCommand.register(dispatcher);
-			});
-		}
-	}
+        if(Platform.isDevelopmentEnvironment()) {
+            CommandRegistrationEvent.EVENT.register((dispatcher, registry, selection) -> {
+                WardenSpawnTrackerCommand.register(dispatcher);
+            });
+        }
+    }
 
 
-	public static final MobType SWINE = new MobType();
-	public static final MobType VULNERABLE_TO_WATER = new MobType();
+    public static final MobType SWINE = new MobType();
+    public static final MobType VULNERABLE_TO_WATER = new MobType();
 
-	public static final ModConfig CONFIG;
+    public static final ModConfig CONFIG;
 
-	public static ResourceLocation modId(String id) {
-		return new ResourceLocation(MOD_ID, id);
-	}
-	public static final String MOD_ID = "incantationem";
+    public static ResourceLocation modId(String id) {
+        return new ResourceLocation(MOD_ID, id);
+    }
 
-	public static final Registrar<Enchantment> ENCHANTMENTS;
-	private static final Supplier<RegistrarManager> MANAGER;
+    public static final String MOD_ID = "incantationem";
 
-	static {
-		MANAGER = Suppliers.memoize(() -> RegistrarManager.get(Incantationem.MOD_ID));
-		ENCHANTMENTS = Incantationem.MANAGER.get().get(Registries.ENCHANTMENT);
+    public static final Registrar<Enchantment> ENCHANTMENTS;
+    private static final Supplier<RegistrarManager> MANAGER;
 
-		ModConfig.HANDLER.load();
-		CONFIG = ModConfig.HANDLER.instance();
-	}
+    static {
+        MANAGER = Suppliers.memoize(() -> RegistrarManager.get(Incantationem.MOD_ID));
+        ENCHANTMENTS = Incantationem.MANAGER.get().get(Registries.ENCHANTMENT);
+
+        ModConfig.HANDLER.load();
+        CONFIG = ModConfig.HANDLER.instance();
+    }
 }

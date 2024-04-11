@@ -18,14 +18,16 @@ public class ReapingRodEnchantment extends IncantationemEnchantment {
             Rarity.VERY_RARE,
             EnchantmentCategory.FISHING_ROD,
             new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND},
-            Incantationem.CONFIG.enchantments.reapingRod.availableForBookOffer,
             Incantationem.CONFIG.enchantments.reapingRod.availableRandomly,
+            Incantationem.CONFIG.enchantments.reapingRod.availableForBookOffer,
             Incantationem.CONFIG.enchantments.reapingRod.availableAsTreasure
         );
     }
 
     @Override
-    public int getMinCost(int level) { return 29; }
+    public int getMinCost(int level) {
+        return 29;
+    }
 
     @Override
     public int getMaxCost(int level) {

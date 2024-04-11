@@ -10,33 +10,34 @@ import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.enchantment.Enchantment;
 
 public class Util {
 
-    public static int positiveEffectRandomNumber(LivingEntity livingEntity, RandomSource random, int min, int max){
+    public static boolean positiveEffectRandomNumber(LivingEntity livingEntity, RandomSource random, int failureOdds, boolean isLuckBased) {
         return effectBasedLuckRandomNumber(
-                livingEntity,
-                random,
-                min, max,
-                random.nextInt(max - min) + min,
-                random.nextInt(max + 2 - min) + min
+            livingEntity,
+            random,
+            positiveRandomNumber(random),
+            negativeRandomNumber(random),
+            failureOdds,
+            isLuckBased
         );
     }
 
-    public static int negativeEffectRandomNumber(LivingEntity livingEntity, RandomSource random, int min, int max){
+    public static boolean negativeEffectRandomNumber(LivingEntity livingEntity, RandomSource random, int failureOdds, boolean isLuckBased) {
         return effectBasedLuckRandomNumber(
-                livingEntity,
-                random,
-                min, max,
-                random.nextInt(max + 2 - min) + min,
-                random.nextInt(max - min) + min
+            livingEntity,
+            random,
+            negativeRandomNumber(random),
+            positiveRandomNumber(random),
+            failureOdds,
+            isLuckBased
         );
     }
 
-    public static int neutralEffectRandomNumber(RandomSource random, int min, int max) {
-        return random.nextInt(max + 1 - min) + min;
+    public static boolean neutralEffectRandomNumber(RandomSource random, int failureOdds, boolean isLuckBased) {
+        return !isLuckBased || (neutralRandomNumber(random) > failureOdds);
     }
 
     public static void applyEffectIfNotPresent(LivingEntity livingEntity, MobEffect statusEffect, int duration, int strength) {
@@ -53,23 +54,34 @@ public class Util {
         );
     }
 
-
     public static boolean isEnchantmentInTag(Enchantment enchantment, TagKey<Enchantment> tag) {
         return BuiltInRegistries.ENCHANTMENT.wrapAsHolder(enchantment).is(tag);
     }
 
-    private static int effectBasedLuckRandomNumber(LivingEntity livingEntity, RandomSource random, int min, int max, int luckOdds, int unluckyOdds){
+    private static boolean effectBasedLuckRandomNumber(LivingEntity livingEntity, RandomSource random, int luckOdds, int unluckyOdds, int failureOdds, boolean isLuckBased) {
         if(hasOnlyOneEffect(livingEntity, MobEffects.LUCK, MobEffects.UNLUCK)) {
-            return luckOdds;
+            return !isLuckBased || (luckOdds > failureOdds);
         } else if(hasOnlyOneEffect(livingEntity, MobEffects.UNLUCK, MobEffects.LUCK)) {
-            return unluckyOdds;
+            return !isLuckBased || (unluckyOdds > failureOdds);
         } else {
-            return neutralEffectRandomNumber(random, min, max);
+            return !isLuckBased || (neutralRandomNumber(random) > failureOdds);
         }
     }
 
     private static boolean hasOnlyOneEffect(LivingEntity livingEntity, MobEffect has, MobEffect hasnt) {
         return livingEntity.hasEffect(has) && !livingEntity.hasEffect(hasnt);
+    }
+
+    private static int positiveRandomNumber(RandomSource random) {
+        return random.nextInt(111);
+    }
+
+    private static int negativeRandomNumber(RandomSource random) {
+        return random.nextInt(91);
+    }
+
+    private static int neutralRandomNumber(RandomSource random) {
+        return random.nextInt(101);
     }
 
 }

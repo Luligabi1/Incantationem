@@ -19,8 +19,8 @@ public class ToughLuckCurse extends IncantationemEnchantment {
             Rarity.VERY_RARE,
             EnchantmentCategory.BREAKABLE,
             EquipmentSlot.values(),
+            Incantationem.CONFIG.curses.toughLuck.availableRandomly,
             Incantationem.CONFIG.curses.toughLuck.availableForBookOffer,
-            true,
             Incantationem.CONFIG.curses.toughLuck.availableAsTreasure
         );
     }

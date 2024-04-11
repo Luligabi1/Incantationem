@@ -6,9 +6,10 @@ import net.minecraft.network.chat.Component;
 
 public enum EffectAppliedMessage {
 
-    DECAY(Incantationem.CONFIG.enchantments.decay.showApplyMessage, "decay", ChatFormatting.GRAY),
+    DECAY(Incantationem.CONFIG.enchantments.decay.showApplyMessage, "decay", ChatFormatting.DARK_GRAY),
+    DEFLECTION(Incantationem.CONFIG.enchantments.deflection.showApplyMessage, "deflection", ChatFormatting.GRAY),
     FORGING_TOUCH(Incantationem.CONFIG.enchantments.forgingTouch.showApplyMessage, "forging_touch", ChatFormatting.GOLD),
-    LAST_STAND(Incantationem.CONFIG.enchantments.lastStand.showApplyMessage, "last_stand", ChatFormatting.GOLD),
+    LAST_STAND(Incantationem.CONFIG.enchantments.lastStand.showApplyMessage, "last_stand", ChatFormatting.RED),
     REAPING_ROD(Incantationem.CONFIG.enchantments.reapingRod.showApplyMessage, "reaping_rod", ChatFormatting.LIGHT_PURPLE),
     RETREAT(Incantationem.CONFIG.enchantments.retreat.showApplyMessage, "retreat", ChatFormatting.AQUA),
     VENOMOUS(Incantationem.CONFIG.enchantments.venomous.showApplyMessage, "venomous", ChatFormatting.DARK_GREEN),

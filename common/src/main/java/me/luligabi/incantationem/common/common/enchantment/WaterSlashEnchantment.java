@@ -16,14 +16,14 @@ public class WaterSlashEnchantment extends IncantationemEnchantment {
 
     public WaterSlashEnchantment() {
         super(
-                "water_slash",
-                Rarity.UNCOMMON,
-                EnchantmentCategory.WEAPON,
-                new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND},
-                Incantationem.CONFIG.enchantments.waterSlash.maxLevel,
-                Incantationem.CONFIG.enchantments.waterSlash.availableForBookOffer,
-                Incantationem.CONFIG.enchantments.waterSlash.availableRandomly,
-                Incantationem.CONFIG.enchantments.waterSlash.availableAsTreasure
+            "water_slash",
+            Rarity.UNCOMMON,
+            EnchantmentCategory.WEAPON,
+            new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND},
+            Incantationem.CONFIG.enchantments.waterSlash.maxLevel,
+            Incantationem.CONFIG.enchantments.waterSlash.availableRandomly,
+            Incantationem.CONFIG.enchantments.waterSlash.availableForBookOffer,
+            Incantationem.CONFIG.enchantments.waterSlash.availableAsTreasure
         );
     }
 

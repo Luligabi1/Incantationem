@@ -17,8 +17,8 @@ public class RetreatEnchantment extends IncantationemEnchantment {
             Rarity.UNCOMMON,
             EnchantmentCategory.ARMOR_LEGS,
             new EquipmentSlot[]{EquipmentSlot.LEGS},
-            Incantationem.CONFIG.enchantments.retreat.availableForBookOffer,
             Incantationem.CONFIG.enchantments.retreat.availableRandomly,
+            Incantationem.CONFIG.enchantments.retreat.availableForBookOffer,
             Incantationem.CONFIG.enchantments.retreat.availableAsTreasure
         );
     }
@@ -35,10 +35,10 @@ public class RetreatEnchantment extends IncantationemEnchantment {
 
     @Override
     public void doPostHurt(LivingEntity user, Entity attacker, int level) {
-        if(Util.positiveEffectRandomNumber(user, user.getRandom(),0, 10) < 2) {
-            Util.applyEffectIfNotPresent(user, MobEffects.MOVEMENT_SPEED, 7, 0);
-            Util.sendEffectAppliedMessage(user, EffectAppliedMessage.RETREAT);
-        }
+        if(!Util.positiveEffectRandomNumber(user, user.getRandom(), 80, Incantationem.CONFIG.enchantments.retreat.isLuckBased))
+            return;
+        Util.applyEffectIfNotPresent(user, MobEffects.MOVEMENT_SPEED, 7, 0);
+        Util.sendEffectAppliedMessage(user, EffectAppliedMessage.RETREAT);
     }
 
 }

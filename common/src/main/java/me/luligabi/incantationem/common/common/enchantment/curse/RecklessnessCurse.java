@@ -21,8 +21,8 @@ public class RecklessnessCurse extends IncantationemEnchantment {
             Rarity.VERY_RARE,
             EnchantmentCategory.DIGGER,
             new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND},
+            Incantationem.CONFIG.curses.recklessness.availableRandomly,
             Incantationem.CONFIG.curses.recklessness.availableForBookOffer,
-            true,
             Incantationem.CONFIG.curses.recklessness.availableAsTreasure
         );
     }
@@ -38,7 +38,9 @@ public class RecklessnessCurse extends IncantationemEnchantment {
     }
 
     @Override
-    public boolean isCurse() { return true; }
+    public boolean isCurse() {
+        return true;
+    }
 
     public static void apply(Player player, Block block, CallbackInfo ci) {
         if(EnchantmentHelper.getEnchantmentLevel(CurseRegistry.RECKLESSNESS.get(), player) < 1) return;

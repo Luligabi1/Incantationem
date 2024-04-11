@@ -9,6 +9,7 @@ import org.spongepowered.asm.mixin.gen.Invoker;
 @Mixin(Entity.class)
 public interface EntityInvoker {
 
-    @Invoker("getBlockPosBelowThatAffectsMyMovement") // what the hell, mojang
+    @Invoker("getBlockPosBelowThatAffectsMyMovement")
+        // what the hell, mojang
     BlockPos invokeGetVelocityAffectingPos();
 }

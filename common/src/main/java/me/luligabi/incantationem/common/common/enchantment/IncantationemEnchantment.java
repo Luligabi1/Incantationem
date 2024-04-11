@@ -10,12 +10,12 @@ import net.minecraft.world.item.enchantment.EnchantmentCategory;
 
 public abstract class IncantationemEnchantment extends Enchantment {
 
-    public IncantationemEnchantment(String id, Rarity rarity, EnchantmentCategory category, EquipmentSlot[] equipmentSlots, int maxLevel, boolean availableForBookOffer, boolean availableRandomly, boolean availableAsTreasure) {
+    public IncantationemEnchantment(String id, Rarity rarity, EnchantmentCategory category, EquipmentSlot[] equipmentSlots, int maxLevel, boolean availableRandomly, boolean availableForBookOffer, boolean availableAsTreasure) {
         super(rarity, category, equipmentSlots);
         this.id = id;
         this.maxLevel = maxLevel;
-        this.availableForBookOffer = availableForBookOffer;
         this.availableRandomly = availableRandomly;
+        this.availableForBookOffer = availableForBookOffer;
         this.availableAsTreasure = availableAsTreasure;
 
         this.incompatibleTag = TagKey.create(
@@ -24,8 +24,8 @@ public abstract class IncantationemEnchantment extends Enchantment {
         );
     }
 
-    public IncantationemEnchantment(String id, Rarity weight, EnchantmentCategory category, EquipmentSlot[] equipmentSlots, boolean availableForBookOffer, boolean availableRandomly, boolean availableAsTreasure) {
-        this(id,weight, category, equipmentSlots, 1, availableForBookOffer, availableRandomly, availableAsTreasure);
+    public IncantationemEnchantment(String id, Rarity weight, EnchantmentCategory category, EquipmentSlot[] equipmentSlots, boolean availableRandomly, boolean availableForBookOffer, boolean availableAsTreasure) {
+        this(id, weight, category, equipmentSlots, 1, availableRandomly, availableForBookOffer, availableAsTreasure);
     }
 
 
@@ -42,15 +42,15 @@ public abstract class IncantationemEnchantment extends Enchantment {
         return maxLevel;
     }
 
+    @Override
+    public boolean isDiscoverable() {
+        return availableRandomly;
+    }
+
     // keeping yarn-like field names for clarity, common mojmap L
     @Override
     public boolean isTradeable() {
         return availableForBookOffer;
-    }
-
-    @Override
-    public boolean isDiscoverable() {
-        return availableRandomly;
     }
 
     @Override

@@ -18,8 +18,8 @@ public class DecayEnchantment extends IncantationemEnchantment {
             EnchantmentCategory.WEAPON,
             new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND},
             Incantationem.CONFIG.enchantments.decay.maxLevel,
-            Incantationem.CONFIG.enchantments.decay.availableForBookOffer,
             Incantationem.CONFIG.enchantments.decay.availableRandomly,
+            Incantationem.CONFIG.enchantments.decay.availableForBookOffer,
             Incantationem.CONFIG.enchantments.decay.availableAsTreasure
         );
     }
@@ -41,13 +41,10 @@ public class DecayEnchantment extends IncantationemEnchantment {
 
     @Override
     public void doPostAttack(LivingEntity user, Entity attacker, int level) {
-        if(Util.positiveEffectRandomNumber(user, user.getRandom(),0, 10) < 1) {
-            if(attacker instanceof LivingEntity) {
-                Util.applyEffectIfNotPresent((LivingEntity) attacker, MobEffects.WITHER, 3 + level, level - 1);
-                Util.sendEffectAppliedMessage(user, EffectAppliedMessage.DECAY);
-            }
-        }
-        super.doPostAttack(user, attacker, level);
+        if(!(attacker instanceof LivingEntity)) return;
+        if(!Util.positiveEffectRandomNumber(user, user.getRandom(), 85, Incantationem.CONFIG.enchantments.decay.isLuckBased)) return;
+        Util.applyEffectIfNotPresent((LivingEntity) attacker, MobEffects.WITHER, 3 + level, level - 1);
+        Util.sendEffectAppliedMessage(user, EffectAppliedMessage.DECAY);
     }
 
 }

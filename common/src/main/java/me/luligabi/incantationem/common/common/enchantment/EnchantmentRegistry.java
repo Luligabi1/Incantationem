@@ -28,8 +28,8 @@ public class EnchantmentRegistry {
         DeflectionEnchantment::new
     );
     public static final RegistrySupplier<ForgingTouchEnchantment> FORGING_TOUCH = Incantationem.ENCHANTMENTS.register(
-            Incantationem.modId("forging_touch"),
-            ForgingTouchEnchantment::new
+        Incantationem.modId("forging_touch"),
+        ForgingTouchEnchantment::new
     );
     public static final RegistrySupplier<FuseShotEnchantment> FUSE_SHOT = Incantationem.ENCHANTMENTS.register(
         Incantationem.modId("fuse_shot"),

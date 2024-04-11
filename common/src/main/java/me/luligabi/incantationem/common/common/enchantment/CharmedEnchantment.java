@@ -20,8 +20,8 @@ public class CharmedEnchantment extends IncantationemEnchantment {
             Rarity.RARE,
             EnchantmentCategory.BREAKABLE,
             EquipmentSlot.values(),
-            Incantationem.CONFIG.enchantments.charmed.availableForBookOffer,
             Incantationem.CONFIG.enchantments.charmed.availableRandomly,
+            Incantationem.CONFIG.enchantments.charmed.availableForBookOffer,
             Incantationem.CONFIG.enchantments.charmed.availableAsTreasure
         );
     }

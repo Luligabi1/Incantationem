@@ -25,8 +25,8 @@ public class FuseShotEnchantment extends IncantationemEnchantment {
             EnchantmentCategory.BOW,
             new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND},
             Incantationem.CONFIG.enchantments.fuseShot.maxLevel,
-            Incantationem.CONFIG.enchantments.fuseShot.availableForBookOffer,
             Incantationem.CONFIG.enchantments.fuseShot.availableRandomly,
+            Incantationem.CONFIG.enchantments.fuseShot.availableForBookOffer,
             Incantationem.CONFIG.enchantments.fuseShot.availableAsTreasure
         );
     }

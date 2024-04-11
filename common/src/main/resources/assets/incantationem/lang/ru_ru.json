@@ -9,20 +9,16 @@
   "enchantment.incantationem.reaping_rod": "Жатвенный стержень",
   "enchantment.incantationem.retreat": "Отступление",
   "enchantment.incantationem.venomous": "Ядоносный",
-
   "enchantment.incantationem.recklessness": "Проклятье безумия",
   "enchantment.incantationem.thunder": "Проклятье грома",
   "enchantment.incantationem.tough_luck": "Проклятье несчастья",
-
   "message.incantationem.decay.applied": "* Наложен эффект Распад! *",
   "message.incantationem.forging_touch.applied": "* Наложен эффект Ковочное касание! *",
   "message.incantationem.last_stand.applied": "* Наложен эффект Последний рубеж! *",
   "message.incantationem.reaping_rod.applied": "* Наложен эффект Жатвенный стержень! *",
   "message.incantationem.retreat.applied": "* Наложен эффект Отступление! *",
   "message.incantationem.venomous.applied": "* Наложен эффект Ядоносный! *",
-
   "message.incantationem.thunder.applied": "* Наложен эффект Проклятье грома! :( *",
-
   "enchantment.incantationem.bunnys_hop.desc": "Даёт Прыгучесть, когда стоишь на блоках травы/земли.",
   "enchantment.incantationem.swine_bane.desc": "Увеличивает урон по свиным мобам, среди которых свиньи, пиглины и хоглины.",
   "enchantment.incantationem.charmed.desc": "Даёт постоянный эффект удачи при его использовании, увеличивая твою фору на события, основанные на удаче.",
@@ -33,8 +29,6 @@
   "enchantment.incantationem.reaping_rod.desc": "Налаживает на пользователя подобно эффекту зачарованного золотого яблока, в случае когда сделан смертельный удар по враждебному мобу (перевёл DrHesperus).",
   "enchantment.incantationem.retreat.desc": "Случайным образом даёт скорость после того, как ударит пользователь.",
   "enchantment.incantationem.venomous.desc": "Случайным образом налаживает отравление при ударе по сущностям.",
-
-
   "enchantment.incantationem.recklessness.desc": "Заставляет все сломанные блоки вообще не выпадать.",
   "enchantment.incantationem.thunder.desc": "Случайным образом бьёт пользователя ударом молнией после того как он ударит.",
   "enchantment.incantationem.tough_luck.desc": "Даёт постоянный эффект неудачи при его использовании, уменьшая твою фору на события, основанные на удаче."

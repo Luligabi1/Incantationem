@@ -24,8 +24,8 @@ public class BaneOfTheSwineEnchantment extends IncantationemEnchantment {
             EnchantmentCategory.WEAPON,
             new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND},
             Incantationem.CONFIG.enchantments.baneOfTheSwine.maxLevel,
-            Incantationem.CONFIG.enchantments.baneOfTheSwine.availableForBookOffer,
             Incantationem.CONFIG.enchantments.baneOfTheSwine.availableRandomly,
+            Incantationem.CONFIG.enchantments.baneOfTheSwine.availableForBookOffer,
             Incantationem.CONFIG.enchantments.baneOfTheSwine.availableAsTreasure
         );
     }
@@ -52,7 +52,7 @@ public class BaneOfTheSwineEnchantment extends IncantationemEnchantment {
 
     @Override
     public float getDamageBonus(int level, MobType mobType) {
-        return mobType == Incantationem.SWINE ? (float)level * 2.5F : 0.0F;
+        return mobType == Incantationem.SWINE ? (float) level * 2.5F : 0.0F;
     }
 
     @Override
