@@ -3,9 +3,10 @@ package me.luligabi.incantationem.common.common.enchantment.curse;
 import me.luligabi.incantationem.common.common.Incantationem;
 import me.luligabi.incantationem.common.common.enchantment.IncantationemEnchantment;
 import net.minecraft.stats.Stats;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.enchantment.EnchantmentCategory;
+import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.block.Block;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -18,23 +19,19 @@ public class RecklessnessCurse extends IncantationemEnchantment {
     public RecklessnessCurse() {
         super(
             "recklessness",
-            Rarity.VERY_RARE,
-            EnchantmentCategory.DIGGER,
-            new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND},
+            Enchantment.definition(
+                ItemTags.MINING_ENCHANTABLE,
+                5,
+                1,
+                Enchantment.dynamicCost(0, 25),
+                Enchantment.dynamicCost(25, 50),
+                2,
+                EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND
+            ),
             Incantationem.CONFIG.curses.recklessness.availableRandomly,
             Incantationem.CONFIG.curses.recklessness.availableForBookOffer,
             Incantationem.CONFIG.curses.recklessness.availableAsTreasure
         );
-    }
-
-    @Override
-    public int getMinCost(int level) {
-        return level * 25;
-    }
-
-    @Override
-    public int getMaxCost(int level) {
-        return this.getMinCost(level) + 50;
     }
 
     @Override

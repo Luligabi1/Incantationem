@@ -4,6 +4,7 @@ import me.luligabi.incantationem.common.common.Incantationem;
 import me.luligabi.incantationem.common.common.util.EffectAppliedMessage;
 import me.luligabi.incantationem.common.common.util.Util;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -11,7 +12,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.item.crafting.SmeltingRecipe;
-import net.minecraft.world.item.enchantment.EnchantmentCategory;
+import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 
 import java.util.ArrayList;
@@ -23,24 +24,19 @@ public class ForgingTouchEnchantment extends IncantationemEnchantment {
     public ForgingTouchEnchantment() {
         super(
             "forging_touch",
-            Rarity.RARE,
-            EnchantmentCategory.DIGGER,
-            new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND},
-            Incantationem.CONFIG.enchantments.forgingTouch.maxLevel,
+            Enchantment.definition(
+                ItemTags.MINING_LOOT_ENCHANTABLE,
+                5,
+                Incantationem.CONFIG.enchantments.forgingTouch.maxLevel,
+                Enchantment.dynamicCost(15, 9),
+                Enchantment.dynamicCost(24, 50),
+                2,
+                EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND
+            ),
             Incantationem.CONFIG.enchantments.forgingTouch.availableRandomly,
             Incantationem.CONFIG.enchantments.forgingTouch.availableForBookOffer,
             Incantationem.CONFIG.enchantments.forgingTouch.availableAsTreasure
         );
-    }
-
-    @Override
-    public int getMinCost(int level) {
-        return 15 + (level - 1) * 9;
-    }
-
-    @Override
-    public int getMaxCost(int level) {
-        return super.getMinCost(level) + 50;
     }
 
     public static List<ItemStack> apply(List<ItemStack> original, ServerLevel level, Entity entity, ItemStack stack) {

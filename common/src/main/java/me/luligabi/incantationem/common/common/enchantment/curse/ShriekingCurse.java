@@ -3,8 +3,9 @@ package me.luligabi.incantationem.common.common.enchantment.curse;
 import me.luligabi.incantationem.common.common.Incantationem;
 import me.luligabi.incantationem.common.common.enchantment.IncantationemEnchantment;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.item.enchantment.EnchantmentCategory;
+import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 
 public class ShriekingCurse extends IncantationemEnchantment {
@@ -12,23 +13,19 @@ public class ShriekingCurse extends IncantationemEnchantment {
     public ShriekingCurse() {
         super(
             "shrieking",
-            Rarity.VERY_RARE,
-            EnchantmentCategory.ARMOR_FEET,
-            new EquipmentSlot[]{EquipmentSlot.FEET},
+            Enchantment.definition(
+                ItemTags.FOOT_ARMOR_ENCHANTABLE,
+                5,
+                1,
+                Enchantment.dynamicCost(0, 25),
+                Enchantment.dynamicCost(25, 50),
+                2,
+                EquipmentSlot.FEET
+            ),
             Incantationem.CONFIG.curses.shrieking.availableRandomly,
             Incantationem.CONFIG.curses.shrieking.availableForBookOffer,
             Incantationem.CONFIG.curses.shrieking.availableAsTreasure
         );
-    }
-
-    @Override
-    public int getMinCost(int level) {
-        return level * 25;
-    }
-
-    @Override
-    public int getMaxCost(int level) {
-        return this.getMinCost(level) + 50;
     }
 
     @Override

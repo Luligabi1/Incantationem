@@ -8,10 +8,15 @@
     "Luligabi"
   ],
   "contributors": [
-    "dummy"
+    "Superkat32",
+    "ghost",
+    "4444Zao9",
+    "UpcraftLP"
   ],
   "contact": {
-    "dummy": "dummy"
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/incantationem",
+    "repo": "https://github.com/Luligabi1/Incantationem/",
+    "issues": "https://github.com/Luligabi1/Incantationem/issues/"
   },
   "license": "Apache-2.0",
   "icon": "assets/incantationem/icon.png",
@@ -28,7 +33,7 @@
     "incantationem-common.mixins.json"
   ],
   "depends": {
-    "minecraft": ">=1.20.4",
+    "minecraft": ">=1.20.5",
     "fabric-api": "*",
     "architectury": ">=11.0.8"
   }

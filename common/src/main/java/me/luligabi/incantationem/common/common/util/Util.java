@@ -2,6 +2,7 @@ package me.luligabi.incantationem.common.common.util;
 
 import me.luligabi.incantationem.common.common.packet.EffectAppliedPacket;
 import me.luligabi.incantationem.common.common.packet.NetworkRegistry;
+import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.TagKey;
@@ -40,7 +41,7 @@ public class Util {
         return !isLuckBased || (neutralRandomNumber(random) > failureOdds);
     }
 
-    public static void applyEffectIfNotPresent(LivingEntity livingEntity, MobEffect statusEffect, int duration, int strength) {
+    public static void applyEffectIfNotPresent(LivingEntity livingEntity, Holder<MobEffect> statusEffect, int duration, int strength) {
         if(livingEntity.hasEffect(statusEffect)) return;
         livingEntity.addEffect(new MobEffectInstance(statusEffect, duration * 20, strength, true, false));
     }
@@ -68,7 +69,7 @@ public class Util {
         }
     }
 
-    private static boolean hasOnlyOneEffect(LivingEntity livingEntity, MobEffect has, MobEffect hasnt) {
+    private static boolean hasOnlyOneEffect(LivingEntity livingEntity, Holder<MobEffect> has, Holder<MobEffect> hasnt) {
         return livingEntity.hasEffect(has) && !livingEntity.hasEffect(hasnt);
     }
 

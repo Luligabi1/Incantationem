@@ -1,6 +1,7 @@
 package me.luligabi.incantationem.common.common.enchantment;
 
 import me.luligabi.incantationem.common.common.Incantationem;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
@@ -8,7 +9,6 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.enchantment.Enchantment;
-import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
@@ -21,26 +21,20 @@ public class FuseShotEnchantment extends IncantationemEnchantment {
     public FuseShotEnchantment() {
         super(
             "fuse_shot",
-            Enchantment.Rarity.RARE,
-            EnchantmentCategory.BOW,
-            new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND},
-            Incantationem.CONFIG.enchantments.fuseShot.maxLevel,
+            Enchantment.definition(
+                ItemTags.BOW_ENCHANTABLE,
+                5,
+                Incantationem.CONFIG.enchantments.fuseShot.maxLevel,
+                Enchantment.constantCost(18),
+                Enchantment.constantCost(42),
+                2,
+                EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND
+            ),
             Incantationem.CONFIG.enchantments.fuseShot.availableRandomly,
             Incantationem.CONFIG.enchantments.fuseShot.availableForBookOffer,
             Incantationem.CONFIG.enchantments.fuseShot.availableAsTreasure
         );
     }
-
-    @Override
-    public int getMinCost(int level) {
-        return 18;
-    }
-
-    @Override
-    public int getMaxCost(int level) {
-        return 42;
-    }
-
 
     public static void createExplosion(LivingEntity attacker, AbstractArrow arrow, @Nullable Entity hitEntity, Vec3 pos, Level level, int i) {
         if(i < 1) return;

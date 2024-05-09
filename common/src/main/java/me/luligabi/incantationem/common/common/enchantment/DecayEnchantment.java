@@ -3,40 +3,31 @@ package me.luligabi.incantationem.common.common.enchantment;
 import me.luligabi.incantationem.common.common.Incantationem;
 import me.luligabi.incantationem.common.common.util.EffectAppliedMessage;
 import me.luligabi.incantationem.common.common.util.Util;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.enchantment.EnchantmentCategory;
+import net.minecraft.world.item.enchantment.Enchantment;
 
 public class DecayEnchantment extends IncantationemEnchantment {
 
     public DecayEnchantment() {
         super(
             "decay",
-            Rarity.RARE,
-            EnchantmentCategory.WEAPON,
-            new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND},
-            Incantationem.CONFIG.enchantments.decay.maxLevel,
+            Enchantment.definition(
+                ItemTags.SHARP_WEAPON_ENCHANTABLE,
+                5,
+                Incantationem.CONFIG.enchantments.decay.maxLevel,
+                Enchantment.dynamicCost(10, 30),
+                Enchantment.dynamicCost(40, 50),
+                2,
+                EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND
+            ),
             Incantationem.CONFIG.enchantments.decay.availableRandomly,
             Incantationem.CONFIG.enchantments.decay.availableForBookOffer,
             Incantationem.CONFIG.enchantments.decay.availableAsTreasure
         );
-    }
-
-    @Override
-    public int getMinCost(int level) {
-        return 10 + 30 * (level - 1);
-    }
-
-    @Override
-    public int getMaxCost(int level) {
-        return super.getMinCost(level) + 50;
-    }
-
-    @Override
-    public int getMaxLevel() {
-        return 3;
     }
 
     @Override

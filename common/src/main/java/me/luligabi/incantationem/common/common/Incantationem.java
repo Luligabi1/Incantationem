@@ -12,7 +12,6 @@ import me.luligabi.incantationem.common.common.packet.NetworkRegistry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.commands.WardenSpawnTrackerCommand;
-import net.minecraft.world.entity.MobType;
 import net.minecraft.world.item.enchantment.Enchantment;
 
 public class Incantationem {
@@ -29,9 +28,6 @@ public class Incantationem {
         }
     }
 
-
-    public static final MobType SWINE = new MobType();
-    public static final MobType VULNERABLE_TO_WATER = new MobType();
 
     public static final ModConfig CONFIG;
 

@@ -5,18 +5,9 @@
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "AbstractArrowMixin",
-    "BlazeMixin",
     "BlockMixin",
-    "EndermanMixin",
     "EntityInvoker",
-    "HoglinMixin",
     "LivingEntityMixin",
-    "PiglinBruteMixin",
-    "PiglinMixin",
-    "PigMixin",
-    "ShulkerMixin",
-    "SnowGolemMixin",
-    "StriderMixin",
     "WardenSpawnTrackerMixin"
   ],
   "client": [

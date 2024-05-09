@@ -3,34 +3,31 @@ package me.luligabi.incantationem.common.common.enchantment;
 import me.luligabi.incantationem.common.common.Incantationem;
 import me.luligabi.incantationem.common.common.util.EffectAppliedMessage;
 import me.luligabi.incantationem.common.common.util.Util;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.enchantment.EnchantmentCategory;
+import net.minecraft.world.item.enchantment.Enchantment;
 
 public class RetreatEnchantment extends IncantationemEnchantment {
 
     public RetreatEnchantment() {
         super(
             "retreat",
-            Rarity.UNCOMMON,
-            EnchantmentCategory.ARMOR_LEGS,
-            new EquipmentSlot[]{EquipmentSlot.LEGS},
+            Enchantment.definition(
+                ItemTags.LEG_ARMOR_ENCHANTABLE,
+                5,
+                1,
+                Enchantment.dynamicCost(10, 20),
+                Enchantment.dynamicCost(30, 50),
+                2,
+                EquipmentSlot.LEGS
+            ),
             Incantationem.CONFIG.enchantments.retreat.availableRandomly,
             Incantationem.CONFIG.enchantments.retreat.availableForBookOffer,
             Incantationem.CONFIG.enchantments.retreat.availableAsTreasure
         );
-    }
-
-    @Override
-    public int getMinCost(int level) {
-        return 10 + 20 * (level - 1);
-    }
-
-    @Override
-    public int getMaxCost(int level) {
-        return super.getMinCost(level) + 50;
     }
 
     @Override

@@ -1,12 +1,13 @@
 package me.luligabi.incantationem.common.common.enchantment;
 
 import me.luligabi.incantationem.common.common.Incantationem;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ExperienceOrb;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
-import net.minecraft.world.item.enchantment.EnchantmentCategory;
+import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
@@ -18,26 +19,20 @@ public class MagneticEnchantment extends IncantationemEnchantment {
     public MagneticEnchantment() {
         super(
             "magnetic",
-            Rarity.VERY_RARE,
-            EnchantmentCategory.ARMOR_LEGS,
-            new EquipmentSlot[]{EquipmentSlot.LEGS},
-            Incantationem.CONFIG.enchantments.magnetic.maxLevel,
+            Enchantment.definition(
+                ItemTags.LEG_ARMOR_ENCHANTABLE,
+                5,
+                Incantationem.CONFIG.enchantments.magnetic.maxLevel,
+                Enchantment.dynamicCost(10, 20),
+                Enchantment.dynamicCost(30, 50),
+                2,
+                EquipmentSlot.LEGS
+            ),
             Incantationem.CONFIG.enchantments.magnetic.availableRandomly,
             Incantationem.CONFIG.enchantments.magnetic.availableForBookOffer,
             Incantationem.CONFIG.enchantments.magnetic.availableAsTreasure
         );
     }
-
-    @Override
-    public int getMinCost(int level) {
-        return 10 + 20 * (level - 1);
-    }
-
-    @Override
-    public int getMaxCost(int level) {
-        return super.getMinCost(level) + 50;
-    }
-
 
     public static void apply(LivingEntity entity, Level level, int i) {
         Vec3 pos = entity.position();

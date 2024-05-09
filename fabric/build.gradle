@@ -1,5 +1,5 @@
 plugins {
-    id "com.github.johnrengelman.shadow" version "7.1.2"
+    id "com.github.johnrengelman.shadow" version "8.1.1"
 }
 
 architectury {
@@ -15,6 +15,10 @@ configurations {
     developmentFabric.extendsFrom common
 }
 
+repositories {
+    maven { url "https://maven.terraformersmc.com/" }
+}
+
 dependencies {
     modImplementation("net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}")
     modImplementation("net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_api_version}")
@@ -25,8 +29,8 @@ dependencies {
     modImplementation("com.terraformersmc:modmenu:${rootProject.modmenu_version}") {
         exclude module: "fabric-api"
     }
-    modRuntimeOnly("dev.isxander.yacl:yet-another-config-lib-fabric:${rootProject.yacl_version}")
-    include("dev.isxander.yacl:yet-another-config-lib-fabric:${rootProject.yacl_version}")
+    modRuntimeOnly("dev.isxander:yet-another-config-lib:${rootProject.yacl_version}-fabric") { transitive false }
+    include("dev.isxander:yet-another-config-lib:${rootProject.yacl_version}-fabric")
 }
 
 processResources {

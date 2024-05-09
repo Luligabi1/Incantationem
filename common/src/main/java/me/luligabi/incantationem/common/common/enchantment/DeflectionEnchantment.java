@@ -3,13 +3,12 @@ package me.luligabi.incantationem.common.common.enchantment;
 import me.luligabi.incantationem.common.common.Incantationem;
 import me.luligabi.incantationem.common.common.util.EffectAppliedMessage;
 import me.luligabi.incantationem.common.common.util.Util;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
-import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
-import net.minecraft.world.item.enchantment.Enchantments;
 
 public class DeflectionEnchantment extends IncantationemEnchantment {
 
@@ -17,24 +16,19 @@ public class DeflectionEnchantment extends IncantationemEnchantment {
     public DeflectionEnchantment() {
         super(
             "deflection",
-            Rarity.VERY_RARE,
-            EnchantmentCategory.ARMOR,
-            new EquipmentSlot[]{EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET},
-            Incantationem.CONFIG.enchantments.deflection.maxLevel,
+            Enchantment.definition(
+                ItemTags.ARMOR_ENCHANTABLE,
+                5,
+                Incantationem.CONFIG.enchantments.deflection.maxLevel,
+                Enchantment.dynamicCost(10, 20),
+                Enchantment.dynamicCost(30, 50),
+                2,
+                EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET
+            ),
             Incantationem.CONFIG.enchantments.deflection.availableRandomly,
             Incantationem.CONFIG.enchantments.deflection.availableForBookOffer,
             Incantationem.CONFIG.enchantments.deflection.availableAsTreasure
         );
-    }
-
-    @Override
-    public int getMinCost(int level) {
-        return 10 + 20 * (level - 1);
-    }
-
-    @Override
-    public int getMaxCost(int level) {
-        return super.getMinCost(level) + 50;
     }
 
     @Override
