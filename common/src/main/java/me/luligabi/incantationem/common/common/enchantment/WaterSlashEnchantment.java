@@ -1,6 +1,7 @@
 package me.luligabi.incantationem.common.common.enchantment;
 
 import me.luligabi.incantationem.common.common.Incantationem;
+import me.luligabi.incantationem.common.common.util.TagRegistry;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.AxeItem;
@@ -26,7 +27,7 @@ public class WaterSlashEnchantment extends IncantationemEnchantment {
             Incantationem.CONFIG.enchantments.waterSlash.availableRandomly,
             Incantationem.CONFIG.enchantments.waterSlash.availableForBookOffer,
             Incantationem.CONFIG.enchantments.waterSlash.availableAsTreasure,
-            Optional.empty() // FIXME
+            TagRegistry.SENSITIVE_TO_WATER_SLASH
         );
 
     }

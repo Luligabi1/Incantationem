@@ -1,18 +1,13 @@
 package me.luligabi.incantationem.common.common.enchantment;
 
 import me.luligabi.incantationem.common.common.Incantationem;
+import me.luligabi.incantationem.common.common.util.TagRegistry;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.DamageEnchantment;
 import net.minecraft.world.item.enchantment.Enchantment;
-
-import java.util.Optional;
 
 /*
  * Original idea by u/nonexistnt @ https://reddit.com/r/minecraftsuggestions/comments/kpqs0r/new_enchantment_bane_of_the_swine/
@@ -35,7 +30,7 @@ public class BaneOfTheSwineEnchantment extends IncantationemEnchantment {
             Incantationem.CONFIG.enchantments.baneOfTheSwine.availableRandomly,
             Incantationem.CONFIG.enchantments.baneOfTheSwine.availableForBookOffer,
             Incantationem.CONFIG.enchantments.baneOfTheSwine.availableAsTreasure,
-            Optional.empty() // FIXME
+            TagRegistry.SENSITIVE_TO_BANE_OF_THE_SWINE
         );
     }
 

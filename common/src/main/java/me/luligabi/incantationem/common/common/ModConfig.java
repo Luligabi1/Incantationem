@@ -128,7 +128,7 @@ public class ModConfig {
         public static class ForgingTouch {
 
             @SerialEntry
-            public int maxLevel = 3;
+            public int maxLevel = 1;
             @SerialEntry
             public boolean availableRandomly = true;
             @SerialEntry
@@ -136,9 +136,9 @@ public class ModConfig {
             @SerialEntry
             public boolean availableAsTreasure = true;
             @SerialEntry
-            public boolean isLuckBased = true;
+            public boolean isLuckBased = false;
             @SerialEntry
-            public boolean showApplyMessage = true;
+            public boolean showApplyMessage = false;
         }
 
         public static class LastStand {

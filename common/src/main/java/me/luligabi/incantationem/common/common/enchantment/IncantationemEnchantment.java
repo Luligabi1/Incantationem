@@ -3,7 +3,6 @@ package me.luligabi.incantationem.common.common.enchantment;
 import me.luligabi.incantationem.common.common.Incantationem;
 import me.luligabi.incantationem.common.common.util.Util;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -13,11 +12,9 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.enchantment.Enchantment;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Optional;
-
 public abstract class IncantationemEnchantment extends Enchantment {
 
-    public IncantationemEnchantment(String id, EnchantmentDefinition definition, boolean availableRandomly, boolean availableForBookOffer, boolean availableAsTreasure, Optional<TagKey<EntityType<?>>> targets) {
+    public IncantationemEnchantment(String id, EnchantmentDefinition definition, boolean availableRandomly, boolean availableForBookOffer, boolean availableAsTreasure, @Nullable TagKey<EntityType<?>> targets) {
         super(definition);
         this.id = id;
         this.availableRandomly = availableRandomly;
@@ -31,7 +28,7 @@ public abstract class IncantationemEnchantment extends Enchantment {
     }
 
     public IncantationemEnchantment(String id, EnchantmentDefinition definition, boolean availableRandomly, boolean availableForBookOffer, boolean availableAsTreasure) {
-        this(id, definition, availableRandomly, availableForBookOffer, availableAsTreasure, Optional.empty());
+        this(id, definition, availableRandomly, availableForBookOffer, availableAsTreasure, null);
     }
 
 
@@ -39,7 +36,7 @@ public abstract class IncantationemEnchantment extends Enchantment {
     private final boolean availableForBookOffer;
     private final boolean availableRandomly;
     private final boolean availableAsTreasure;
-    private final Optional<TagKey<EntityType<?>>> targets;
+    @Nullable private final TagKey<EntityType<?>> targets;
     public final TagKey<Enchantment> incompatibleTag;
 
 
@@ -65,20 +62,16 @@ public abstract class IncantationemEnchantment extends Enchantment {
     }
 
 
-    @SuppressWarnings("OptionalIsPresent")
     public float getDamageBonus(int i, @Nullable EntityType<?> entityType) {
-        if(targets.isEmpty()) {
-            return 1.0F + (float )Math.max(0, i - 1) * 0.5F;
-        } else {
-            return entityType != null && entityType.is(targets.get()) ? (float) i * 2.5F : 0.0F;
-        }
+        if(targets == null || entityType == null) return 0F;
+        return entityType.is(targets) ? (float) i * 2.5F : 0F;
     }
 
-    public void doPostAttack(LivingEntity livingEntity, Entity entity, int i) {
-        if(targets.isPresent() && entity instanceof LivingEntity livingEntity2) {
-            if(i > 0 && livingEntity2.getType().is(targets.get())) {
-                int duration = 20 + livingEntity.getRandom().nextInt(10 * i);
-                livingEntity2.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, duration, 3));
+    public void doPostAttack(LivingEntity user, Entity entity, int i) {
+        if(targets != null && entity instanceof LivingEntity target) {
+            if(i > 0 && target.getType().is(targets)) {
+                int duration = 20 + user.getRandom().nextInt(10 * i);
+                target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, duration, 3));
             }
         }
     }

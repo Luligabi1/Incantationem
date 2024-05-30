@@ -1,7 +1,7 @@
 package me.luligabi.incantationem.common.common.util;
 
-import me.luligabi.incantationem.common.common.packet.EffectAppliedPacket;
-import me.luligabi.incantationem.common.common.packet.NetworkRegistry;
+import dev.architectury.networking.NetworkManager;
+import me.luligabi.incantationem.common.common.network.EffectAppliedPacket;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.server.level.ServerPlayer;
@@ -49,7 +49,7 @@ public class Util {
     public static void sendEffectAppliedMessage(LivingEntity entity, EffectAppliedMessage msg) {
         if(!(entity instanceof ServerPlayer)) return;
         if(!msg.canShow) return;
-        NetworkRegistry.NETWORK_CHANNEL.sendToPlayer(
+        NetworkManager.sendToPlayer(
             (ServerPlayer) entity,
             new EffectAppliedPacket(msg)
         );

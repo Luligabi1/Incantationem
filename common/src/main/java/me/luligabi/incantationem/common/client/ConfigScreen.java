@@ -242,7 +242,7 @@ public class ConfigScreen {
         // Forging Touch
         Option<Integer> forgingTouchMaxLevel = maxLevel()
             .binding(
-                3,
+                1,
                 () -> config.enchantments.forgingTouch.maxLevel,
                 newValue -> config.enchantments.forgingTouch.maxLevel = newValue
             )
@@ -274,7 +274,7 @@ public class ConfigScreen {
 
         Option<Boolean> forgingTouchIsLuckBased = isLuckBased()
             .binding(
-                true,
+                false,
                 () -> config.enchantments.forgingTouch.isLuckBased,
                 newValue -> config.enchantments.forgingTouch.isLuckBased = newValue
             )
@@ -282,7 +282,7 @@ public class ConfigScreen {
 
         Option<Boolean> forgingTouchShowApplyMessage = showApplyMessage()
             .binding(
-                true,
+                false,
                 () -> config.enchantments.forgingTouch.showApplyMessage,
                 newValue -> config.enchantments.forgingTouch.showApplyMessage = newValue
             )
@@ -816,28 +816,32 @@ public class ConfigScreen {
         return Option.<Integer>createBuilder()
             .name(Component.translatable("configOption.incantationem.maxLevel"))
             .description(OptionDescription.of(Component.translatable("configOption.incantationem.maxLevel.tooltip")))
-            .controller(option -> IntegerFieldControllerBuilder.create(option).range(1, 10));
+            .controller(option -> IntegerFieldControllerBuilder.create(option).range(1, 10))
+            .flag(OptionFlag.GAME_RESTART);
     }
 
     private static Option.Builder<Boolean> availableRandomly() {
         return Option.<Boolean>createBuilder()
             .name(Component.translatable("configOption.incantationem.availableRandomly"))
             .description(OptionDescription.of(Component.translatable("configOption.incantationem.availableRandomly.tooltip")))
-            .controller(option -> BooleanControllerBuilder.create(option).yesNoFormatter().coloured(true));
+            .controller(option -> BooleanControllerBuilder.create(option).yesNoFormatter().coloured(true))
+            .flag(OptionFlag.GAME_RESTART);
     }
 
     private static Option.Builder<Boolean> availableForBookOffer() {
         return Option.<Boolean>createBuilder()
             .name(Component.translatable("configOption.incantationem.availableForBookOffer"))
             .description(OptionDescription.of(Component.translatable("configOption.incantationem.availableForBookOffer.tooltip")))
-            .controller(option -> BooleanControllerBuilder.create(option).yesNoFormatter().coloured(true));
+            .controller(option -> BooleanControllerBuilder.create(option).yesNoFormatter().coloured(true))
+            .flag(OptionFlag.GAME_RESTART);
     }
 
     private static Option.Builder<Boolean> availableAsTreasure() {
         return Option.<Boolean>createBuilder()
             .name(Component.translatable("configOption.incantationem.availableAsTreasure"))
             .description(OptionDescription.of(Component.translatable("configOption.incantationem.availableAsTreasure.tooltip")))
-            .controller(option -> BooleanControllerBuilder.create(option).yesNoFormatter().coloured(true));
+            .controller(option -> BooleanControllerBuilder.create(option).yesNoFormatter().coloured(true))
+            .flag(OptionFlag.GAME_RESTART);
     }
 
     private static Option.Builder<Boolean> isLuckBased() {
@@ -851,7 +855,8 @@ public class ConfigScreen {
         return Option.<Boolean>createBuilder()
             .name(Component.translatable("configOption.incantationem.showApplyMessage"))
             .description(OptionDescription.of(Component.translatable("configOption.incantationem.showApplyMessage.tooltip")))
-            .controller(option -> BooleanControllerBuilder.create(option).yesNoFormatter().coloured(true));
+            .controller(option -> BooleanControllerBuilder.create(option).yesNoFormatter().coloured(true))
+            .flag(OptionFlag.GAME_RESTART);
     }
 
 
