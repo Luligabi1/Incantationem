@@ -1,0 +1,22 @@
+{
+  "replace": false,
+  "values": [
+    "incantationem:bane_of_the_swine",
+    "incantationem:bunnys_hop",
+    "incantationem:charmed",
+    "incantationem:decay",
+    "incantationem:deflection",
+    "incantationem:fuse_shot",
+    "incantationem:forging_touch",
+    "incantationem:last_stand",
+    "incantationem:magnetic",
+    "incantationem:reaping_rod",
+    "incantationem:retreat",
+    "incantationem:venomous",
+    "incantationem:water_slash",
+    "incantationem:recklessness",
+    "incantationem:shrieking",
+    "incantationem:thunder",
+    "incantationem:tough_luck"
+  ]
+}

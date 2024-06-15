@@ -1,0 +1,33 @@
+{
+  "description": {
+    "translate": "enchantment.incantationem.tough_luck"
+  },
+  "supported_items": "#minecraft:enchantable/durability",
+  "primary_items": "#minecraft:enchantable/durability",
+  "weight": 5,
+  "max_level": 1,
+  "min_cost": {
+    "base": 0,
+    "per_level_above_first": 0
+  },
+  "max_cost": {
+    "base": 25,
+    "per_level_above_first": 0
+  },
+  "anvil_cost": 1,
+  "slots": [
+    "mainhand",
+    "armor"
+  ],
+  "exclusive_set": "#incantationem:exclusive_set/tough_luck",
+  "effects": {
+    "minecraft:tick": [
+      {
+        "effect": {
+          "type": "incantationem:apply_effect",
+          "effect": "minecraft:unluck"
+        }
+      }
+    ]
+  }
+}

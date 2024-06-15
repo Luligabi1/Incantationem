@@ -12,7 +12,7 @@ public class TagRegistry {
 
 
     private static TagKey<EntityType<?>> createSensitiveToTag(String id) {
-        return TagKey.create(Registries.ENTITY_TYPE, Incantationem.modId("sensitive_to_" + id));
+        return TagKey.create(Registries.ENTITY_TYPE, Incantationem.id("sensitive_to_" + id));
     }
 
     public static void init() {

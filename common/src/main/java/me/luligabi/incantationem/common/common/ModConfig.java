@@ -8,7 +8,7 @@ import dev.isxander.yacl3.config.v2.api.serializer.GsonConfigSerializerBuilder;
 public class ModConfig {
 
     public static final ConfigClassHandler<ModConfig> HANDLER = ConfigClassHandler.createBuilder(ModConfig.class)
-        .id(Incantationem.modId("config"))
+        .id(Incantationem.id("config"))
         .serializer(config -> GsonConfigSerializerBuilder.create(config)
             .setPath(Platform.getConfigFolder().resolve("incantationem.json"))
             .build())
@@ -86,11 +86,11 @@ public class ModConfig {
             @SerialEntry
             public int maxLevel = 3;
             @SerialEntry
-            public boolean availableRandomly = true;
+            public boolean availableRandomly = false;
             @SerialEntry
             public boolean availableForBookOffer = true;
             @SerialEntry
-            public boolean availableAsTreasure = false;
+            public boolean availableAsTreasure = true;
             @SerialEntry
             public boolean isLuckBased = true;
             @SerialEntry
@@ -130,7 +130,7 @@ public class ModConfig {
             @SerialEntry
             public int maxLevel = 1;
             @SerialEntry
-            public boolean availableRandomly = true;
+            public boolean availableRandomly = false;
             @SerialEntry
             public boolean availableForBookOffer = true;
             @SerialEntry

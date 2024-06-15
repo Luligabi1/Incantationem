@@ -1,0 +1,33 @@
+{
+  "description": {
+    "translate": "enchantment.incantationem.retreat"
+  },
+  "supported_items": "#minecraft:enchantable/leg_armor",
+  "primary_items": "#minecraft:enchantable/leg_armor",
+  "weight": 5,
+  "max_level": 1,
+  "min_cost": {
+    "base": 10,
+    "per_level_above_first": 20
+  },
+  "max_cost": {
+    "base": 30,
+    "per_level_above_first": 50
+  },
+  "anvil_cost": 2,
+  "slots": [
+    "legs"
+  ],
+  "exclusive_set": "#incantationem:exclusive_set/retreat",
+  "effects": {
+    "minecraft:post_attack": [
+      {
+        "affected": "attacker",
+        "enchanted": "victim",
+        "effect": {
+          "type": "incantationem:retreat"
+        }
+      }
+    ]
+  }
+}

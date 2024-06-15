@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "#minecraft:exclusive_set/damage",
+    "minecraft:fire_aspect"
+  ]
+}

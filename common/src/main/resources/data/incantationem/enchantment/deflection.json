@@ -1,0 +1,22 @@
+{
+  "description": {
+    "translate": "enchantment.incantationem.deflection"
+  },
+  "supported_items": "#minecraft:enchantable/armor",
+  "primary_items": "#minecraft:enchantable/armor",
+  "weight": 5,
+  "max_level": 3,
+  "min_cost": {
+    "base": 10,
+    "per_level_above_first": 20
+  },
+  "max_cost": {
+    "base": 30,
+    "per_level_above_first": 50
+  },
+  "anvil_cost": 2,
+  "slots": [
+    "armor"
+  ],
+  "exclusive_set": "#incantationem:exclusive_set/deflection"
+}

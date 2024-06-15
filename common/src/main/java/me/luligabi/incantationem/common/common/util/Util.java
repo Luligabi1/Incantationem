@@ -1,9 +1,12 @@
 package me.luligabi.incantationem.common.common.util;
 
 import dev.architectury.networking.NetworkManager;
+import me.luligabi.incantationem.common.common.Incantationem;
 import me.luligabi.incantationem.common.common.network.EffectAppliedPacket;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.RandomSource;
@@ -11,9 +14,42 @@ import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
+import net.minecraft.world.level.Level;
 
 public class Util {
+
+    public static int getItemEnchantmentLevel(String id, ItemStack stack, Level level) {
+        return getItemEnchantmentLevel(Incantationem.id(id), stack, level);
+    }
+
+    public static int getEnchantmentLevel(String id, LivingEntity attacker, Level level) {
+        return getEnchantmentLevel(Incantationem.id(id), attacker, level);
+    }
+
+    public static int getItemEnchantmentLevel(ResourceLocation id, ItemStack stack, Level level) {
+        return EnchantmentHelper.getItemEnchantmentLevel(
+            level.registryAccess()
+                .registry(Registries.ENCHANTMENT)
+                .get()
+                .getHolder(id)
+                .get(),
+            stack
+        );
+    }
+
+    public static int getEnchantmentLevel(ResourceLocation id, LivingEntity attacker, Level level) {
+        return EnchantmentHelper.getEnchantmentLevel(
+            level.registryAccess()
+                .registry(Registries.ENCHANTMENT)
+                .get()
+                .getHolder(id)
+                .get(),
+            attacker
+        );
+    }
 
     public static boolean positiveEffectRandomNumber(LivingEntity livingEntity, RandomSource random, int failureOdds, boolean isLuckBased) {
         return effectBasedLuckRandomNumber(
@@ -43,6 +79,7 @@ public class Util {
 
     public static void applyEffectIfNotPresent(LivingEntity livingEntity, Holder<MobEffect> statusEffect, int duration, int strength) {
         if(livingEntity.hasEffect(statusEffect)) return;
+
         livingEntity.addEffect(new MobEffectInstance(statusEffect, duration * 20, strength, true, false));
     }
 
@@ -53,10 +90,6 @@ public class Util {
             (ServerPlayer) entity,
             new EffectAppliedPacket(msg)
         );
-    }
-
-    public static boolean isEnchantmentInTag(Enchantment enchantment, TagKey<Enchantment> tag) {
-        return BuiltInRegistries.ENCHANTMENT.wrapAsHolder(enchantment).is(tag);
     }
 
     private static boolean effectBasedLuckRandomNumber(LivingEntity livingEntity, RandomSource random, int luckOdds, int unluckyOdds, int failureOdds, boolean isLuckBased) {

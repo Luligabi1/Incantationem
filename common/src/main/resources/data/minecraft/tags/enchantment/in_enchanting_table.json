@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "incantationem:bane_of_the_swine",
+    "incantationem:bunnys_hop",
+    "incantationem:charmed",
+    "incantationem:deflection",
+    "incantationem:last_stand",
+    "incantationem:magnetic",
+    "incantationem:reaping_rod",
+    "incantationem:retreat",
+    "incantationem:venomous",
+    "incantationem:water_slash"
+  ]
+}

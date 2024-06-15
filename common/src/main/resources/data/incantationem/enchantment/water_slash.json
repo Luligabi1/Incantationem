@@ -1,0 +1,79 @@
+{
+  "description": {
+    "translate": "enchantment.incantationem.water_slash"
+  },
+  "supported_items": "#minecraft:enchantable/sharp_weapon",
+  "primary_items": "#minecraft:enchantable/sharp_weapon",
+  "weight": 5,
+  "max_level": 5,
+  "min_cost": {
+    "base": 5,
+    "per_level_above_first": 10
+  },
+  "max_cost": {
+    "base": 15,
+    "per_level_above_first": 30
+  },
+  "anvil_cost": 2,
+  "slots": [
+    "mainhand"
+  ],
+  "exclusive_set": "#incantationem:exclusive_set/water_slash",
+  "effects": {
+    "minecraft:damage": [
+      {
+        "effect": {
+          "type": "minecraft:add",
+          "value": {
+            "type": "minecraft:linear",
+            "base": 2.5,
+            "per_level_above_first": 2.5
+          }
+        },
+        "requirements": {
+          "condition": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "type": "#incantationem:sensitive_to_water_slash"
+          }
+        }
+      }
+    ],
+    "minecraft:post_attack": [
+      {
+        "affected": "victim",
+        "effect": {
+          "type": "minecraft:apply_mob_effect",
+          "max_amplifier": 3.0,
+          "max_duration": {
+            "type": "minecraft:linear",
+            "base": 1.5,
+            "per_level_above_first": 0.5
+          },
+          "min_amplifier": 3.0,
+          "min_duration": 1.5,
+          "to_apply": "minecraft:slowness"
+        },
+        "enchanted": "attacker",
+        "requirements": {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type": "#incantationem:sensitive_to_water_slash"
+              }
+            },
+            {
+              "condition": "minecraft:damage_source_properties",
+              "predicate": {
+                "is_direct": true
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

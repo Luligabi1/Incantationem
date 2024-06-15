@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "incantationem:decay",
+    "incantationem:fuse_shot",
+    "incantationem:forging_touch",
+    "incantationem:recklessness",
+    "incantationem:shrieking",
+    "incantationem:thunder",
+    "incantationem:tough_luck"
+  ]
+}

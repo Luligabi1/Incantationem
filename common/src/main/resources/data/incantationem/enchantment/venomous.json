@@ -1,0 +1,22 @@
+{
+  "description": {
+    "translate": "enchantment.incantationem.venomous"
+  },
+  "supported_items": "#minecraft:enchantable/bow",
+  "primary_items": "#minecraft:enchantable/bow",
+  "weight": 5,
+  "max_level": 3,
+  "min_cost": {
+    "base": 5,
+    "per_level_above_first": 20
+  },
+  "max_cost": {
+    "base": 25,
+    "per_level_above_first": 50
+  },
+  "anvil_cost": 2,
+  "slots": [
+    "mainhand"
+  ],
+  "exclusive_set": "#incantationem:exclusive_set/venomous"
+}

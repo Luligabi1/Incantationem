@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "incantationem:bunnys_hop",
+    "incantationem:decay",
+    "incantationem:deflection",
+    "incantationem:forging_touch",
+    "incantationem:magnetic",
+    "incantationem:recklessness"
+  ]
+}

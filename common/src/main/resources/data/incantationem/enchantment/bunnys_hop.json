@@ -1,0 +1,31 @@
+{
+  "description": {
+    "translate": "enchantment.incantationem.bunnys_hop"
+  },
+  "supported_items": "#minecraft:enchantable/foot_armor",
+  "primary_items": "#minecraft:enchantable/foot_armor",
+  "weight": 5,
+  "max_level": 3,
+  "min_cost": {
+    "base": 10,
+    "per_level_above_first": 10
+  },
+  "max_cost": {
+    "base": 50,
+    "per_level_above_first": 0
+  },
+  "anvil_cost": 2,
+  "slots": [
+    "feet"
+  ],
+  "exclusive_set": "#incantationem:exclusive_set/bunnys_hop",
+  "effects": {
+    "minecraft:tick": [
+      {
+        "effect": {
+          "type": "incantationem:bunnys_hop"
+        }
+      }
+    ]
+  }
+}

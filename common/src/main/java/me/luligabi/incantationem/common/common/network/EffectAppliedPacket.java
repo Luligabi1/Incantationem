@@ -10,7 +10,7 @@ import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 public class EffectAppliedPacket implements CustomPacketPayload {
 
 
-    public static final Type<EffectAppliedPacket> TYPE = new Type<>(Incantationem.modId("effect_applied"));
+    public static final Type<EffectAppliedPacket> TYPE = new Type<>(Incantationem.id("effect_applied"));
     public static final StreamCodec<RegistryFriendlyByteBuf, EffectAppliedPacket> CODEC = CustomPacketPayload.codec(EffectAppliedPacket::write, EffectAppliedPacket::new);
 
     public final EffectAppliedMessage message;

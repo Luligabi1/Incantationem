@@ -1,6 +1,6 @@
 package me.luligabi.incantationem.common.mixin;
 
-import me.luligabi.incantationem.common.common.enchantment.curse.ShriekingCurse;
+import me.luligabi.incantationem.common.common.enchantment.HardcodedEnchantments;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -22,8 +22,7 @@ public abstract class WardenSpawnTrackerMixin {
             target = "Lnet/minecraft/world/entity/monster/warden/WardenSpawnTracker;increaseWarningLevel()V"
         )
     )
-    private static void shouldCurseOfShrieking(ServerLevel level, BlockPos pos, ServerPlayer player, CallbackInfoReturnable<OptionalInt> cir) {
-        ShriekingCurse.apply(player);
+    private static void incantationem_tryWarn(ServerLevel level, BlockPos pos, ServerPlayer player, CallbackInfoReturnable<OptionalInt> cir) {
+        HardcodedEnchantments.shrieking(player);
     }
-
 }

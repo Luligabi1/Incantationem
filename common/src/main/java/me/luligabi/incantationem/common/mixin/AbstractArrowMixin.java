@@ -1,11 +1,9 @@
 package me.luligabi.incantationem.common.mixin;
 
-import me.luligabi.incantationem.common.common.enchantment.EnchantmentRegistry;
-import me.luligabi.incantationem.common.common.enchantment.FuseShotEnchantment;
-import me.luligabi.incantationem.common.common.enchantment.VenomousEnchantment;
+import me.luligabi.incantationem.common.common.enchantment.HardcodedEnchantments;
+import me.luligabi.incantationem.common.common.util.Util;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractArrow;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.phys.EntityHitResult;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -20,25 +18,20 @@ public abstract class AbstractArrowMixin {
         method = "onHitEntity",
         at = @At("TAIL")
     )
-    public void onHitEntity(EntityHitResult entityHitResult, CallbackInfo ci) {
+    public void incantationem_onHitEntity(EntityHitResult entityHitResult, CallbackInfo ci) {
         AbstractArrow arrow = ((AbstractArrow) (Object) this);
 
         if(entityHitResult.getEntity() instanceof LivingEntity hitEntity) {
             if(arrow.getOwner() instanceof LivingEntity attacker) {
-                VenomousEnchantment.apply(
+                HardcodedEnchantments.venomous(
                     attacker, hitEntity,
-                    EnchantmentHelper.getEnchantmentLevel(
-                        EnchantmentRegistry.VENOMOUS.get(),
-                        attacker
-                    )
+                    Util.getEnchantmentLevel("venomous", attacker, attacker.level())
+
                 );
-                FuseShotEnchantment.createExplosion(
+                HardcodedEnchantments.fuseShot(
                     attacker, arrow, hitEntity,
                     entityHitResult.getLocation(), arrow.level(),
-                    EnchantmentHelper.getEnchantmentLevel(
-                        EnchantmentRegistry.FUSE_SHOT.get(),
-                        attacker
-                    )
+                    Util.getEnchantmentLevel("fuse_shot", attacker, attacker.level())
                 );
             }
         }
