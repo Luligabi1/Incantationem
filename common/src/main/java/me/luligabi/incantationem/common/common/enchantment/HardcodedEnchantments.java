@@ -18,7 +18,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.item.crafting.SmeltingRecipe;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.phys.Vec3;
@@ -46,7 +45,7 @@ public class HardcodedEnchantments { // TODO attempt to move these onto Mojang's
         if(deflectionLevel > 0) {
             boolean apply = Util.positiveEffectRandomNumber(
                 user, user.getRandom(),
-                Math.round(100 - deflectionLevel * 4.2F),
+                100 - deflectionLevel * Incantationem.CONFIG.enchantments.deflection.successRate,
                 Incantationem.CONFIG.enchantments.deflection.isLuckBased
             );
             if(apply) Util.sendEffectAppliedMessage(user, EffectAppliedMessage.DEFLECTION);
@@ -58,12 +57,17 @@ public class HardcodedEnchantments { // TODO attempt to move these onto Mojang's
 
     public static List<ItemStack> forgingTouch(List<ItemStack> original, ServerLevel level, Entity entity, ItemStack stack) {
         List<ItemStack> itemsToDropList = new ArrayList<>();
-        int forgingTouchLevel = Util.getItemEnchantmentLevel(
+        int i = Util.getItemEnchantmentLevel(
             "forging_touch",
             stack,
             entity.level()
         );
-        if(forgingTouchLevel < 1) return original;
+        if(i < 1) return original;
+        if(!Util.neutralEffectRandomNumber(
+            level.getRandom(),
+            (100 - (i * Incantationem.CONFIG.enchantments.forgingTouch.successRate)),
+            Incantationem.CONFIG.enchantments.forgingTouch.isLuckBased)
+        ) return original;
 
         for(ItemStack preForgingItems : original) {
             Optional<RecipeHolder<SmeltingRecipe>> recipe = level.getRecipeManager().getAllRecipesFor(RecipeType.SMELTING)
@@ -71,7 +75,7 @@ public class HardcodedEnchantments { // TODO attempt to move these onto Mojang's
                 .filter(smeltingRecipe -> smeltingRecipe.value().getIngredients().get(0).test(preForgingItems))
                 .findFirst();
 
-            if(recipe.isPresent() && Util.neutralEffectRandomNumber(level.getRandom(), (100 - (forgingTouchLevel * 15)), Incantationem.CONFIG.enchantments.forgingTouch.isLuckBased)) {
+            if(recipe.isPresent()) {
                 ItemStack forgedItems = recipe.get().value().getResultItem(level.registryAccess()).copy();
                 forgedItems.setCount(preForgingItems.getCount());
                 itemsToDropList.add(forgedItems);
@@ -102,7 +106,11 @@ public class HardcodedEnchantments { // TODO attempt to move these onto Mojang's
 
     public static void venomous(LivingEntity attacker, LivingEntity hitEntity, int i) {
         if(i < 1) return;
-        if(!Util.positiveEffectRandomNumber(attacker, attacker.getRandom(), (100 - (i * 15)), Incantationem.CONFIG.enchantments.venomous.isLuckBased)) return;
+        if(!Util.positiveEffectRandomNumber(
+            attacker, attacker.getRandom(),
+            (100 - (i * Incantationem.CONFIG.enchantments.venomous.successRate)),
+            Incantationem.CONFIG.enchantments.venomous.isLuckBased
+        )) return;
 
         Util.applyEffectIfNotPresent(hitEntity, MobEffects.POISON, hitEntity.getRandom().nextInt(i + 2), i - 1);
         Util.sendEffectAppliedMessage(attacker, EffectAppliedMessage.VENOMOUS);

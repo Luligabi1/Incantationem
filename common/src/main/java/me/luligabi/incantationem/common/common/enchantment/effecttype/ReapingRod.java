@@ -1,7 +1,6 @@
 package me.luligabi.incantationem.common.common.enchantment.effecttype;
 
 import com.mojang.serialization.MapCodec;
-import me.luligabi.incantationem.common.common.Incantationem;
 import me.luligabi.incantationem.common.common.util.EffectAppliedMessage;
 import me.luligabi.incantationem.common.common.util.Util;
 import net.minecraft.server.level.ServerLevel;

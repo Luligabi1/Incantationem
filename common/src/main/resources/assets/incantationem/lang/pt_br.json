@@ -43,16 +43,10 @@
   "enchantment.incantationem.tough_luck.desc": "Garante permanentemente o efeito de Má Sorte enquanto usa, diminuindo suas chances em eventos de sorte.",
   "configCategory.incantationem.enchantment": "Encantamentos",
   "configCategory.incantationem.curse": "Maldições",
-  "configOption.incantationem.maxLevel": "Nível Máximo",
-  "configOption.incantationem.maxLevel.tooltip": "Nível máximo que este encantamento pode alcançar normalmente.",
-  "configOption.incantationem.availableRandomly": "Disponível Aleatoriamente?",
-  "configOption.incantationem.availableRandomly.tooltip": "Permite encontrar este encantamento na Mesa de Encantamentos e baús de loot comuns",
-  "configOption.incantationem.availableForBookOffer": "Disponível em Trocas de Livros?",
-  "configOption.incantationem.availableForBookOffer.tooltip": "Permite encontrar este encantamento em trocas de Aldeões",
-  "configOption.incantationem.availableAsTreasure": "Disponível como Tesouro?",
-  "configOption.incantationem.availableAsTreasure.tooltip": "Permite encontrar este encantamento em baús de loot raros",
   "configOption.incantationem.isLuckBased": "É Baseado em Sorte?",
   "configOption.incantationem.isLuckBased.tooltip": "Determina se encantamento é ativado por sorte ou toda vez. Alguns encantamentos podem se tornar extremamente poderosos se desativado.",
+  "configOption.incantationem.successRate": "Taxa de Sucesso",
+  "configOption.incantationem.successRate.tooltip": "Quão frequentemente, em porcentagem, este encantamento será ativado.",
   "configOption.incantationem.showApplyMessage": "Exibir Mensagem de Aplicação?",
   "configOption.incantationem.showApplyMessage.tooltip": "Exibe mensagem quando encantamento é ativado. Se desativado no servidor/host, esta opção será ignorada."
 }

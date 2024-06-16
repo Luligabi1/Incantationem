@@ -22,7 +22,11 @@ public record LastStand() implements EnchantmentEntityEffect {
     public void apply(ServerLevel serverLevel, int i, EnchantedItemInUse enchantedItemInUse, Entity entity, Vec3 vec3) {
         LivingEntity user = enchantedItemInUse.owner();
         if(user.getHealth() >= 5) return;
-        if(!Util.positiveEffectRandomNumber(user, user.getRandom(), (100 - (i * 30)), Incantationem.CONFIG.enchantments.lastStand.isLuckBased)) return;
+        if(!Util.positiveEffectRandomNumber(
+            user, user.getRandom(),
+            (100 - (i * Incantationem.CONFIG.enchantments.lastStand.successRate)),
+            Incantationem.CONFIG.enchantments.lastStand.isLuckBased
+        )) return;
         Util.applyEffectIfNotPresent(user, MobEffects.DAMAGE_BOOST, (int) Math.ceil(i * 2.5), i - 1);
         Util.sendEffectAppliedMessage(user, EffectAppliedMessage.LAST_STAND);
     }

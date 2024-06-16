@@ -5,7 +5,6 @@ import me.luligabi.incantationem.common.common.Incantationem;
 import me.luligabi.incantationem.common.common.util.EffectAppliedMessage;
 import me.luligabi.incantationem.common.common.util.Util;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LightningBolt;
@@ -24,7 +23,11 @@ public record Thunder() implements EnchantmentEntityEffect {
     @Override
     public void apply(ServerLevel serverLevel, int i, EnchantedItemInUse enchantedItemInUse, Entity entity, Vec3 vec3) {
         LivingEntity user = enchantedItemInUse.owner();
-        if(!Util.negativeEffectRandomNumber(user, user.getRandom(), 85, Incantationem.CONFIG.curses.thunder.isLuckBased)) return;
+        if(!Util.negativeEffectRandomNumber(
+            user, user.getRandom(),
+            (100 - Incantationem.CONFIG.curses.thunder.successRate),
+            Incantationem.CONFIG.curses.thunder.isLuckBased
+        )) return;
 
         LightningBolt lightningEntity = EntityType.LIGHTNING_BOLT.create(user.level());
         lightningEntity.setVisualOnly(!user.level().getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING));

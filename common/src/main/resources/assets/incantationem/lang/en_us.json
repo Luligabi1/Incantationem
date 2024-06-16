@@ -43,16 +43,10 @@
   "enchantment.incantationem.tough_luck.desc": "Grants permanent unluck effect while using it, decreasing your odds on luck-based events.",
   "configCategory.incantationem.enchantment": "Enchantments",
   "configCategory.incantationem.curse": "Curses",
-  "configOption.incantationem.maxLevel": "Maximum Level",
-  "configOption.incantationem.maxLevel.tooltip": "The maximum level this enchantment can be by normal means",
-  "configOption.incantationem.availableRandomly": "Available randomly?",
-  "configOption.incantationem.availableRandomly.tooltip": "Allows this enchantment to be obtainable via the Enchanting Table and low-tiered loot chests",
-  "configOption.incantationem.availableForBookOffer": "Available for Book Offers?",
-  "configOption.incantationem.availableForBookOffer.tooltip": "Allows this enchantment to be obtainable via Villager trades",
-  "configOption.incantationem.availableAsTreasure": "Available as Treasure?",
-  "configOption.incantationem.availableAsTreasure.tooltip": "Allows this enchantment to be obtainable via high-tiered loot chests",
   "configOption.incantationem.isLuckBased": "Is Luck Based?",
   "configOption.incantationem.isLuckBased.tooltip": "Whether this enchantment is triggered through luck or everytime. Some enchantments might become extremely overpowered if disabled.",
+  "configOption.incantationem.successRate": "Success Rate",
+  "configOption.incantationem.successRate.tooltip": "How often, in percentage, this enchantment will be triggered.",
   "configOption.incantationem.showApplyMessage": "Show Apply Message?",
   "configOption.incantationem.showApplyMessage.tooltip": "Shows action bar message whenever this enchantment is triggered. If disabled by server/host, this option will be ignored."
 }

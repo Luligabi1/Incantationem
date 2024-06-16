@@ -21,7 +21,11 @@ public record Retreat() implements EnchantmentEntityEffect {
     @Override
     public void apply(ServerLevel serverLevel, int i, EnchantedItemInUse enchantedItemInUse, Entity entity, Vec3 vec3) {
         LivingEntity user = enchantedItemInUse.owner();
-        if(!Util.positiveEffectRandomNumber(user, user.getRandom(), 80, Incantationem.CONFIG.enchantments.retreat.isLuckBased)) return;
+        if(!Util.positiveEffectRandomNumber(
+            user, user.getRandom(),
+            Incantationem.CONFIG.enchantments.retreat.successRate,
+            Incantationem.CONFIG.enchantments.retreat.isLuckBased
+        )) return;
         Util.applyEffectIfNotPresent(user, MobEffects.MOVEMENT_SPEED, 7, 0);
         Util.sendEffectAppliedMessage(user, EffectAppliedMessage.RETREAT);
 

@@ -22,7 +22,11 @@ public record Decay() implements EnchantmentEntityEffect {
     public void apply(ServerLevel serverLevel, int i, EnchantedItemInUse enchantedItemInUse, Entity entity, Vec3 vec3) {
         if(entity instanceof LivingEntity attacker) {
             LivingEntity user = enchantedItemInUse.owner();
-            if(!Util.positiveEffectRandomNumber(user, user.getRandom(), 85, Incantationem.CONFIG.enchantments.decay.isLuckBased)) return;
+            if(!Util.positiveEffectRandomNumber(
+                user, user.getRandom(),
+                (100 - i * Incantationem.CONFIG.enchantments.decay.successRate),
+                Incantationem.CONFIG.enchantments.decay.isLuckBased
+            )) return;
             Util.applyEffectIfNotPresent(attacker, MobEffects.WITHER, 3 + i, i - 1);
             Util.sendEffectAppliedMessage(user, EffectAppliedMessage.DECAY);
         }
