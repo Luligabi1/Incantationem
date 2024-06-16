@@ -1,7 +1,7 @@
 {
   "replace": false,
   "values": [
-    "#minecraft:exclusive_set/mining",
+    "minecraft:silk_touch",
     "incantationem:recklessness"
   ]
 }
