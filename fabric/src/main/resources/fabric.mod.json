@@ -3,7 +3,7 @@
   "id": "incantationem",
   "version": "${version}",
   "name": "Incantationem",
-  "description": "dummy",
+  "description": "Adds vanilla+, configurable enchantments",
   "authors": [
     "Luligabi"
   ],
@@ -33,8 +33,8 @@
     "incantationem-common.mixins.json"
   ],
   "depends": {
-    "minecraft": ">=1.20.5",
+    "minecraft": ">=1.21",
     "fabric-api": "*",
-    "architectury": ">=11.0.8"
+    "architectury": ">=13.0.1"
   }
 }

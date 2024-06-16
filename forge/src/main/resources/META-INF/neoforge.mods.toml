@@ -10,7 +10,7 @@ displayURL = "https://www.curseforge.com/minecraft/mc-mods/incantationem"
 logoFile = "icon.png"
 authors = "Luligabi1"
 credits = "With contributions by Superkat32 || With translations by ghost, 4444Zao9 and UpcraftLP"
-description = "Introduces vanilla+, fully configurable enchantments"
+description = "Adds vanilla+, configurable enchantments"
 [[mixins]]
 config = "incantationem-common.mixins.json"
 [[dependencies.incantationem]]
