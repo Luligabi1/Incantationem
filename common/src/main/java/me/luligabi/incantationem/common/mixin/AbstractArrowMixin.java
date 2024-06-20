@@ -1,7 +1,6 @@
 package me.luligabi.incantationem.common.mixin;
 
 import me.luligabi.incantationem.common.common.enchantment.HardcodedEnchantments;
-import me.luligabi.incantationem.common.common.util.Util;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.phys.EntityHitResult;
@@ -24,14 +23,11 @@ public abstract class AbstractArrowMixin {
         if(entityHitResult.getEntity() instanceof LivingEntity hitEntity) {
             if(arrow.getOwner() instanceof LivingEntity attacker) {
                 HardcodedEnchantments.venomous(
-                    attacker, hitEntity,
-                    Util.getEnchantmentLevel("venomous", attacker, attacker.level())
-
+                    attacker, hitEntity
                 );
                 HardcodedEnchantments.fuseShot(
                     attacker, arrow, hitEntity,
-                    entityHitResult.getLocation(), arrow.level(),
-                    Util.getEnchantmentLevel("fuse_shot", attacker, attacker.level())
+                    entityHitResult.getLocation(), arrow.level()
                 );
             }
         }

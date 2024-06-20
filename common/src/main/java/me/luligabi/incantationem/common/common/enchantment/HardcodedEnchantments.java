@@ -21,7 +21,6 @@ import net.minecraft.world.item.crafting.SmeltingRecipe;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.phys.Vec3;
-import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.ArrayList;
@@ -56,11 +55,13 @@ public class HardcodedEnchantments { // TODO attempt to move these onto Mojang's
     }
 
     public static List<ItemStack> forgingTouch(List<ItemStack> original, ServerLevel level, Entity entity, ItemStack stack) {
+        if(entity == null) return original;
+
         List<ItemStack> itemsToDropList = new ArrayList<>();
         int i = Util.getItemEnchantmentLevel(
             "forging_touch",
             stack,
-            entity.level()
+            level
         );
         if(i < 1) return original;
         if(!Util.neutralEffectRandomNumber(
@@ -90,7 +91,11 @@ public class HardcodedEnchantments { // TODO attempt to move these onto Mojang's
         return itemsToDropList;
     }
 
-    public static void fuseShot(LivingEntity attacker, AbstractArrow arrow, @Nullable Entity hitEntity, Vec3 pos, Level level, int i) {
+    public static void fuseShot(LivingEntity attacker, AbstractArrow arrow, Entity hitEntity, Vec3 pos, Level level) {
+        int i = Util.getEnchantmentLevel(
+            "fuse_shot",
+            attacker, attacker.level()
+        );
         if(i < 1) return;
         DamageSource damageSource = attacker.damageSources().explosion(arrow, attacker);
         float damage = (float) Mth.clamp(arrow.getDeltaMovement().length(), 0.1, i * 1.25);
@@ -104,7 +109,11 @@ public class HardcodedEnchantments { // TODO attempt to move these onto Mojang's
         );
     }
 
-    public static void venomous(LivingEntity attacker, LivingEntity hitEntity, int i) {
+    public static void venomous(LivingEntity attacker, LivingEntity hitEntity) {
+        int i = Util.getEnchantmentLevel(
+            "venomous",
+            attacker, attacker.level()
+        );
         if(i < 1) return;
         if(!Util.positiveEffectRandomNumber(
             attacker, attacker.getRandom(),
