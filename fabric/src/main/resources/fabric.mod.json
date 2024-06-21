@@ -35,6 +35,7 @@
   "depends": {
     "minecraft": ">=1.21",
     "fabric-api": "*",
-    "architectury": ">=13.0.1"
+    "architectury": ">=13.0.1",
+    "yet_another_config_lib_v3": "*"
   }
 }
