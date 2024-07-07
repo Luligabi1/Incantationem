@@ -51,7 +51,7 @@ allprojects {
 
 
 ext.getChangeLog = { ->
-    return "- Fix Forging Touch crash"
+    return ""
 }
 
 publishMods {

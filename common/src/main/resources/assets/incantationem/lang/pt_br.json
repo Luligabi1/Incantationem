@@ -1,6 +1,6 @@
 {
   "enchantment.incantationem.bunnys_hop": "Salto de Coelho",
-  "enchantment.incantationem.swine_bane": "Ruína dos Suínos",
+  "enchantment.incantationem.bane_of_the_swine": "Ruína dos Suínos",
   "enchantment.incantationem.charmed": "Talismã",
   "enchantment.incantationem.decay": "Deterioração",
   "enchantment.incantationem.deflection": "Deflexão",
@@ -25,7 +25,7 @@
   "message.incantationem.venomous.applied": "* Efeito peçonhento aplicado! *",
   "message.incantationem.thunder.applied": "* Maldição dos Trovões aplicada! :( *",
   "enchantment.incantationem.bunnys_hop.desc": "Aplica Salto enquanto pisa em blocos de grama ou terra.",
-  "enchantment.incantationem.swine_bane.desc": "Aumenta o dano causado a suínos, como porcos, piglins e hoglins.",
+  "enchantment.incantationem.bane_of_the_swine.desc": "Aumenta o dano causado a suínos, como porcos, piglins e hoglins.",
   "enchantment.incantationem.charmed.desc": "Melhora a qualidade do loot de pesca e sua sorte com enchantamentos/maldições do Incantationem.",
   "enchantment.incantationem.decay.desc": "Aplica aleatoriamente decomposição em entidades acertadas.",
   "enchantment.incantationem.deflection.desc": "Aleatoriamente desvia projéteis atirados no usuário. A chance de ativação aumenta com cada peça.",

@@ -1,6 +1,6 @@
 {
   "enchantment.incantationem.bunnys_hop": "Bunny's Hop",
-  "enchantment.incantationem.swine_bane": "Bane of the Swine",
+  "enchantment.incantationem.bane_of_the_swine": "Bane of the Swine",
   "enchantment.incantationem.charmed": "Charmed",
   "enchantment.incantationem.decay": "Decay",
   "enchantment.incantationem.deflection": "Deflection",
@@ -25,7 +25,7 @@
   "message.incantationem.venomous.applied": "* Venomous effect applied! *",
   "message.incantationem.thunder.applied": "* Curse of the Thunders applied! :( *",
   "enchantment.incantationem.bunnys_hop.desc": "Grants jump boost while standing on grass/dirt blocks.",
-  "enchantment.incantationem.swine_bane.desc": "Increases damage for swine mobs, such as pigs, piglins and hoglins.",
+  "enchantment.incantationem.bane_of_the_swine.desc": "Increases damage for swine mobs, such as pigs, piglins and hoglins.",
   "enchantment.incantationem.charmed.desc": "Increases loot quality while fishing and your luck with Incantationem's enchantments/curses.",
   "enchantment.incantationem.decay.desc": "Randomly inflicts withering to hit entities.",
   "enchantment.incantationem.deflection.desc": "Randomly deflects projectiles shot at the user. Effect stacks across armor.",

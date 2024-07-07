@@ -1,6 +1,6 @@
 {
   "enchantment.incantationem.bunnys_hop": "Прыжок кролика",
-  "enchantment.incantationem.swine_bane": "Бич свиньи",
+  "enchantment.incantationem.bane_of_the_swine": "Бич свиньи",
   "enchantment.incantationem.charmed": "Заколдованный",
   "enchantment.incantationem.decay": "Распад",
   "enchantment.incantationem.forging_touch": "Ковочное касание",
@@ -20,7 +20,7 @@
   "message.incantationem.venomous.applied": "* Наложен эффект Ядоносный! *",
   "message.incantationem.thunder.applied": "* Наложен эффект Проклятье грома! :( *",
   "enchantment.incantationem.bunnys_hop.desc": "Даёт Прыгучесть, когда стоишь на блоках травы/земли.",
-  "enchantment.incantationem.swine_bane.desc": "Увеличивает урон по свиным мобам, среди которых свиньи, пиглины и хоглины.",
+  "enchantment.incantationem.bane_of_the_swine.desc": "Увеличивает урон по свиным мобам, среди которых свиньи, пиглины и хоглины.",
   "enchantment.incantationem.charmed.desc": "Даёт постоянный эффект удачи при его использовании, увеличивая твою фору на события, основанные на удаче.",
   "enchantment.incantationem.decay.desc": "Случайным образом наносит иссушение при ударе по сущностям.",
   "enchantment.incantationem.forging_touch.desc": "Сломанные блоки случайным образом выбросят свой переплавленный экземпляр (например, песок -> стекло).",

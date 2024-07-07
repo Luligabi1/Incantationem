@@ -1,6 +1,6 @@
 {
   "enchantment.incantationem.bunnys_hop": "Hasensprung",
-  "enchantment.incantationem.swine_bane": "Verderben der Schweine",
+  "enchantment.incantationem.bane_of_the_swine": "Verderben der Schweine",
   "enchantment.incantationem.charmed": "Glückspilz",
   "enchantment.incantationem.decay": "Zerfall",
   "enchantment.incantationem.forging_touch": "Schmiedende Berührung",
@@ -20,7 +20,7 @@
   "message.incantationem.venomous.applied": "* Gift-Effekt angewendet! *",
   "message.incantationem.thunder.applied": "* Fluch des Donners angewendet! :( *",
   "enchantment.incantationem.bunnys_hop.desc": "Gewährt Sprungkraft, wenn man auf Gras- oder Erdblöcken steht.",
-  "enchantment.incantationem.swine_bane.desc": "Erhöht den Schaden für schweine-artige Gegner, wie Schweine, Piglins und Hoglins.",
+  "enchantment.incantationem.bane_of_the_swine.desc": "Erhöht den Schaden für schweine-artige Gegner, wie Schweine, Piglins und Hoglins.",
   "enchantment.incantationem.charmed.desc": "Erhöht die Qualität der Beute beim Angeln und dein Glück mit den Verzauberungen/Flüchen von Incantationem.",
   "enchantment.incantationem.decay.desc": "Verursacht bei getroffenen Gegnern zufällig Verwelken.",
   "enchantment.incantationem.forging_touch.desc": "Abgebaute Blöcke lassen zufällig ihr geschmolzenes Gegenstück fallen (z. B. Sand -> Glas).",
@@ -33,13 +33,5 @@
   "enchantment.incantationem.thunder.desc": "Der Anwender wird nach Treffern zufällig vom Blitz getroffen.",
   "enchantment.incantationem.tough_luck.desc": "Gewährt einen permanenten Unglückseffekt, während er benutzt wird, der deine Chancen bei glücksbasierten Ereignissen verringert.",
   "configCategory.incantationem.enchantment": "Verzauberungen",
-  "configCategory.incantationem.curse": "Flüche",
-  "configOption.incantationem.maxLevel": "Höchste Stufe",
-  "configOption.incantationem.maxLevel.tooltip": "Die maximale Stufe, die diese Verzauberung auf normalem Wege erreichen kann",
-  "configOption.incantationem.availableRandomly": "Als zufällge Beute erhältlich?",
-  "configOption.incantationem.availableRandomly.tooltip": "Ermöglicht es, diese Verzauberung über den Verzauberungstisch und niedrigstufige Beutetruhen zu erhalten",
-  "configOption.incantationem.availableForBookOffer": "Im Handel erhältlich?",
-  "configOption.incantationem.availableForBookOffer.tooltip": "Ermöglicht, dass diese Verzauberung über den Handel mit Dorfbewohnern erworben werden kann.",
-  "configOption.incantationem.availableAsTreasure": "Als Schatz erhältlich?",
-  "configOption.incantationem.availableAsTreasure.tooltip": "Ermöglicht, dass diese Verzauberung über hochrangige Beutetruhen erhältlich ist"
+  "configCategory.incantationem.curse": "Flüche"
 }
